@@ -4,8 +4,14 @@
 # LANG
 export LANG=ja_JP.UTF-8
 # PATH
-PATH=$PATH:/opt/local/bin:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin
-export MANPATH=/usr/local/man:/usr/share/man
+case "${OSTYPE}" in
+darwin*)
+    PATH=$PATH:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin
+    export MANPATH=/usr/local/man:/usr/share/man
+    ;;
+linux*)
+    ;;
+esac
 # エディタ
 export EDITOR="vim"
 # ls をカラー表示
@@ -18,12 +24,31 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_cache
 export PIP_RESPECT_VIRTUALENV=true
 # virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+case "${OSTYPE}" in
+darwin*)
+    source /usr/local/bin/virtualenvwrapper.sh
+    ;;
+linux*)
+    ;;
+esac
+
+## Ruby
+## rvm
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+    source "$HOME/.rvm/scripts/rvm"
+fi
 
 ######
 # エイリアス
 ######
-alias ls='ls -GF'
+case "${OSTYPE}" in
+darwin*)
+    alias ls='ls -GF'
+    ;;
+linux*)
+    alias ls='ls --color -F'
+    ;;
+esac
 alias ll='ls -lh'
 alias la='ls -lha'
 
@@ -92,8 +117,9 @@ zstyle ':completion:*:default' menu select
 ######
 # キーバインド
 ######
-# vi 風のキーバインドを使用する
-bindkey -v
+# Emacs 風のキーバインド
+bindkey -e
+# ^ を入力で cd ..
 bindkey '\^' cdup
 
 ######

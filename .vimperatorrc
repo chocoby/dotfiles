@@ -1,13 +1,15 @@
 " ----- 表示 -----
 " ブラウザタイトルの変更
-set titlestring=Firefox/vimperator
+set titlestring=Firefox
 " 詳細表示レベル(左下のステータス)
 " 「:javascript!」で表示される内容レベル
 "set verbose=9
 " メニューを表示
-set guioptions=Brb
+set guioptions=rbmn
 " ページ全体で検索後を強調表示
 set hlsearch
+" Colorscheme
+colorscheme agroove
 
 " リンクの色
 "highlight HintElem background-color:aqua;
@@ -20,7 +22,7 @@ set nobeep
 " テキストボックスなどにフォーカスが奪われるのを防ぐ
 set focuscontent
 " exモード時のインクリメント補完
-"set wildoptions=auto
+set wildoptions=auto
 " open/tabopen時の補完候補(Like AwesomeBar)
 "set complete = sl
 " AwesomeBarの補完対象にBookmarkletを追加、件数を50件に変更
@@ -30,7 +32,7 @@ set focuscontent
 " ----- キーマッピング -----
 " <C-c>で選択範囲をコピー
 map <C-c> :echo 'Yank!'<CR>Y
-" j/kでのスクロール量を1行から3行に変更
+" j/kでのスクロール量
 map j 3<C-e>
 map k 3<C-y>
 " Backspaceに戻るを割り当て
@@ -46,8 +48,28 @@ map <Right> gt
 " S-←/→で現在のタブ位置を移動
 map <S-Right> :tabmove! +1<CR>
 map <S-Left>  :tabmove! -1<CR>
+" ESC キー2回押しでハイライトを消去
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
+map s :sbm<Space>
+map <S-s> :hatenastar<CR>
 
 " ----- Plugin -----
+" _smooziee.js
+let g:smooziee_scroll_amount="230"
+let g:smooziee_scroll_interval="10"
+" feedSomeKeys_3.js
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gu u / ? J K
+lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gu u / ? J K
+" hatena-bookmark-xul
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
+" direct_bookmark.js
+let g:direct_sbm_use_services_by_tag = "h"
+let g:direct_sbm_use_services_by_post = "h"
+" char-hints-mod2.js
+let g:hintsio="i"
 
 " 読み込んだ結果を出力
 echo ".vimpratorrc sourced"

@@ -1,0 +1,154 @@
+" ==VimperatorColorSchema==
+" name: agroove
+" ==/VimperatorColorSchema==
+" http://d.hatena.ne.jp/maridinger/20100309/1268098152
+
+"+----------------------------------------------------------------------------------------+
+" コマンドライン
+"+----------------------------------------------------------------------------------------+
+"コマンドライン
+hi CmdLine      font-family: monospace; font-size: 15px; padding: 1px; background: #f6f6f0;
+hi CmdOutput    white-space: pre;
+"コマンドラインの通常テキスト
+hi Normal       color: #533e24; font-size: 15px; background: #f6f6f0;
+"コマンドラインのモード表示
+hi ModeMsg      color: #533e24; font-size: 15px; background: #f6f6f0;
+"さらに表示するテキストがある場合の表示
+hi MoreMsg      color: #533e24; font-size: 15px; background: #f6f6f0;
+hi NonText      color: blue; min-height: 16px; padding-left: 2px;
+hi Preview      color: #c6c5a0; font-size: 15px;
+"決定を行うためのプロンプト
+hi Question     color: #533e24; font-size: 15px; background: #f6f6f0; margin: 1px 0 0 0;
+hi Indicator    color: blue;
+
+"+----------------------------------------------------------------------------------------+
+" 補完リスト
+"+----------------------------------------------------------------------------------------+
+"補完リストの説明欄 ( 右側 )
+hi CompDesc              color: #c6c5a0; width: 50%;
+hi CompGroup
+hi CompGroup:not(:first-of-type)	margin-top: .5em;
+"補完リストの favicon
+hi CompIcon              width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
+hi CompIcon>img          max-width: 16px; max-height: 16px; vertical-align: middle;
+"補完リストの 1 行
+hi CompItem              font-size: 15px;
+hi CompItem>*            padding: 0 .5ex;
+"補完リストの選択している行
+hi CompItem[selected]    background: #e1e1cd; font-weight: bold;
+"上にスクロール可能なことを示すマーク
+hi CompLess              text-align: center; height: 0; line-height: .5ex; padding-top: 1ex;
+"上にスクロール可能なことを示すマークとして使う文字
+hi CompLess::after       content: "\2303" /* Unicode up arrowhead */
+"下にスクロール可能なことを示すマーク
+hi CompMore              text-align: center; height: .5ex; line-height: .5ex; margin-bottom: -.5ex;
+"下にスクロール可能なことを示すマークとして使う文字
+hi CompMore::after       content: "\2304" /* Unicode down arrowhead */
+"補完リストでマッチしたテキスト
+hi Filter                color: red; font-weight: bold;
+hi CompMsg               font-style: italic; margin-left: 16px; font-size: 15px;
+"補完リストの結果欄 ( 左側 )
+"hi CompResult            width: 45%; overfloaw: hidden;
+"補完リストのタイトル
+hi CompTitle             color: #4f3a20; background: #f6f6f0; font-weight: bold; font-size: 15px;
+hi CompTitle>*           padding: 0 .5ex;
+"URL のブックマークタグ
+hi Tag                   color: blue;
+":bmarks  や :jumps  などのリストのタイトル
+hi Title                 color: #79baaf; font-size: 18px; background: #f6f6f0; font-weight: bold;
+"URL
+hi URL                   text-decoration: none; color: #4f3a20; background: inherit; font-size: 18px;
+hi URL:hover             text-decoration: underline; cursor: pointer;
+"URL のブックマークキーワード
+hi Keyword
+
+"+----------------------------------------------------------------------------------------+
+" 各種通知メッセージ
+"+----------------------------------------------------------------------------------------+
+"警告メッセージ
+hi WarningMsg    font-size: 15px; color: red;    background: #f6f6f0;
+"通知メッセージ
+hi InfoMsg       font-size: 15px; color: black;  background: #f6f6f0;
+"エラーメッセージ
+hi ErrorMsg      font-size: 15px; color: white;  background: red; font-weight: bold;
+"エラーの行番号
+hi LineNr        font-size: 15px; color: orange; background: #f6f6f0;
+hi Message       font-size: 15px; white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
+":command等のフォント
+hi Normal        font-size: 15px;
+
+"+----------------------------------------------------------------------------------------+
+" リストの区切り線
+"+----------------------------------------------------------------------------------------+
+hi Gradient         height: 2px; margin-bottom: -1px; margin-top: -1px;
+hi GradientLeft     background-color: #4f3a20;
+hi GradientRight    background-color: #4f3a20;
+
+"+----------------------------------------------------------------------------------------+
+" ステータスバー
+"+----------------------------------------------------------------------------------------+
+"ステータスバー
+hi StatusLine           color: #d1d8be; background: #543f24; font-size: 15px;
+"安全でないウェブページにおけるステータスバー
+hi StatusLineBroken     color: black; background: #FF6060; font-size: 15px; /* light-red */
+"安全なウェブページにおけるステータスバー
+hi StatusLineSecure     color: black; background: #B0FF00; font-size: 15px; /* light-green */
+hi StatusLineExtended   font-size: 15px;
+
+"+----------------------------------------------------------------------------------------+
+" ヒント
+"+----------------------------------------------------------------------------------------+
+"ヒント
+hi Hint           font-family: monospace; font-size: 16px; font-weight: bold; color: #523d23; padding: 0 0.25em; margin: -0.3em 0 0 -1.2em; background-color: #f6f6f0;      border: 2px #523d23 solid; -moz-border-radius: 4px; ButtonShadow; padding 0 1px;
+hi Hint::after    content: attr(number);
+"<Enter>  でリンク先を辿るヒント要素
+hi HintActive     background: #523d23; color: #d1d8be; border: 2px #523d23 solid; -moz-border-radius: 4px;
+"選択されうるヒント要素
+hi HintElem       background-color: #e1e1cd; color: black;
+"画像の上のヒント表示
+hi HintImage      opacity: .5;
+
+"+----------------------------------------------------------------------------------------+
+" タブ周り
+"+----------------------------------------------------------------------------------------+
+"タブの閉じるボタン
+hi TabClose
+"タブのアイコン
+hi TabIcon
+"アイコンの上に表示される、タブ番号
+hi TabIconNumber    font-weight: normal; color: black; text-align: center; text-shadow: black -1px 0 1px, black 0 1px 1px, black 1px 0 1px, black 0 -1px 1px;
+"アイコンのとなりに表示される、タブ番号
+hi TabNumber        font-weight: bold; margin: 0; padding-right: .3ex;
+"タブのテキスト
+hi TabText
+
+"タブバーの色
+style -name tab chrome://* <<EOM
+.tabbrowser-tabs {
+  margin: 0px !important;
+  background-color: #f6f6f0 !important;
+}
+#content tab:not([selected]) {
+background-color: #e1e1cd !important; color:#595757  !important;
+}
+EOM
+
+"+----------------------------------------------------------------------------------------+
+" その他の見た目
+"+----------------------------------------------------------------------------------------+
+"Vimperator のビジュアルベル
+hi Bell              border: 0 none; background-color: black;
+"ウェブページの検索結果の強調表示
+hi Search            font-size: inherit; padding: 0; color: black; background-color: yellow; padding: 0;
+"新しくフレームが選択された際の表示
+hi FrameIndicator    background-color: red; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+
+"+----------------------------------------------------------------------------------------+
+" JavaScript
+"+----------------------------------------------------------------------------------------+
+hi Null      color: blue;
+hi Number    color: blue;
+hi Object    color: maroon;
+hi String    color: green;
+hi Function  color: navy;
+hi Boolean   color: red;

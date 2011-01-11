@@ -12,20 +12,10 @@ set wildmenu        " 補完強化
 set showcmd         " コマンドライン補完を表示
 set showtabline=2   " タブバーの表示
 set cursorline      " カーソル行をハイライト
+set showmatch       " 対応する括弧の表示
 
-" カーソルを点滅させない
-set guicursor=a:blinkon0
 " ステータスバーに文字コード/改行コードを表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-" フォント設定
-set guifont=DejaVu\ Sans\ Mono\ 12
-if has('gui_macvim')
-    set guifont=DejaVu\ Sans\ Mono:h16
-endif
-" シンタックスハイライト
-syntax on
-" カラースキーム
-colorscheme desert
 
 " 基本設定
 " --------------------
@@ -44,13 +34,22 @@ set wrapscan        " 最後まで検索したら先頭へ戻る
 set hlsearch        " 検索文字列をハイライト
 set incsearch       " インクリメンタルサーチ
 
-" 編集
+" インデント
 set autoindent      " 自動インデント
 set smartindent     " より高度な自動インデント
 set cindent         " C 言語の自動インデント
-set showmatch       " 対応する括弧の表示
+
+" 編集
+set hidden          " 編集中でも他のファイルを開けるようにする
+set whichwrap=b,s,h,l,<,>,[,]   " カーソルを行頭、行末で止まらないようにする
 set backspace=indent,eol,start  " 改行して自動インデントされたスペースを BS で削除
-set clipboard=unnamed           " クリップボードを vim 以外で使用できるように
+set clipboard+=unnamed          " OS のクリップボードを使用する
+set clipboard=unnamed           " yank は OS のクリップボードを使用する
+" Insert Mode を抜けたら IME をオフにする
+set noimdisable
+set iminsert=0 imsearch=0
+set noimcmdline
+inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
 " バックアップ
 set backup
@@ -58,12 +57,20 @@ set backupdir=~/.vim_backup
 set swapfile
 set directory=~/.vim_swap
 
-" キーマップ 
+" キーマップ
+" F4 は QuickBuf
 " --------------------
-if has('gui_macvim')
-    " 円マークでバックスラッシュ入力
-    noremap ¥ \
-endif
+" スペースキーでカーソルを中心に保ってスクロール
+nnoremap <Space> jzz
+nnoremap <S-Space> kzz
+" ESC キー2回押しでハイライトを消去
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
+nmap <F2> :tabnew<CR><ESC>
+nmap <F3> :Tlist<CR><ESC>
+nmap <F5> gT
+nmap <F6> gt
+nmap f :e<Space>
+nmap t :tabnew<Space>
 
 " 文字コード
 " --------------------
@@ -126,8 +133,53 @@ if exists('&ambiwidth')
   set ambiwidth=double
 endif
 
+" お役立ち
+" --------------------
+" 対応したカッコを補完し、カッコの中にカーソルを戻す
+imap { {}<Left>
+imap [ []<Left>
+imap ( ()<Left>
+imap < <><Left>
+" カッコの中にカーソルを戻す
+imap '' ''<Left>
+imap "" ""<Left>
+imap `` ``<Left>
+
+" 行末の不要なスペースを削除
+function! RTrim()
+    let s:cursor = getpos(".")
+    %s/\s\+$//e
+    call setpos(".", s:cursor)
+endfunction
+autocmd BufWritePre * call RTrim()
+
 " プラグイン
 " --------------------
-
+" vim-pathogen
+filetype off
+filetype indent off
+syntax off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+set helpfile=$VIMRUNTIME/doc/help.txt
+filetype plugin indent on
+syntax on
 " neocomplcache
+" vim 起動時に有効化
 let g:neocomplcache_enable_at_startup = 1
+" 大文字が入力されるまで大文字小文字を区別しない
+let g:neocomplcache_enable_smart_case = 1
+" _ 区切りの補完を有効化
+let g:neocomplcache_enable_underbar_completion = 1
+" 日本語は補完しない
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+" surround
+let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
+let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
+let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
+let g:surround_{char2nr("c")} = "{% comment\1 \r..*\r &\1%}\r{% endcomment %}"
+let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
