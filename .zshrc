@@ -13,7 +13,7 @@ linux*)
     ;;
 esac
 # エディタ
-export EDITOR="vim"
+export EDITOR=vim
 # ls をカラー表示
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
@@ -24,16 +24,15 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_cache
 export PIP_RESPECT_VIRTUALENV=true
 # virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
-case "${OSTYPE}" in
-darwin*)
+if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
     source /usr/local/bin/virtualenvwrapper.sh
-    ;;
-linux*)
-    ;;
-esac
+fi
+# Mercurial
+HGENCODING=utf-8
+export HGENCODING
 
 ## Ruby
-## rvm
+# rvm
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
 fi
@@ -51,33 +50,74 @@ linux*)
 esac
 alias ll='ls -lh'
 alias la='ls -lha'
+alias r='rails'
 
 ######
 # プロンプト
 ######
 autoload -Uz colors
 colors
-# 色を %{fg[green]%} のように指定ができる
+# 色を %{fg[green]%} のように指定する
 setopt prompt_subst
-# root の場合は # / その他は % でプロンプトを表示
-case ${UID} in
-0)
-    PROMPT="%{$fg_bold[red]%}#%{$reset_color%} "
-    PROMPT2="%{$fg_bold[red]%}%{$reset_color%} "
-    SPROMPT="%{$fg_bold[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-        PROMPT="%{$fg_bold[red]%}${HOST%%.*} $PROMPT"
-    ;;
-*)
-    PROMPT="%{$fg_bold[green]%}%%%{$reset_color%} "
-    PROMPT2="%{$fg_bold[green]%}%{$reset_color%} "
-    SPROMPT="%{$fg_bold[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-        PROMPT="%{$fg_bold[green]%}${HOST%%.*} $PROMPT"
-    ;;
-esac
-# 右プロンプトにカレントディレクトリを表示
-RPROMPT=" [%~]"
+# vcs_info を表示
+# http://d.hatena.ne.jp/tarao/20100114/1263436661
+if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
+    autoload -Uz vcs_info
+    zstyle ':vcs_info:*' formats '%R' '%S' '%s:%b'
+    zstyle ':vcs_info:*' actionformats '%R' '%S' '%s:%b|%a'
+    precmd_vcs_info () {
+        psvar=()
+        LANG=en_US.UTF-8 vcs_info
+        repos=`print -nD "$vcs_info_msg_0_"`
+        [[ -n "$repos" ]] && psvar[2]="$repos"
+        [[ -n "$vcs_info_msg_1_" ]] && psvar[3]="$vcs_info_msg_1_"
+        [[ -n "$vcs_info_msg_2_" ]] && psvar[1]="$vcs_info_msg_2_"
+    }
+    typeset -ga precmd_functions
+    precmd_functions+=precmd_vcs_info
+
+    # root の場合は # / その他は % でプロンプトを表示
+    case ${UID} in
+    0)
+        PROMPT="%{$fg[red]%}#%{$reset_color%} "
+        PROMPT2="%{$fg[red]%}%{$reset_color%} "
+        SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+            PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
+        ;;
+    *)
+        PROMPT="%{$fg[green]%}%%%{$reset_color%} "
+        PROMPT2="%{$fg[green]%}%{$reset_color%} "
+        SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+            PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
+        ;;
+    esac
+
+    local dirs='[%F{yellow}%3(v|%32<..<%3v%<<|%60<..<%~%<<)%f]'
+    local vcs='%3(v|[%25<\<<%F{yellow}%2v%f@%F{blue}%1v%f%<<]|)'
+    RPROMPT="$dirs$vcs"
+else
+    # root の場合は # / その他は % でプロンプトを表示
+    case ${UID} in
+    0)
+        PROMPT="%{$fg_bold[red]%}#%{$reset_color%} "
+        PROMPT2="%{$fg_bold[red]%}%{$reset_color%} "
+        SPROMPT="%{$fg_bold[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+            PROMPT="%{$fg_bold[red]%}${HOST%%.*} $PROMPT"
+        ;;
+    *)
+        PROMPT="%{$fg_bold[green]%}%%%{$reset_color%} "
+        PROMPT2="%{$fg_bold[green]%}%{$reset_color%} "
+        SPROMPT="%{$fg_bold[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+            PROMPT="%{$fg_bold[green]%}${HOST%%.*} $PROMPT"
+        ;;
+    esac
+    # 右プロンプトにカレントディレクトリを表示
+    RPROMPT=" [%~]"
+fi
 
 ######
 # コマンドヒストリ

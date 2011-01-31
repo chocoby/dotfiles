@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/grep"]
 	path = .vim/bundle/grep
 	url = git://github.com/vim-scripts/grep.vim.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = git://github.com/vim-scripts/The-NERD-tree.git

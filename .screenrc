@@ -14,4 +14,3 @@ bind e encoding eucJP
 bind s eval 'split' 'focus' 'screen 1'
 bind q only
 bind w windowlist -b
-
