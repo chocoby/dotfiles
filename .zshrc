@@ -1,5 +1,5 @@
 ######
-# 環境変数
+# Envs
 ######
 # LANG
 export LANG=ja_JP.UTF-8
@@ -10,11 +10,13 @@ darwin*)
     export MANPATH=/usr/local/man:/usr/share/man
     ;;
 linux*)
+    PATH=$PATH:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin
+    export MANPATH=/usr/local/man:/usr/share/man
     ;;
 esac
-# エディタ
+# Editor
 export EDITOR=vim
-# ls をカラー表示
+# ls
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
@@ -37,12 +39,19 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
 fi
 
-## Elixir
+## PHP
+# Elixir
 export SERVER_STATUS=devlocal
 
 ######
-# エイリアス
+# Alias
 ######
+case "${SERVER_STATUS}" in
+devlocal*)
+    alias vim="$HOME/local/bin/vim"
+    ;;
+esac
+
 case "${OSTYPE}" in
 darwin*)
     alias ls='ls -GF'
@@ -51,12 +60,13 @@ linux*)
     alias ls='ls --color -F'
     ;;
 esac
+
 alias ll='ls -lh'
 alias la='ls -lha'
 alias r='rails'
 
 ######
-# プロンプト
+# Prompt
 ######
 autoload -Uz colors
 colors
@@ -126,12 +136,16 @@ fi
 # コマンドヒストリ
 ######
 HISTFILE=$HOME/.zsh/.zsh_history
-HISESIZE=10000
-SAVEHIST=10000
+HISESIZE=100000
+SAVEHIST=100000
 # 同じコマンドを重複して記録しない
 setopt hist_ignore_dups
+# 履歴ファイルに時刻を記録
+setopt extended_history
 # ヒストリファイルを共有する
 setopt share_history
+# 複数の zsh を同時に使う時など history ファイルに上書きせず追加
+setopt append_history
 # root のコマンドはヒストリに追加しない
 if [ $UID = 0 ]; then
     unset HISTFILE
@@ -182,3 +196,10 @@ function cdup() {
     zle reset-prompt
 }
 zle -N cdup
+
+preexec () {
+    if [ $TERM = "screen" ]; then
+        1="$1 " # deprecated.
+        echo -ne "\ek${${(s: :)1}[0]}\e\\"
+    fi
+  }
