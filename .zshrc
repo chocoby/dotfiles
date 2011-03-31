@@ -112,18 +112,18 @@ else
     # root の場合は # / その他は % でプロンプトを表示
     case ${UID} in
     0)
-        PROMPT="%{$fg_bold[red]%}#%{$reset_color%} "
-        PROMPT2="%{$fg_bold[red]%}%{$reset_color%} "
-        SPROMPT="%{$fg_bold[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+        PROMPT="%{$fg[red]%}#%{$reset_color%} "
+        PROMPT2="%{$fg[red]%}%{$reset_color%} "
+        SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
         [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-            PROMPT="%{$fg_bold[red]%}${HOST%%.*} $PROMPT"
+            PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
         ;;
     *)
-        PROMPT="%{$fg_bold[green]%}%%%{$reset_color%} "
-        PROMPT2="%{$fg_bold[green]%}%{$reset_color%} "
-        SPROMPT="%{$fg_bold[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+        PROMPT="%{$fg[green]%}%%%{$reset_color%} "
+        PROMPT2="%{$fg[green]%}%{$reset_color%} "
+        SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
         [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-            PROMPT="%{$fg_bold[green]%}${HOST%%.*} $PROMPT"
+            PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
         ;;
     esac
     # 右プロンプトにカレントディレクトリを表示
