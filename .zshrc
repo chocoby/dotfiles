@@ -46,11 +46,9 @@ export SERVER_STATUS=devlocal
 ######
 # Alias
 ######
-case "${SERVER_STATUS}" in
-devlocal*)
+if [[ -s "$HOME/local/bin/vim" ]]; then
     alias vim="$HOME/local/bin/vim"
-    ;;
-esac
+fi
 
 case "${OSTYPE}" in
 darwin*)
