@@ -19,6 +19,8 @@ export EDITOR=vim
 # ls
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
+# git
+export GIT_PAGER="lv -c"
 
 ## Python
 # pip
