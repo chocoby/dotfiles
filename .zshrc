@@ -19,6 +19,8 @@ export EDITOR=vim
 # ls
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
+# git
+export GIT_PAGER="lv -c"
 
 ## Python
 # pip
@@ -48,6 +50,8 @@ export SERVER_STATUS=devlocal
 ######
 if [[ -s "$HOME/local/bin/vim" ]]; then
     alias vim="$HOME/local/bin/vim"
+elif [[ -s "/Applications/MacVim.app/Contents/MacOS/Vim" ]]; then
+    alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 fi
 
 case "${OSTYPE}" in
