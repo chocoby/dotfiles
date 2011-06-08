@@ -1,0 +1,17 @@
+" ==VimperatorColorSchema==
+" name: oreore
+" ==/VimperatorColorSchema==
+" http://cho-co.be
+
+"+----------------------------------------------------------------------------------------+
+" ヒント
+"+----------------------------------------------------------------------------------------+
+"ヒント
+hi Hint           font-family: monospace; font-size: 16px; font-weight: bold; color: #523d23; padding: 0 0.25em; margin: -0.3em 0 0 -1.2em; background-color: #f6f6f0;      border: 2px #523d23 solid; -moz-border-radius: 4px; ButtonShadow; padding 0 1px;
+hi Hint::after    content: attr(number);
+"<Enter>  でリンク先を辿るヒント要素
+hi HintActive     background: #523d23; color: #d1d8be; border: 2px #523d23 solid; -moz-border-radius: 4px;
+"選択されうるヒント要素
+hi HintElem       background-color: #e1e1cd; color: black;
+"画像の上のヒント表示
+hi HintImage      opacity: .5;
