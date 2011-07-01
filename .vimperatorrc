@@ -1,20 +1,13 @@
 " ----- 表示 -----
 " ブラウザタイトルの変更
-set titlestring=Firefox
-" 詳細表示レベル(左下のステータス)
-" 「:javascript!」で表示される内容レベル
-"set verbose=9
+set titlestring=Fx
 " メニューを表示
-set guioptions=rbmn
+"set guioptions=rbmn
+set gui=noaddons,nobookmarks,menu,nonavigation,tabs
 " ページ全体で検索後を強調表示
 set hlsearch
 " Colorscheme
-colorscheme agroove
-
-" リンクの色
-"highlight HintElem background-color:aqua;
-" アクティブなリンクの色
-"highlight HintActive background:lightblue;
+colorscheme oreore
 
 " ----- 動作 -----
 " スクロールの端などの際に出るBeepをオフ
@@ -23,11 +16,10 @@ set nobeep
 set focuscontent
 " exモード時のインクリメント補完
 set wildoptions=auto
-" open/tabopen時の補完候補(Like AwesomeBar)
-"set complete = sl
-" AwesomeBarの補完対象にBookmarkletを追加、件数を50件に変更
-"set! browser.urlbar.filter.javascript=false
-"set! browser.urlbar.maxRichResults=50
+" ヒントをアルファベットで表示
+set hintchars="hjklasdfgyuiopqwertnmzxcvb"
+hi -append Hint text-transform: uppercase;
+
 
 " ----- キーマッピング -----
 " <C-c>で選択範囲をコピー
@@ -50,8 +42,6 @@ map <S-Right> :tabmove! +1<CR>
 map <S-Left>  :tabmove! -1<CR>
 " ESC キー2回押しでハイライトを消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
-map s :sbm<Space>
-map <S-s> :hatenastar<CR>
 
 " ----- Plugin -----
 " _smooziee.js
@@ -63,13 +53,8 @@ lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs g
 lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
 lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gu u / ? J K
 lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gu u / ? J K
-" hatena-bookmark-xul
-javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
-" direct_bookmark.js
-let g:direct_sbm_use_services_by_tag = "h"
-let g:direct_sbm_use_services_by_post = "h"
-" char-hints-mod2.js
-let g:hintsio="i"
+" statusline-toolbar.js
+set statuslinetoolbars=feed-button,greasemonkey-tbb
 
 " 読み込んだ結果を出力
 echo ".vimpratorrc sourced"
