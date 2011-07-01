@@ -67,6 +67,15 @@ alias ll='ls -lh'
 alias la='ls -lha'
 alias r='rails'
 
+alias gco='git checkout'
+alias gst='git status'
+alias gci='git commit'
+alias gdi='git diff'
+alias gbr='git branch'
+alias gps='git push'
+alias gpl='git pull'
+alias gad='git add'
+
 ######
 # Prompt
 ######
