@@ -41,10 +41,6 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
 fi
 
-## PHP
-# Elixir
-export SERVER_STATUS=devlocal
-
 ######
 # Alias
 ######
@@ -75,6 +71,7 @@ alias gbr='git branch'
 alias gps='git push'
 alias gpl='git pull'
 alias gad='git add'
+alias glo='git log'
 
 ######
 # Prompt
