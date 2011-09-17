@@ -26,6 +26,8 @@ export GIT_PAGER="lv -c"
 # pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_cache
 export PIP_RESPECT_VIRTUALENV=true
+export PIP_REQUIRE_VIRTUALENV=true
+export VIRTUALENV_USE_DISTRIBUTE=true
 # virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
