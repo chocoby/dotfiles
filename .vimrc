@@ -14,6 +14,8 @@ set showtabline=2   " タブバーの表示
 set cursorline      " カーソル行をハイライト
 set showmatch       " 対応する括弧の表示
 
+syntax on           " カラーハイライト
+
 " ステータスバーに文字コード/改行コードを表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
@@ -155,15 +157,6 @@ autocmd BufWritePre * call RTrim()
 
 " プラグイン
 " --------------------
-" vim-pathogen
-filetype off
-filetype indent off
-syntax off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-set helpfile=$VIMRUNTIME/doc/help.txt
-filetype plugin indent on
-syntax on
 " neocomplcache
 " vim 起動時に有効化
 let g:neocomplcache_enable_at_startup = 1
@@ -183,3 +176,27 @@ let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
 let g:surround_{char2nr("w")} = "{% with\1 \r..*\r &\1%}\r{% endwith %}"
 let g:surround_{char2nr("c")} = "{% comment\1 \r..*\r &\1%}\r{% endcomment %}"
 let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
+" ctrlp.vim
+" 無視するファイル
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so     " Linux/MacOSX
+set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
+" vundle
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+" github/vim-scripts
+Bundle "grep.vim"
+Bundle "The-NERD-tree"
+Bundle "QuickBuf"
+Bundle "taglist.vim"
+
+" github
+Bundle "Shougo/neocomplcache"
+Bundle "tpope/vim-surround"
+Bundle "scrooloose/nerdcommenter"
+Bundle "kien/ctrlp.vim"
+
+filetype plugin indent on
