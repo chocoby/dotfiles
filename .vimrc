@@ -155,15 +155,6 @@ autocmd BufWritePre * call RTrim()
 
 " プラグイン
 " --------------------
-" vim-pathogen
-filetype off
-filetype indent off
-syntax off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-set helpfile=$VIMRUNTIME/doc/help.txt
-filetype plugin indent on
-syntax on
 " neocomplcache
 " vim 起動時に有効化
 let g:neocomplcache_enable_at_startup = 1
