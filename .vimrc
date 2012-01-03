@@ -14,6 +14,8 @@ set showtabline=2   " タブバーの表示
 set cursorline      " カーソル行をハイライト
 set showmatch       " 対応する括弧の表示
 
+syntax on           " カラーハイライト
+
 " ステータスバーに文字コード/改行コードを表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
@@ -178,3 +180,23 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
 " 無視するファイル
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so     " Linux/MacOSX
 set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
+" vundle
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+" github/vim-scripts
+Bundle "grep.vim"
+Bundle "The-NERD-tree"
+Bundle "QuickBuf"
+Bundle "taglist.vim"
+
+" github
+Bundle "Shougo/neocomplcache"
+Bundle "tpope/vim-surround"
+Bundle "scrooloose/nerdcommenter"
+Bundle "kien/ctrlp.vim"
+
+filetype plugin indent on
