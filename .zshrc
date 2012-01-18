@@ -65,9 +65,13 @@ alias ll='ls -lh'
 alias la='ls -lha'
 alias r='rails'
 
+alias cd='pushd'
+alias p='popd'
+
 alias gco='git checkout'
 alias gst='git status'
 alias gci='git commit'
+alias gme='git merge'
 alias gdi='git diff'
 alias gbr='git branch'
 alias gps='git push'
@@ -206,3 +210,8 @@ function cdup() {
     zle reset-prompt
 }
 zle -N cdup
+
+# cd したら ls する
+function chpwd() {
+    ls
+}
