@@ -1,0 +1,64 @@
+# icon
+snippet icon
+    {% icon '${1:default}' %}${0}
+
+# spacer
+snippet spacer
+    {% spacer '${1:after_h3}' %}${0}
+
+# based twig-vim
+# if
+snippet if
+    {% if ${1} %}
+        ${0}
+    {% endif %}
+
+# else
+snippet else
+    {% else %}
+        ${0}
+
+# elseif
+snippet elseif
+    {% elseif ${1} %}
+        ${0}
+# for
+snippet for
+    {% for ${2:} in ${1} %}
+      {{ $2.${0} }}
+    {% endfor %}
+
+# set
+snippet set
+    {% set ${1:var} = ${2:value} %}
+
+# Print variable
+snippet print
+    {{ ${1} }}${2}
+
+# Single Regular execution block
+snippet exec
+    {% ${1} %}${2}
+
+# Comment block
+snippet comment
+    {# ${1} #}${2}
+
+# Open/close block
+snippet exec_block
+    {% ${1:block} %}${2}{% end$1 %}
+
+# Named block
+snippet block
+    {% block ${1:name} %}${2}{% endblock %}
+
+snippet f_date
+    {{ ${1:a_date}|date("${2:Y/m/d}") }}
+
+# include
+snippet include
+    {% include '${1}' %}${0}
+
+# extends
+snippet extends
+    {% extends '${1:template}' %}${0}

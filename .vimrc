@@ -170,6 +170,11 @@ if !exists('g:neocomplcache_keyword_patterns')
     let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+" スニペット補完
+" スニペットファイルの置き場所
+let g:neocomplcache_snippets_dir = '~/.vim/snippets'
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_expand)
 " surround
 let g:surround_{char2nr("b")} = "{% block\1 \r..*\r &\1%}\r{% endblock %}"
 let g:surround_{char2nr("i")} = "{% if\1 \r..*\r &\1%}\r{% endif %}"
