@@ -197,6 +197,7 @@ Bundle "grep.vim"
 Bundle "The-NERD-tree"
 Bundle "QuickBuf"
 Bundle "taglist.vim"
+Bundle "quickrun.vim"
 
 " github
 Bundle "Shougo/neocomplcache"
