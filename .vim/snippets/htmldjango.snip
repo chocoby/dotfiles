@@ -4,7 +4,14 @@ snippet icon
 
 # spacer
 snippet spacer
+    {% spacer %}${0}
+
+snippet spacer_h3
     {% spacer '${1:after_h3}' %}${0}
+
+# line
+snippet line
+    {% line '${1:basic}' %}${0}
 
 # based twig-vim
 # if
@@ -36,20 +43,20 @@ snippet set
 snippet print
     {{ ${1} }}${2}
 
-# Single Regular execution block
-snippet exec
-    {% ${1} %}${2}
-
 # Comment block
 snippet comment
     {# ${1} #}${2}
 
+# Single Regular execution block
+snippet block
+    {% ${1} %}${2}
+
 # Open/close block
-snippet exec_block
+snippet block_open
     {% ${1:block} %}${2}{% end$1 %}
 
 # Named block
-snippet block
+snippet block_named
     {% block ${1:name} %}${2}{% endblock %}
 
 snippet f_date
@@ -62,3 +69,10 @@ snippet include
 # extends
 snippet extends
     {% extends '${1:template}' %}${0}
+
+# TODO: 後で移動
+snippet span
+    <span style="${1}">${2}</span>${0}
+
+snippet div
+    <div style="${1}">${2}</div>${0}
