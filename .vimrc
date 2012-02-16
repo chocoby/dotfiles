@@ -73,6 +73,7 @@ nmap <F5> gT
 nmap <F6> gt
 nmap f :e<Space>
 nmap t :tabnew<Space>
+nmap T :tabclose
 
 " 文字コード
 " --------------------
