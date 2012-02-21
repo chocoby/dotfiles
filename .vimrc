@@ -186,6 +186,8 @@ let g:surround_{char2nr("f")} = "{% for\1 \r..*\r &\1%}\r{% endfor %}"
 " 無視するファイル
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so     " Linux/MacOSX
 set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
+" vim-easymotion
+let g:EasyMotion_leader_key = '<Leader>'
 " vundle
 set nocompatible
 filetype off
@@ -205,5 +207,6 @@ Bundle "Shougo/neocomplcache"
 Bundle "tpope/vim-surround"
 Bundle "scrooloose/nerdcommenter"
 Bundle "kien/ctrlp.vim"
+Bundle "Lokaltog/vim-easymotion"
 
 filetype plugin indent on
