@@ -211,11 +211,7 @@ function cdup() {
 }
 zle -N cdup
 
-# cd したら ls する
-function chpwd() {
-    ls
-}
-
+# z.sh
 _Z_CMD=j
 source ~/.zsh/z.sh
 precmd() {
