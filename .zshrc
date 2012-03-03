@@ -65,7 +65,6 @@ alias ll='ls -lh'
 alias la='ls -lha'
 alias r='rails'
 
-alias cd='pushd'
 alias p='popd'
 
 alias gco='git checkout'
