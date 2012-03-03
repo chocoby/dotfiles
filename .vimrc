@@ -216,5 +216,6 @@ Bundle "scrooloose/nerdcommenter"
 Bundle "kien/ctrlp.vim"
 Bundle "Lokaltog/vim-easymotion"
 Bundle "nathanaelkane/vim-indent-guides"
+Bundle "motemen/git-vim"
 
 filetype plugin indent on
