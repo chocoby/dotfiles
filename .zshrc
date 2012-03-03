@@ -212,7 +212,7 @@ zle -N cdup
 
 # z.sh
 _Z_CMD=j
-source ~/.zsh/z.sh
+source $HOME/.zsh/z.sh
 precmd() {
     _z --add "$(pwd -P)"
 }
