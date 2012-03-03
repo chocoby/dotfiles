@@ -215,3 +215,9 @@ zle -N cdup
 function chpwd() {
     ls
 }
+
+_Z_CMD=j
+source ~/.zsh/z.sh
+precmd() {
+    _z --add "$(pwd -P)"
+}
