@@ -77,6 +77,10 @@ alias gps='git push'
 alias gpl='git pull'
 alias gad='git add'
 alias glo='git log'
+alias gbr='git branch'
+alias gsh='git show'
+alias gfl='git flow'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 ######
 # Prompt
