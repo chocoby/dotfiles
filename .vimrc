@@ -71,10 +71,11 @@ nmap <F2> :NERDTreeToggle<CR><ESC>
 nmap <F3> :Tlist<CR><ESC>
 nmap <F5> gT
 nmap <F6> gt
-nmap t :tabnew<Space>
-nmap T :tabclose
 nmap <F11> <C-w>_
 nmap <F12> <C-w>=
+nmap t :tabnew<Space>
+nmap T :tabclose
+nmap f <Leader>w
 
 " 文字コード
 " --------------------
