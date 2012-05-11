@@ -63,9 +63,12 @@ esac
 
 alias ll='ls -lh'
 alias la='ls -lha'
-alias r='rails'
 
 alias p='popd'
+
+alias r='rails'
+
+alias rgem='rvm gemset'
 
 alias gco='git checkout'
 alias gst='git status'
