@@ -62,14 +62,21 @@ linux*)
 esac
 
 alias ll='ls -lh'
-alias la='ls -lha'
+alias la='ll -a'
 
 alias p='popd'
 
+# Rails
 alias r='rails'
 
-alias rgem='rvm gemset'
+# RVM
+alias rvl='rvm list'
+alias rvu='rvm use'
+alias rgl='rvm gemset list'
+alias rgc='rvm gemset create'
+alias rgu='rvm gemset use'
 
+# Git
 alias gco='git checkout'
 alias gst='git status'
 alias gci='git commit'
