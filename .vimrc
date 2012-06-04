@@ -220,5 +220,6 @@ Bundle "Lokaltog/vim-easymotion"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "motemen/git-vim"
 Bundle "kchmck/vim-coffee-script"
+Bundle "groenewege/vim-less"
 
 filetype plugin indent on
