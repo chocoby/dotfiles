@@ -1,6 +1,6 @@
-######
-# Envs
-######
+###########
+# Env
+###########
 # LANG
 export LANG=en_US.UTF-8
 # PATH
@@ -43,9 +43,9 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
 fi
 
-######
+###########
 # Alias
-######
+###########
 if [[ -s "$HOME/local/bin/vim" ]]; then
     alias vim="$HOME/local/bin/vim"
 elif [[ -s "/Applications/MacVim.app/Contents/MacOS/Vim" ]]; then
@@ -84,18 +84,23 @@ alias gme='git merge'
 alias gdi='git diff'
 alias gbr='git branch'
 alias gps='git push'
+alias gpsu='gps upstream'
+alias gpso='gps origin'
 alias gpl='git pull'
+alias gplu='gpl upstream'
+alias gplo='gpl origin'
 alias gad='git add'
 alias glo='git log'
 alias gbr='git branch'
 alias gsh='git show'
 alias gfl='git flow'
 alias gcp='git cherry-pick'
+alias gre='git rebase'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-######
+###########
 # Prompt
-######
+###########
 autoload -Uz colors
 colors
 # 色を %{fg[green]%} のように指定する
@@ -160,9 +165,9 @@ else
     RPROMPT=" [%~]"
 fi
 
-######
-# コマンドヒストリ
-######
+###########
+# History
+###########
 HISTFILE=$HOME/.zsh/.zsh_history
 HISESIZE=100000
 SAVEHIST=100000
@@ -180,9 +185,9 @@ if [ $UID = 0 ]; then
     SAVEHIST=0
 fi
 
-######
-# 自動補完
-######
+###########
+# Completion
+###########
 autoload -U compinit
 compinit
 # ビープ音を鳴らさないようにする
@@ -199,24 +204,23 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 補完候補を矢印キーなどで選択できるようにする
 zstyle ':completion:*:default' menu select
 
-######
-# キーバインド
-######
+###########
+# Key Bind
+###########
 # Emacs 風のキーバインド
 bindkey -e
 # ^ を入力で cd ..
 bindkey '\^' cdup
 
-######
-# いろいろ
-######
+###########
+# Other
+###########
 # cd を押さずに cd
 setopt auto_cd
 # 移動したディレクトリを記録しておく
 setopt auto_pushd
 # 自動修正
 setopt correct
-
 # ^ で cd ..
 function cdup() {
     echo
