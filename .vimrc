@@ -190,13 +190,6 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so     " Linux/MacOSX
 set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
 " vim-easymotion
 let g:EasyMotion_leader_key = '<Leader>'
-" vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_color_change_percent = 30
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=darkgrey
 " vundle
 set nocompatible
 filetype off
@@ -217,8 +210,6 @@ Bundle "tpope/vim-surround"
 Bundle "scrooloose/nerdcommenter"
 Bundle "kien/ctrlp.vim"
 Bundle "Lokaltog/vim-easymotion"
-Bundle "nathanaelkane/vim-indent-guides"
-Bundle "motemen/git-vim"
 Bundle "kchmck/vim-coffee-script"
 Bundle "groenewege/vim-less"
 
