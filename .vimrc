@@ -19,7 +19,9 @@ syntax on           " カラーハイライト
 " ステータスバーに文字コード/改行コードを表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
-colorscheme zenburn
+if has('mac')
+    colorscheme zenburn
+endif
 
 " 基本設定
 " --------------------
