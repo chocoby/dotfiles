@@ -68,6 +68,7 @@ alias p='popd'
 
 # Rails
 alias r='rails'
+alias pryr='pry -r ./config/environment'
 
 # RVM
 alias rvl='rvm list'
