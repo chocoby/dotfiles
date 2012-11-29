@@ -171,7 +171,7 @@ fi
 # History
 ###########
 HISTFILE=$HOME/.zsh/.zsh_history
-HISESIZE=100000
+HISTSIZE=100000
 SAVEHIST=100000
 # 同じコマンドを重複して記録しない
 setopt hist_ignore_dups
