@@ -211,6 +211,7 @@ Bundle "quickrun.vim"
 " github
 Bundle "Shougo/neocomplcache"
 Bundle "Shougo/neosnippet"
+Bundle "honza/snipmate-snippets"
 Bundle "tpope/vim-surround"
 Bundle "scrooloose/nerdcommenter"
 Bundle "kien/ctrlp.vim"
