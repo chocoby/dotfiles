@@ -210,6 +210,7 @@ Bundle "quickrun.vim"
 
 " github
 Bundle "Shougo/neocomplcache"
+Bundle "Shougo/neosnippet"
 Bundle "tpope/vim-surround"
 Bundle "scrooloose/nerdcommenter"
 Bundle "kien/ctrlp.vim"
