@@ -179,7 +179,7 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " スニペット補完
 " スニペットファイルの置き場所
-let g:neocomplcache_snippets_dir = '~/.vim/snippets'
+let g:neosnippet#snippets_directory = '~/.vim/bundle/snipmate-snippets/snippets'
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 " surround
