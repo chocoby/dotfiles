@@ -10,7 +10,7 @@ darwin*)
     export MANPATH=/usr/local/man:/usr/share/man
     ;;
 linux*)
-    PATH=$PATH:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin
+    PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin:$PATH
     export MANPATH=/usr/local/man:/usr/share/man
     ;;
 esac
