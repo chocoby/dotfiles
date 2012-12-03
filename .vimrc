@@ -198,8 +198,10 @@ let g:EasyMotion_leader_key = '<Leader>'
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+Bundle 'gmarik/vundle'
 
 " github/vim-scripts
 Bundle "grep.vim"
