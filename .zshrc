@@ -214,6 +214,10 @@ bindkey -e
 # ^ を入力で cd ..
 bindkey '\^' cdup
 
+# glob (*) でヒストリをインクリメンタル検索
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward
+
 ###########
 # Other
 ###########
