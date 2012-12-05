@@ -237,3 +237,6 @@ source $HOME/.zsh/z.sh
 precmd() {
     _z --add "$(pwd -P)"
 }
+
+# C-s でロックされるのを防ぐ
+stty stop undef
