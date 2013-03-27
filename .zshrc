@@ -66,6 +66,9 @@ alias la='ll -a'
 
 alias p='popd'
 
+# Ruby
+alias be='bundle exec'
+
 # Rails
 alias r='rails'
 alias pryr='pry -r ./config/environment'
