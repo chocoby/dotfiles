@@ -207,6 +207,8 @@ Bundle "quickrun.vim"
 " github
 Bundle "Shougo/neocomplcache"
 Bundle "Shougo/neosnippet"
+Bundle "Shougo/vimproc"
+Bundle "Shougo/vimshell"
 Bundle "Shougo/vimfiler"
 Bundle "Shougo/unite.vim"
 Bundle "honza/snipmate-snippets"
