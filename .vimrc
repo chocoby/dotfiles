@@ -72,7 +72,7 @@ nnoremap <S-Space> kzz
 " ESC キー2回押しでハイライトを消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 nmap <F2> :NERDTreeToggle<CR><ESC>
-nmap <F3> :Tlist<CR><ESC>
+nmap <F3> :VimFiler<CR><ESC>
 nmap <F5> gT
 nmap <F6> gt
 nmap <F11> <C-w>_
