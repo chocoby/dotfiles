@@ -187,6 +187,11 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 autocmd FileType vimfiler
         \ nnoremap <buffer><silent>/
         \ :<C-u>Unite file -default-action=vimfiler<CR>
+" unite.vim
+" grep に ag を使う
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+let g:unite_source_grep_max_candidates = 1000
 " ctrlp.vim
 " 無視するファイル
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so     " Linux/MacOSX
