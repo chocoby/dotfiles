@@ -182,6 +182,11 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 let g:neosnippet#snippets_directory = '~/.vim/bundle/snipmate-snippets/snippets'
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
+" VimFiler
+" カレントディレクトリの絞り込みに unite.vim を使う
+autocmd FileType vimfiler
+        \ nnoremap <buffer><silent>/
+        \ :<C-u>Unite file -default-action=vimfiler<CR>
 " ctrlp.vim
 " 無視するファイル
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so     " Linux/MacOSX
