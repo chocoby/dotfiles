@@ -73,6 +73,7 @@ nnoremap <S-Space> kzz
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 nmap <F2> :NERDTreeToggle<CR><ESC>
 nmap <F3> :VimFiler<CR><ESC>
+nmap <F4> :Unite buffer<CR><ESC>
 nmap <F5> gT
 nmap <F6> gt
 nmap <F11> <C-w>_
