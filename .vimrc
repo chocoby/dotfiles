@@ -184,6 +184,8 @@ let g:neosnippet#snippets_directory = '~/.vim/bundle/snipmate-snippets/snippets'
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 " VimFiler
+" セーフモードを無効にする
+let g:vimfiler_safe_mode_by_default = 0
 " カレントディレクトリの絞り込みに unite.vim を使う
 autocmd FileType vimfiler
         \ nnoremap <buffer><silent>/
