@@ -64,7 +64,6 @@ set swapfile
 set directory=~/.vim_swap
 
 " キーマップ
-" F4 は QuickBuf
 " --------------------
 " スペースキーでカーソルを中心に保ってスクロール
 nnoremap <Space> jzz
@@ -81,6 +80,16 @@ nmap <F12> <C-w>=
 nmap t :tabnew<Space>
 nmap T :tabclose
 nmap f <Leader>w
+
+" unite: prefix key
+nnoremap [unite] <Nop>
+nmap <Space>f [unite]
+
+" unite: キーマッピング
+nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
+nnoremap <silent> [unite]s :<C-u>Unite source<CR>
+nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 
 " 文字コード
 " --------------------
