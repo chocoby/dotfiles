@@ -229,4 +229,5 @@ Bundle "kien/ctrlp.vim"
 Bundle "Lokaltog/vim-easymotion"
 Bundle "kchmck/vim-coffee-script"
 Bundle "groenewege/vim-less"
+Bundle "thinca/vim-qfreplace"
 filetype plugin indent on
