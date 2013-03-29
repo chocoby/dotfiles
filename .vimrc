@@ -83,7 +83,7 @@ nmap f <Leader>w
 
 " unite: prefix key
 nnoremap [unite] <Nop>
-nmap <Space>f [unite]
+nmap <S-f> [unite]
 
 " unite: キーマッピング
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
