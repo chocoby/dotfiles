@@ -1,5 +1,5 @@
 " カラースキーム
-colorscheme desert
+colorscheme jellybeans
 " フォント設定
 if has('gui_macvim')
     set guifont=DejaVu\ Sans\ Mono:h16

@@ -20,7 +20,7 @@ syntax on           " カラーハイライト
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
 if has('mac')
-    colorscheme zenburn
+    colorscheme jellybeans
 endif
 
 " 基本設定
@@ -245,4 +245,5 @@ Bundle "Lokaltog/vim-easymotion"
 Bundle "kchmck/vim-coffee-script"
 Bundle "groenewege/vim-less"
 Bundle "thinca/vim-qfreplace"
+Bundle "nanotech/jellybeans.vim"
 filetype plugin indent on
