@@ -210,9 +210,6 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so     " Linux/MacOSX
 set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
 " vim-easymotion
 let g:EasyMotion_leader_key = '<Leader>'
-" smartchr
-inoremap <expr> = smartchr#loop(' = ', '=', ' == ', ' === ')
-inoremap <expr> , smartchr#one_of(', ', ',')
 " vundle
 set nocompatible
 filetype off
@@ -227,7 +224,6 @@ Bundle "grep.vim"
 Bundle "The-NERD-tree"
 Bundle "taglist.vim"
 Bundle "quickrun.vim"
-Bundle "smartchr"
 
 " github
 Bundle "Shougo/neocomplcache"
