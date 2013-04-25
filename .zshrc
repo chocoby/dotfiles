@@ -6,11 +6,12 @@ export LANG=en_US.UTF-8
 # PATH
 case "${OSTYPE}" in
 darwin*)
-    PATH=$PATH:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin
+    export PATH=$PATH:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin
     export MANPATH=/usr/local/man:/usr/share/man
     ;;
 linux*)
-    PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin:$PATH
+    export PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin:$PATH
+    export PATH=$HOME/.rbenv/bin:$PATH
     export MANPATH=/usr/local/man:/usr/share/man
     ;;
 esac
@@ -41,6 +42,11 @@ export HGENCODING
 # rvm
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
+fi
+
+# rbenv
+if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
+    eval "$(rbenv init -)"
 fi
 
 ###########
