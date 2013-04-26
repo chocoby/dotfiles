@@ -6,7 +6,8 @@ export LANG=en_US.UTF-8
 # PATH
 case "${OSTYPE}" in
 darwin*)
-  export PATH=$PATH:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin
+  export PATH=/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin:$PATH
+  export PATH=/usr/local/share/npm/bin:$PATH
   export MANPATH=/usr/local/man:/usr/share/man
   ;;
 linux*)
