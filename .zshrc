@@ -6,14 +6,14 @@ export LANG=en_US.UTF-8
 # PATH
 case "${OSTYPE}" in
 darwin*)
-    export PATH=$PATH:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin
-    export MANPATH=/usr/local/man:/usr/share/man
-    ;;
+  export PATH=$PATH:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin
+  export MANPATH=/usr/local/man:/usr/share/man
+  ;;
 linux*)
-    export PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin:$PATH
-    export PATH=$HOME/.rbenv/bin:$PATH
-    export MANPATH=/usr/local/man:/usr/share/man
-    ;;
+  export PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:/usr/local/git/bin:/opt/local/bin:$PATH
+  export PATH=$HOME/.rbenv/bin:$PATH
+  export MANPATH=/usr/local/man:/usr/share/man
+  ;;
 esac
 # Editor
 export EDITOR=vim
@@ -32,7 +32,7 @@ export VIRTUALENV_USE_DISTRIBUTE=true
 # virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
-    source /usr/local/bin/virtualenvwrapper.sh
+  source /usr/local/bin/virtualenvwrapper.sh
 fi
 # Mercurial
 HGENCODING=utf-8
@@ -41,30 +41,30 @@ export HGENCODING
 ## Ruby
 # rvm
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-    source "$HOME/.rvm/scripts/rvm"
+  source "$HOME/.rvm/scripts/rvm"
 fi
 
 # rbenv
 if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
-    eval "$(rbenv init -)"
+  eval "$(rbenv init -)"
 fi
 
 ###########
 # Alias
 ###########
 if [[ -s "$HOME/local/bin/vim" ]]; then
-    alias vim="$HOME/local/bin/vim"
+  alias vim="$HOME/local/bin/vim"
 elif [[ -s "/Applications/MacVim.app/Contents/MacOS/Vim" ]]; then
-    alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+  alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 fi
 
 case "${OSTYPE}" in
 darwin*)
-    alias ls='ls -GF'
-    ;;
+  alias ls='ls -GF'
+  ;;
 linux*)
-    alias ls='ls --color -F'
-    ;;
+  alias ls='ls --color -F'
+  ;;
 esac
 
 alias ll='ls -lh'
@@ -121,61 +121,61 @@ setopt prompt_subst
 # vcs_info を表示
 # http://d.hatena.ne.jp/tarao/20100114/1263436661
 if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
-    autoload -Uz vcs_info
-    zstyle ':vcs_info:*' formats '%R' '%S' '%s:%b'
-    zstyle ':vcs_info:*' actionformats '%R' '%S' '%s:%b|%a'
-    precmd_vcs_info () {
-        psvar=()
-        LANG=en_US.UTF-8 vcs_info
-        repos=`print -nD "$vcs_info_msg_0_"`
-        [[ -n "$repos" ]] && psvar[2]="$repos"
-        [[ -n "$vcs_info_msg_1_" ]] && psvar[3]="$vcs_info_msg_1_"
-        [[ -n "$vcs_info_msg_2_" ]] && psvar[1]="$vcs_info_msg_2_"
-    }
-    typeset -ga precmd_functions
-    precmd_functions+=precmd_vcs_info
+  autoload -Uz vcs_info
+  zstyle ':vcs_info:*' formats '%R' '%S' '%s:%b'
+  zstyle ':vcs_info:*' actionformats '%R' '%S' '%s:%b|%a'
+  precmd_vcs_info () {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    repos=`print -nD "$vcs_info_msg_0_"`
+    [[ -n "$repos" ]] && psvar[2]="$repos"
+    [[ -n "$vcs_info_msg_1_" ]] && psvar[3]="$vcs_info_msg_1_"
+    [[ -n "$vcs_info_msg_2_" ]] && psvar[1]="$vcs_info_msg_2_"
+  }
+  typeset -ga precmd_functions
+  precmd_functions+=precmd_vcs_info
 
-    # root の場合は # / その他は % でプロンプトを表示
-    case ${UID} in
-    0)
-        PROMPT="%{$fg[red]%}#%{$reset_color%} "
-        PROMPT2="%{$fg[red]%}%{$reset_color%} "
-        SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-            PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
-        ;;
-    *)
-        PROMPT="%{$fg[green]%}%%%{$reset_color%} "
-        PROMPT2="%{$fg[green]%}%{$reset_color%} "
-        SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-            PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
-        ;;
-    esac
+  # root の場合は # / その他は % でプロンプトを表示
+  case ${UID} in
+  0)
+      PROMPT="%{$fg[red]%}#%{$reset_color%} "
+      PROMPT2="%{$fg[red]%}%{$reset_color%} "
+      SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+      [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+          PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
+      ;;
+  *)
+      PROMPT="%{$fg[green]%}%%%{$reset_color%} "
+      PROMPT2="%{$fg[green]%}%{$reset_color%} "
+      SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+      [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+          PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
+      ;;
+  esac
 
-    local dirs='[%F{yellow}%3(v|%32<..<%3v%<<|%60<..<%~%<<)%f]'
-    local vcs='%3(v|[%25<\<<%F{yellow}%2v%f@%F{blue}%1v%f%<<]|)'
-    RPROMPT="$dirs$vcs"
+  local dirs='[%F{yellow}%3(v|%32<..<%3v%<<|%60<..<%~%<<)%f]'
+  local vcs='%3(v|[%25<\<<%F{yellow}%2v%f@%F{blue}%1v%f%<<]|)'
+  RPROMPT="$dirs$vcs"
 else
-    # root の場合は # / その他は % でプロンプトを表示
-    case ${UID} in
-    0)
-        PROMPT="%{$fg[red]%}#%{$reset_color%} "
-        PROMPT2="%{$fg[red]%}%{$reset_color%} "
-        SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-            PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
-        ;;
-    *)
-        PROMPT="%{$fg[green]%}%%%{$reset_color%} "
-        PROMPT2="%{$fg[green]%}%{$reset_color%} "
-        SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-            PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
-        ;;
-    esac
-    # 右プロンプトにカレントディレクトリを表示
-    RPROMPT=" [%~]"
+  # root の場合は # / その他は % でプロンプトを表示
+  case ${UID} in
+  0)
+      PROMPT="%{$fg[red]%}#%{$reset_color%} "
+      PROMPT2="%{$fg[red]%}%{$reset_color%} "
+      SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+      [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+          PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
+      ;;
+  *)
+      PROMPT="%{$fg[green]%}%%%{$reset_color%} "
+      PROMPT2="%{$fg[green]%}%{$reset_color%} "
+      SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+      [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+          PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
+      ;;
+  esac
+  # 右プロンプトにカレントディレクトリを表示
+  RPROMPT=" [%~]"
 fi
 
 ###########
@@ -194,8 +194,8 @@ setopt share_history
 setopt append_history
 # root のコマンドはヒストリに追加しない
 if [ $UID = 0 ]; then
-    unset HISTFILE
-    SAVEHIST=0
+  unset HISTFILE
+  SAVEHIST=0
 fi
 
 ###########
@@ -240,9 +240,9 @@ setopt auto_pushd
 setopt correct
 # ^ で cd ..
 function cdup() {
-    echo
-    cd ..
-    zle reset-prompt
+  echo
+  cd ..
+  zle reset-prompt
 }
 zle -N cdup
 
@@ -250,7 +250,7 @@ zle -N cdup
 _Z_CMD=j
 source $HOME/.zsh/z.sh
 precmd() {
-    _z --add "$(pwd -P)"
+  _z --add "$(pwd -P)"
 }
 
 # C-s でロックされるのを防ぐ
