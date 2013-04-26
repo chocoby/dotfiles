@@ -12,8 +12,5 @@ mkdir -p $HOME/.zsh
 mkdir -p $HOME/.vim_swap
 mkdir -p $HOME/.vim_backup
 
-git submodule init
-git submodule update
-
 mkdir $HOME/.vim/bundle
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
