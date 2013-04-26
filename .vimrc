@@ -206,7 +206,7 @@ let g:unite_source_grep_default_opts = '--nocolor --nogroup'
 let g:unite_source_grep_max_candidates = 1000
 " ctrlp.vim
 " 無視するファイル
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so     " Linux/MacOSX
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/* " Linux/MacOSX
 set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
 " vim-easymotion
 let g:EasyMotion_leader_key = '<Leader>'
