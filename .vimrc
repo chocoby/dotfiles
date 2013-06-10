@@ -190,8 +190,9 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " スニペット補完
 " スニペットファイルの置き場所
 let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 " VimFiler
 " セーフモードを無効にする
 let g:vimfiler_safe_mode_by_default = 0
