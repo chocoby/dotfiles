@@ -19,9 +19,7 @@ syntax on           " カラーハイライト
 " ステータスバーに文字コード/改行コードを表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
-if has('mac')
-  colorscheme jellybeans
-endif
+colorscheme jellybeans
 
 " 基本設定
 " --------------------
