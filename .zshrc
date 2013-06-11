@@ -65,6 +65,7 @@ darwin*)
   ;;
 linux*)
   alias ls='ls --color -F'
+  alias tmux='TERM=screen-256color tmux'
   ;;
 esac
 
