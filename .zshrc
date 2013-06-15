@@ -92,6 +92,7 @@ alias rgu='rvm gemset use'
 alias rbv='rbenv versions'
 alias rbg='rbenv global'
 alias rbl='rbenv local'
+alias rbr='rbenv rehash'
 
 # Git
 alias gco='git checkout'
