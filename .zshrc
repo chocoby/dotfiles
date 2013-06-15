@@ -12,7 +12,6 @@ darwin*)
   ;;
 linux*)
   export PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:$PATH
-  export PATH=$HOME/.rbenv/bin:$PATH
   export MANPATH=/usr/local/man:/usr/share/man
   ;;
 esac
@@ -47,6 +46,7 @@ fi
 
 # rbenv
 if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
+  export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
 fi
 
