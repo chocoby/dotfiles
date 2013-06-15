@@ -88,6 +88,11 @@ alias rgl='rvm gemset list'
 alias rgc='rvm gemset create'
 alias rgu='rvm gemset use'
 
+# rbenv
+alias rbv='rbenv versions'
+alias rbg='rbenv global'
+alias rbl='rbenv local'
+
 # Git
 alias gco='git checkout'
 alias gcob='git checkout -b'
