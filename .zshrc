@@ -46,7 +46,7 @@ fi
 
 # rbenv
 if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
-  export PATH=$HOME/.rbenv/bin:$PATH
+  export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
   eval "$(rbenv init -)"
 fi
 
