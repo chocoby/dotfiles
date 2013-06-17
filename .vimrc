@@ -68,7 +68,6 @@ nnoremap <Space> jzz
 nnoremap <S-Space> kzz
 " ESC キー2回押しでハイライトを消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
-nmap <F2> :NERDTreeToggle<CR><ESC>
 nmap <F3> :VimFiler<CR><ESC>
 nmap <F4> :Unite buffer<CR><ESC>
 nmap <F5> gT
@@ -240,4 +239,5 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "groenewege/vim-less"
 Bundle "thinca/vim-qfreplace"
 Bundle "nanotech/jellybeans.vim"
+
 filetype plugin indent on
