@@ -220,7 +220,6 @@ Bundle 'gmarik/vundle'
 
 " github/vim-scripts
 Bundle "grep.vim"
-Bundle "The-NERD-tree"
 Bundle "taglist.vim"
 Bundle "quickrun.vim"
 
