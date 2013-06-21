@@ -19,6 +19,9 @@ syntax on           " カラーハイライト
 " ステータスバーに文字コード/改行コードを表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
+" 81 桁目以降をハイライト
+execute 'set colorcolumn=' . join(range(81, 9999), ',')
+
 colorscheme jellybeans
 
 " 基本設定
