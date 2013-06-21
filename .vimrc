@@ -241,5 +241,6 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "groenewege/vim-less"
 Bundle "thinca/vim-qfreplace"
 Bundle "nanotech/jellybeans.vim"
+Bundle "basyura/unite-rails"
 
 filetype plugin indent on
