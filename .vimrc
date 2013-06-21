@@ -1,7 +1,8 @@
 set nocompatible    " vi 互換を使用しない
 
-" 表示系
-" --------------------
+"--------------------------------------
+" 見た目
+"--------------------------------------
 set number          " 行番号表示
 set ruler           " ステータスバーにルーラー表示
 set laststatus=2    " ステータスバー表示
@@ -24,8 +25,9 @@ execute 'set colorcolumn=' . join(range(81, 9999), ',')
 
 colorscheme jellybeans
 
+"--------------------------------------
 " 基本設定
-" --------------------
+"--------------------------------------
 " タブ
 set tabstop=4       " 半角スペース4つ分
 set expandtab       " タブを半角スペースにする
@@ -52,6 +54,7 @@ set whichwrap=b,s,h,l,<,>,[,]   " カーソルを行頭、行末で止まらな�
 set backspace=indent,eol,start  " 改行して自動インデントされたスペースを BS で削除
 set clipboard+=unnamed          " OS のクリップボードを使用する
 set clipboard=unnamed           " yank は OS のクリップボードを使用する
+
 " Insert Mode を抜けたら IME をオフにする
 set noimdisable
 set iminsert=0 imsearch=0
@@ -64,13 +67,15 @@ set backupdir=~/.vim_backup
 set swapfile
 set directory=~/.vim_swap
 
+"--------------------------------------
 " キーマップ
-" --------------------
+"--------------------------------------
 " スペースキーでカーソルを中心に保ってスクロール
 nnoremap <Space> jzz
-nnoremap <S-Space> kzz
+
 " ESC キー2回押しでハイライトを消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
 nmap <F3> :VimFiler<CR><ESC>
 nmap <F4> :Unite buffer<CR><ESC>
 nmap <F5> gT
@@ -82,8 +87,35 @@ nmap T :tabclose
 nmap f <Leader>w
 
 "--------------------------------------
+" 便利
+"--------------------------------------
+" 対応したカッコを補完し、カッコの中にカーソルを戻す
+imap { {}<Left>
+imap [ []<Left>
+imap ( ()<Left>
+imap < <><Left>
+
+" カッコの中にカーソルを戻す
+imap '' ''<Left>
+imap "" ""<Left>
+imap `` ``<Left>
+
+" 行末の不要なスペースを削除
+function! RTrim()
+  let s:cursor = getpos(".")
+  %s/\s\+$//e
+  call setpos(".", s:cursor)
+endfunction
+autocmd BufWritePre * call RTrim()
+
+"--------------------------------------
 " unite.vim
 "--------------------------------------
+" grep に ag を使う
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+let g:unite_source_grep_max_candidates = 1000
+
 " prefix key
 nnoremap [unite] <Nop>
 nmap <S-f> [unite]
@@ -106,8 +138,88 @@ nnoremap <silent> [unite]rconfig :<C-u>Unite rails/config<CR>
 nnoremap <silent> [unite]rlog :<C-u>Unite rails/log<CR>
 
 "--------------------------------------
+" neocomplcache
+"--------------------------------------
+" vim 起動時に有効化
+let g:neocomplcache_enable_at_startup = 1
+" 大文字が入力されるまで大文字小文字を区別しない
+let g:neocomplcache_enable_smart_case = 1
+" _ 区切りの補完を有効化
+let g:neocomplcache_enable_underbar_completion = 1
+" 日本語は補完しない
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+" スニペット補完
+" スニペットファイルの置き場所
+let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+"--------------------------------------
+" VimFiler
+"--------------------------------------
+" セーフモードを無効にする
+let g:vimfiler_safe_mode_by_default = 0
+" カレントディレクトリの絞り込みに unite.vim を使う
+autocmd FileType vimfiler
+      \ nnoremap <buffer><silent>/
+      \ :<C-u>Unite file -default-action=vimfiler<CR>
+
+"--------------------------------------
+" ctrlp.vim
+"--------------------------------------
+" 無視するファイル
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/* " Linux/MacOSX
+set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
+
+"--------------------------------------
+" vim-easymotion
+"--------------------------------------
+let g:EasyMotion_leader_key = '<Leader>'
+
+"--------------------------------------
+" vundle
+"--------------------------------------
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" github/vim-scripts
+Bundle "taglist.vim"
+Bundle "quickrun.vim"
+
+" github
+Bundle "Shougo/neocomplcache"
+Bundle "Shougo/neosnippet"
+Bundle "Shougo/vimproc"
+Bundle "Shougo/vimshell"
+Bundle "Shougo/vimfiler"
+Bundle "Shougo/unite.vim"
+Bundle "honza/vim-snippets"
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-fugitive"
+Bundle "scrooloose/nerdcommenter"
+Bundle "kien/ctrlp.vim"
+Bundle "Lokaltog/vim-easymotion"
+Bundle "kchmck/vim-coffee-script"
+Bundle "groenewege/vim-less"
+Bundle "thinca/vim-qfreplace"
+Bundle "nanotech/jellybeans.vim"
+Bundle "basyura/unite-rails"
+
+filetype plugin indent on
+
+"--------------------------------------
 " 文字コード
-" --------------------
+"--------------------------------------
 " 文字コードの自動認識
 " 参照：http://www.kawaz.jp/pukiwiki/?vim#cb691f26
 if &encoding !=# 'utf-8'
@@ -118,16 +230,16 @@ endif
 if has('iconv')
   let s:enc_euc = 'euc-jp'
   let s:enc_jis = 'iso-2022-jp'
-  " iconvがeucJP-msに対応しているかをチェック
+  " iconv が eucJP-ms に対応しているかをチェック
   if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
     let s:enc_euc = 'eucjp-ms'
     let s:enc_jis = 'iso-2022-jp-3'
-  " iconvがJISX0213に対応しているかをチェック
+  " iconv が JISX0213 に対応しているかをチェック
   elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
     let s:enc_euc = 'euc-jisx0213'
     let s:enc_jis = 'iso-2022-jp-3'
   endif
-  " fileencodingsを構築
+  " fileencodings を構築
   if &encoding ==# 'utf-8'
     let s:fileencodings_default = &fileencodings
     let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
@@ -162,100 +274,7 @@ if has('autocmd')
 endif
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
-" □とか○の文字があってもカーソル位置がずれないようにする
+" □や○の文字があってもカーソル位置がずれないようにする
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
-
-" お役立ち
-" --------------------
-" 対応したカッコを補完し、カッコの中にカーソルを戻す
-imap { {}<Left>
-imap [ []<Left>
-imap ( ()<Left>
-imap < <><Left>
-" カッコの中にカーソルを戻す
-imap '' ''<Left>
-imap "" ""<Left>
-imap `` ``<Left>
-
-" 行末の不要なスペースを削除
-function! RTrim()
-  let s:cursor = getpos(".")
-  %s/\s\+$//e
-  call setpos(".", s:cursor)
-endfunction
-autocmd BufWritePre * call RTrim()
-
-" プラグイン
-" --------------------
-" neocomplcache
-" vim 起動時に有効化
-let g:neocomplcache_enable_at_startup = 1
-" 大文字が入力されるまで大文字小文字を区別しない
-let g:neocomplcache_enable_smart_case = 1
-" _ 区切りの補完を有効化
-let g:neocomplcache_enable_underbar_completion = 1
-" 日本語は補完しない
-" Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-" スニペット補完
-" スニペットファイルの置き場所
-let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-" VimFiler
-" セーフモードを無効にする
-let g:vimfiler_safe_mode_by_default = 0
-" カレントディレクトリの絞り込みに unite.vim を使う
-autocmd FileType vimfiler
-      \ nnoremap <buffer><silent>/
-      \ :<C-u>Unite file -default-action=vimfiler<CR>
-" unite.vim
-" grep に ag を使う
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts = '--nocolor --nogroup'
-let g:unite_source_grep_max_candidates = 1000
-" ctrlp.vim
-" 無視するファイル
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/* " Linux/MacOSX
-set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
-" vim-easymotion
-let g:EasyMotion_leader_key = '<Leader>'
-" vundle
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
-" github/vim-scripts
-Bundle "taglist.vim"
-Bundle "quickrun.vim"
-
-" github
-Bundle "Shougo/neocomplcache"
-Bundle "Shougo/neosnippet"
-Bundle "Shougo/vimproc"
-Bundle "Shougo/vimshell"
-Bundle "Shougo/vimfiler"
-Bundle "Shougo/unite.vim"
-Bundle "honza/vim-snippets"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-fugitive"
-Bundle "scrooloose/nerdcommenter"
-Bundle "kien/ctrlp.vim"
-Bundle "Lokaltog/vim-easymotion"
-Bundle "kchmck/vim-coffee-script"
-Bundle "groenewege/vim-less"
-Bundle "thinca/vim-qfreplace"
-Bundle "nanotech/jellybeans.vim"
-Bundle "basyura/unite-rails"
-
-filetype plugin indent on
