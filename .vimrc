@@ -81,16 +81,31 @@ nmap t :tabnew<Space>
 nmap T :tabclose
 nmap f <Leader>w
 
-" unite: prefix key
+"--------------------------------------
+" unite.vim
+"--------------------------------------
+" prefix key
 nnoremap [unite] <Nop>
 nmap <S-f> [unite]
 
-" unite: キーマッピング
+" basic key mappings
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
 nnoremap <silent> [unite]s :<C-u>Unite source<CR>
 nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 
+" unite-rails
+nnoremap <silent> [unite]r :<C-u>Unite rails/
+nnoremap <silent> [unite]rmo :<C-u>Unite rails/model<CR>
+nnoremap <silent> [unite]rcon :<C-u>Unite rails/controller<CR>
+nnoremap <silent> [unite]rvi :<C-u>Unite rails/view<CR>
+nnoremap <silent> [unite]rhel :<C-u>Unite rails/helper<CR>
+nnoremap <silent> [unite]rlib :<C-u>Unite rails/lib<CR>
+nnoremap <silent> [unite]rdb :<C-u>Unite rails/db<CR>
+nnoremap <silent> [unite]rconfig :<C-u>Unite rails/config<CR>
+nnoremap <silent> [unite]rlog :<C-u>Unite rails/log<CR>
+
+"--------------------------------------
 " 文字コード
 " --------------------
 " 文字コードの自動認識
