@@ -1,8 +1,9 @@
-###########
-# Env
-###########
+#--------------------------------------
+# Environment
+#--------------------------------------
 # LANG
 export LANG=en_US.UTF-8
+
 # PATH
 case "${OSTYPE}" in
 darwin*)
@@ -15,11 +16,14 @@ linux*)
   export MANPATH=/usr/local/man:/usr/share/man
   ;;
 esac
+
 # Editor
 export EDITOR=vim
+
 # ls
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
+
 # git
 export GIT_PAGER="lv -c"
 
@@ -50,21 +54,29 @@ if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
   eval "$(rbenv init -)"
 fi
 
-###########
+#--------------------------------------
 # Alias
-###########
+#--------------------------------------
+# vim
 if [[ -s "$HOME/local/bin/vim" ]]; then
   alias vim="$HOME/local/bin/vim"
 elif [[ -s "/Applications/MacVim.app/Contents/MacOS/Vim" ]]; then
   alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 fi
 
+# ls
 case "${OSTYPE}" in
 darwin*)
   alias ls='ls -GF'
   ;;
 linux*)
   alias ls='ls --color -F'
+  ;;
+esac
+
+# tmux
+case "${OSTYPE}" in
+linux*)
   alias tmux='TERM=screen-256color tmux'
   ;;
 esac
@@ -121,9 +133,9 @@ alias gre='git rebase'
 alias gwc='git whatchanged'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-###########
+#--------------------------------------
 # Prompt
-###########
+#--------------------------------------
 autoload -Uz colors
 colors
 # 色を %{fg[green]%} のように指定する
@@ -188,9 +200,9 @@ else
   RPROMPT=" [%~]"
 fi
 
-###########
+#--------------------------------------
 # History
-###########
+#--------------------------------------
 HISTFILE=$HOME/.zsh/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -208,9 +220,9 @@ if [ $UID = 0 ]; then
   SAVEHIST=0
 fi
 
-###########
+#--------------------------------------
 # Completion
-###########
+#--------------------------------------
 autoload -U compinit
 compinit
 # ビープ音を鳴らさないようにする
@@ -227,11 +239,12 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 補完候補を矢印キーなどで選択できるようにする
 zstyle ':completion:*:default' menu select
 
-###########
+#--------------------------------------
 # Key Bind
-###########
+#--------------------------------------
 # Emacs 風のキーバインド
 bindkey -e
+
 # ^ を入力で cd ..
 bindkey '\^' cdup
 
@@ -239,15 +252,16 @@ bindkey '\^' cdup
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 
-###########
+#--------------------------------------
 # Other
-###########
+#--------------------------------------
 # cd を押さずに cd
 setopt auto_cd
 # 移動したディレクトリを記録しておく
 setopt auto_pushd
 # 自動修正
 setopt correct
+
 # ^ で cd ..
 function cdup() {
   echo
