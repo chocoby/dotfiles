@@ -81,6 +81,8 @@ linux*)
   ;;
 esac
 
+alias tm='tmux a -t'
+
 alias ll='ls -lh'
 alias la='ll -a'
 
