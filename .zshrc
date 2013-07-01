@@ -27,6 +27,10 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 # git
 export GIT_PAGER="lv -c"
 
+# Mercurial
+HGENCODING=utf-8
+export HGENCODING
+
 ## Python
 # pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_cache
@@ -38,9 +42,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
-# Mercurial
-HGENCODING=utf-8
-export HGENCODING
 
 ## Ruby
 # rvm
