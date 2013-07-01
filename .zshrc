@@ -65,19 +65,19 @@ fi
 
 # ls
 case "${OSTYPE}" in
-darwin*)
-  alias ls='ls -GF'
-  ;;
-linux*)
-  alias ls='ls --color -F'
-  ;;
+  darwin*)
+    alias ls='ls -GF'
+    ;;
+  linux*)
+    alias ls='ls --color -F'
+    ;;
 esac
 
 # tmux
 case "${OSTYPE}" in
-linux*)
-  alias tmux='TERM=screen-256color tmux'
-  ;;
+  linux*)
+    alias tmux='TERM=screen-256color tmux'
+    ;;
 esac
 
 alias tm='tmux a -t'
@@ -160,19 +160,19 @@ if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
 
   # root の場合は # / その他は % でプロンプトを表示
   case ${UID} in
-  0)
+    0)
       PROMPT="%{$fg[red]%}#%{$reset_color%} "
       PROMPT2="%{$fg[red]%}%{$reset_color%} "
       SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
       [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-          PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
+        PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
       ;;
-  *)
+    *)
       PROMPT="%{$fg[green]%}%%%{$reset_color%} "
       PROMPT2="%{$fg[green]%}%{$reset_color%} "
       SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
       [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-          PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
+        PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
       ;;
   esac
 
@@ -182,19 +182,19 @@ if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
 else
   # root の場合は # / その他は % でプロンプトを表示
   case ${UID} in
-  0)
+    0)
       PROMPT="%{$fg[red]%}#%{$reset_color%} "
       PROMPT2="%{$fg[red]%}%{$reset_color%} "
       SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
       [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-          PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
+        PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
       ;;
-  *)
+    *)
       PROMPT="%{$fg[green]%}%%%{$reset_color%} "
       PROMPT2="%{$fg[green]%}%{$reset_color%} "
       SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
       [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-          PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
+        PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
       ;;
   esac
   # 右プロンプトにカレントディレクトリを表示
