@@ -5,17 +5,17 @@
 export LANG=en_US.UTF-8
 
 # PATH
+PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:$PATH
+PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
+
 case "${OSTYPE}" in
-darwin*)
-  export PATH=/usr/local/bin:/sbin:/usr/bin:$PATH
-  export PATH=/usr/local/share/npm/bin:$PATH
-  export MANPATH=/usr/local/man:/usr/share/man
-  ;;
-linux*)
-  export PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:$PATH
-  export MANPATH=/usr/local/man:/usr/share/man
-  ;;
+  darwin*)
+    PATH=/usr/local/share/npm/bin:$PATH
+    ;;
 esac
+
+export PATH
+export MANPATH=/usr/local/man:/usr/share/man
 
 # Editor
 export EDITOR=vim
@@ -50,7 +50,6 @@ fi
 
 # rbenv
 if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
-  export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
   eval "$(rbenv init -)"
 fi
 
