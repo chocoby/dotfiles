@@ -57,13 +57,6 @@ fi
 #--------------------------------------
 # Alias
 #--------------------------------------
-# vim
-if [[ -s "$HOME/local/bin/vim" ]]; then
-  alias vim="$HOME/local/bin/vim"
-elif [[ -s "/Applications/MacVim.app/Contents/MacOS/Vim" ]]; then
-  alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-fi
-
 # ls
 case "${OSTYPE}" in
   darwin*)
@@ -74,6 +67,18 @@ case "${OSTYPE}" in
     ;;
 esac
 
+alias ll='ls -lh'
+alias la='ll -a'
+
+alias p='popd'
+
+# vim
+if [[ -s "$HOME/local/bin/vim" ]]; then
+  alias vim="$HOME/local/bin/vim"
+elif [[ -s "/Applications/MacVim.app/Contents/MacOS/Vim" ]]; then
+  alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+fi
+
 # tmux
 case "${OSTYPE}" in
   linux*)
@@ -82,11 +87,6 @@ case "${OSTYPE}" in
 esac
 
 alias tm='tmux a -t'
-
-alias ll='ls -lh'
-alias la='ll -a'
-
-alias p='popd'
 
 # Ruby
 alias be='bundle exec'
