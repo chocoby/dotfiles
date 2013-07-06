@@ -240,6 +240,8 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 補完候補を矢印キーなどで選択できるようにする
 zstyle ':completion:*:default' menu select
+# --prefix=/usr などの = 以降でも補完
+setopt magic_equal_subst
 
 #--------------------------------------
 # Key Bind
