@@ -242,6 +242,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select
 # --prefix=/usr などの = 以降でも補完
 setopt magic_equal_subst
+# カッコの対応などを自動的に補完する
+setopt auto_param_keys
 
 #--------------------------------------
 # Key Bind
