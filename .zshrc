@@ -89,10 +89,16 @@ esac
 alias tm='tmux a -t'
 
 # Ruby
+alias b='bundle'
 alias be='bundle exec'
+alias bu='bundle update'
 
 # Rails
-alias r='rails'
+alias r='be rails'
+alias brs='be rails s'
+alias brc='be rails c'
+alias bsp='be rspec'
+alias bra='be rake'
 alias pryr='pry -r ./config/environment'
 
 # RVM
