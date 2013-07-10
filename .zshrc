@@ -152,18 +152,28 @@ setopt prompt_subst
 # http://d.hatena.ne.jp/tarao/20100114/1263436661
 if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
   autoload -Uz vcs_info
-  zstyle ':vcs_info:*' formats '%R' '%S' '%s:%b'
-  zstyle ':vcs_info:*' actionformats '%R' '%S' '%s:%b|%a'
-  precmd_vcs_info () {
+  zstyle ':vcs_info:*' max-exports 4
+  zstyle ':vcs_info:*' enable git
+  zstyle ':vcs_info:git:*' check-for-changes true
+  zstyle ':vcs_info:git:*' stagedstr "!"
+  zstyle ':vcs_info:git:*' unstagedstr "+"
+  zstyle ':vcs_info:git:*' formats '%R' '%S' '%b' '%c%u'
+  zstyle ':vcs_info:git:*' actionformats '%R' '%S' '%b|%a' '%c%u'
+  precmd_vcs_info() {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
     repos=`print -nD "$vcs_info_msg_0_"`
     [[ -n "$repos" ]] && psvar[2]="$repos"
     [[ -n "$vcs_info_msg_1_" ]] && psvar[3]="$vcs_info_msg_1_"
     [[ -n "$vcs_info_msg_2_" ]] && psvar[1]="$vcs_info_msg_2_"
+    [[ -n "$vcs_info_msg_3_" ]] && psvar[4]="$vcs_info_msg_3_"
   }
   typeset -ga precmd_functions
   precmd_functions+=precmd_vcs_info
+
+  local dirs='[%F{yellow}%3(v|%32<..<%3v%<<|%60<..<%~%<<)%f]'
+  local vcs='%3(v|[%25<\<<%F{yellow}%2v%f%<<@%F{blue}%1v%f%4(v|:%4v|)]|)'
+  RPROMPT="$dirs$vcs"
 
   # root の場合は # / その他は % でプロンプトを表示
   case ${UID} in
@@ -182,10 +192,6 @@ if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
         PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
       ;;
   esac
-
-  local dirs='[%F{yellow}%3(v|%32<..<%3v%<<|%60<..<%~%<<)%f]'
-  local vcs='%3(v|[%25<\<<%F{yellow}%2v%f@%F{blue}%1v%f%<<]|)'
-  RPROMPT="$dirs$vcs"
 else
   # root の場合は # / その他は % でプロンプトを表示
   case ${UID} in
