@@ -149,6 +149,25 @@ autoload -Uz colors
 colors
 # 色を %{fg[green]%} のように指定する
 setopt prompt_subst
+
+# root の場合は # / その他は % でプロンプトを表示
+case ${UID} in
+  0)
+    PROMPT="%{$fg[red]%}#%{$reset_color%} "
+    PROMPT2="%{$fg[red]%}%{$reset_color%} "
+    SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+      PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
+    ;;
+  *)
+    PROMPT="%{$fg[green]%}%%%{$reset_color%} "
+    PROMPT2="%{$fg[green]%}%{$reset_color%} "
+    SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
+    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+      PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
+    ;;
+esac
+
 # vcs_info を表示
 # http://d.hatena.ne.jp/tarao/20100114/1263436661
 if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
@@ -175,42 +194,7 @@ if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
   local dirs='[%F{yellow}%3(v|%32<..<%3v%<<|%60<..<%~%<<)%f]'
   local vcs='%3(v|[%15<\<<%F{yellow}%2v%f%<<@%F{blue}%1v%f%4(v|:%4v|)]|)'
   RPROMPT="$dirs$vcs"
-
-  # root の場合は # / その他は % でプロンプトを表示
-  case ${UID} in
-    0)
-      PROMPT="%{$fg[red]%}#%{$reset_color%} "
-      PROMPT2="%{$fg[red]%}%{$reset_color%} "
-      SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-      [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-        PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
-      ;;
-    *)
-      PROMPT="%{$fg[green]%}%%%{$reset_color%} "
-      PROMPT2="%{$fg[green]%}%{$reset_color%} "
-      SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-      [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-        PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
-      ;;
-  esac
 else
-  # root の場合は # / その他は % でプロンプトを表示
-  case ${UID} in
-    0)
-      PROMPT="%{$fg[red]%}#%{$reset_color%} "
-      PROMPT2="%{$fg[red]%}%{$reset_color%} "
-      SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-      [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-        PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
-      ;;
-    *)
-      PROMPT="%{$fg[green]%}%%%{$reset_color%} "
-      PROMPT2="%{$fg[green]%}%{$reset_color%} "
-      SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-      [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-        PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
-      ;;
-  esac
   # 右プロンプトにカレントディレクトリを表示
   RPROMPT=" [%~]"
 fi
