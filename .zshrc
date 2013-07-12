@@ -115,6 +115,7 @@ alias rbl='rbenv local'
 alias rbr='rbenv rehash'
 
 # Git
+alias gfe='git fetch'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gst='git status'
