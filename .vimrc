@@ -136,6 +136,7 @@ nnoremap <silent> [unite]rlib :<C-u>Unite rails/lib<CR>
 nnoremap <silent> [unite]rdb :<C-u>Unite rails/db<CR>
 nnoremap <silent> [unite]rconfig :<C-u>Unite rails/config<CR>
 nnoremap <silent> [unite]rlog :<C-u>Unite rails/log<CR>
+nnoremap <silent> [unite]rspe :<C-u>Unite rails/spec<CR>
 
 "--------------------------------------
 " neocomplcache
