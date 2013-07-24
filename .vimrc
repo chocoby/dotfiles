@@ -123,6 +123,7 @@ nmap <S-f> [unite]
 " basic key mappings
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
+nnoremap <silent> [unite]t :<C-u>Unite tab<CR>
 nnoremap <silent> [unite]s :<C-u>Unite source<CR>
 nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 
