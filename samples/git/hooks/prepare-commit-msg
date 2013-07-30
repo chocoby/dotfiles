@@ -1,0 +1,11 @@
+# feature/123_keyword 形式のブランチ名からチケット番号(例: 123)を
+# 取り出し、コミットコメントに付加してエディタを起動する
+if [ "$2" == "" ]; then
+    branch_name=`git rev-parse --abbrev-ref HEAD`
+
+    if [[ "$branch_name" =~ ^feature\/ ]]; then
+        mv $1 $1.tmp
+        echo " #`echo $branch_name | sed -e "s/^feature\/\([0-9]*\)_.*/\1/g"`" > $1
+        cat $1.tmp >> $1
+    fi
+fi
