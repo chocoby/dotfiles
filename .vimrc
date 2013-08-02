@@ -217,6 +217,7 @@ Bundle "thinca/vim-qfreplace"
 Bundle "nanotech/jellybeans.vim"
 Bundle "basyura/unite-rails"
 Bundle "hallison/vim-markdown"
+Bundle "vim-ruby/vim-ruby"
 
 filetype plugin indent on
 
