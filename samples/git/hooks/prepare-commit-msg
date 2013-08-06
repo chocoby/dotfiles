@@ -5,7 +5,7 @@ if [ "$2" == "" ]; then
 
     if [[ "$branch_name" =~ ^feature\/ ]]; then
         mv $1 $1.tmp
-        echo " #`echo $branch_name | sed -e "s/^feature\/\([0-9]*\)_.*/\1/g"`" > $1
+        echo "#`echo $branch_name | sed -e "s/^feature\/\([0-9]*\)_.*/\1/g"`" > $1
         cat $1.tmp >> $1
     fi
 fi
