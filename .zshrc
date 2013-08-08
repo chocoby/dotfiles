@@ -194,7 +194,7 @@ if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
   precmd_functions+=precmd_vcs_info
 
   local dirs='[%F{yellow}%3(v|%32<..<%3v%<<|%60<..<%~%<<)%f]'
-  local vcs='%3(v|[%15<\<<%F{yellow}%2v%f%<<@%F{blue}%1v%f%4(v|:%4v|)]|)'
+  local vcs='%3(v|[%10<\<<%F{yellow}%2v%f%<<@%F{blue}%1v%f%4(v|:%4v|)]|)'
   RPROMPT="$dirs$vcs"
 else
   # 右プロンプトにカレントディレクトリを表示
