@@ -195,29 +195,29 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " github/vim-scripts
-Bundle "taglist.vim"
-Bundle "quickrun.vim"
+Bundle 'taglist.vim'
+Bundle 'quickrun.vim'
 
 " github
-Bundle "Shougo/neocomplcache"
-Bundle "Shougo/neosnippet"
-Bundle "Shougo/vimproc"
-Bundle "Shougo/vimshell"
-Bundle "Shougo/vimfiler"
-Bundle "Shougo/unite.vim"
-Bundle "honza/vim-snippets"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-fugitive"
-Bundle "scrooloose/nerdcommenter"
-Bundle "kien/ctrlp.vim"
-Bundle "Lokaltog/vim-easymotion"
-Bundle "kchmck/vim-coffee-script"
-Bundle "groenewege/vim-less"
-Bundle "thinca/vim-qfreplace"
-Bundle "nanotech/jellybeans.vim"
-Bundle "basyura/unite-rails"
-Bundle "hallison/vim-markdown"
-Bundle "vim-ruby/vim-ruby"
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/vimshell'
+Bundle 'Shougo/vimfiler'
+Bundle 'Shougo/unite.vim'
+Bundle 'honza/vim-snippets'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'groenewege/vim-less'
+Bundle 'thinca/vim-qfreplace'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'basyura/unite-rails'
+Bundle 'hallison/vim-markdown'
+Bundle 'vim-ruby/vim-ruby'
 
 filetype plugin indent on
 
