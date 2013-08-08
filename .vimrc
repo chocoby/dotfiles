@@ -184,6 +184,11 @@ set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
 let g:EasyMotion_leader_key = '<Leader>'
 
 "--------------------------------------
+" vim-operator-replace
+"--------------------------------------
+map R <Plug>(operator-replace)
+
+"--------------------------------------
 " vundle
 "--------------------------------------
 set nocompatible
