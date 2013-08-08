@@ -8,7 +8,6 @@ do
     fi
 done
 
-mkdir -p $HOME/.zsh
 mkdir -p $HOME/.vim_swap
 mkdir -p $HOME/.vim_backup
 
