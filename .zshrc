@@ -195,7 +195,8 @@ if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
 
   local dirs='[%F{yellow}%3(v|%32<..<%3v%<<|%60<..<%~%<<)%f]'
   local vcs='%3(v|[%10<\<<%F{yellow}%2v%f%<<@%F{blue}%1v%f%4(v|:%4v|)]|)'
-  RPROMPT="$dirs$vcs"
+  local datetime="[%D{%m/%d %T}]"
+  RPROMPT="$dirs$vcs$datetime"
 else
   # 右プロンプトにカレントディレクトリを表示
   RPROMPT=" [%~]"
