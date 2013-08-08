@@ -8,6 +8,9 @@ do
     fi
 done
 
+git submodule init
+git submodule update
+
 mkdir -p $HOME/.vim_swap
 mkdir -p $HOME/.vim_backup
 
