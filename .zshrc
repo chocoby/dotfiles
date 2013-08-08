@@ -141,6 +141,8 @@ alias gcp='git cherry-pick'
 alias gre='git rebase'
 alias gwc='git whatchanged'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gcpo='git-co-pull-origin'
+alias gcpu='git-co-pull-upstream'
 
 #--------------------------------------
 # Prompt
@@ -282,3 +284,15 @@ precmd() {
 
 # C-s でロックされるのを防ぐ
 stty stop undef
+
+# Git: ブランチ checkout/pull(origin)
+function git-co-pull-origin() {
+  git checkout $1
+  git pull origin $1
+}
+
+# Git: ブランチ checkout/pull(upstream)
+function git-co-pull-upstream() {
+  git checkout $1
+  git pull upstream $1
+}
