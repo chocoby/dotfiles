@@ -218,6 +218,8 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'basyura/unite-rails'
 Bundle 'hallison/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'kana/vim-operator-user'
+Bundle 'kana/vim-operator-replace'
 
 filetype plugin indent on
 
