@@ -128,7 +128,7 @@ alias gbr='git branch'
 alias gps='git push'
 alias gpsu='gps upstream'
 alias gpso='gps origin'
-alias gpsoc='gpso `git rev-parse --abbrev-ref HEAD`'
+alias gpsoc='git push origin `git-current-branch`'
 alias gpl='git pull'
 alias gplu='gpl upstream'
 alias gplo='gpl origin'
@@ -297,4 +297,9 @@ function git-co-pull-origin() {
 function git-co-pull-upstream() {
   git checkout $1
   git pull upstream $1
+}
+
+# Git: 現在のブランチ
+function git-current-branch() {
+  git rev-parse --abbrev-ref HEAD
 }
