@@ -139,6 +139,7 @@ alias gbr='git branch'
 alias gsh='git show'
 alias gcp='git cherry-pick'
 alias gre='git rebase'
+alias grei='git rebase -i'
 alias gwc='git whatchanged'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gcpo='git-co-pull-origin'
