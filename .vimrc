@@ -175,8 +175,10 @@ autocmd FileType vimfiler
 " ctrlp.vim
 "--------------------------------------
 " 無視するファイル
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/* " Linux/MacOSX
-set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe    " Windows
+" Linux/Mac OS X
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/*,*/coverage/*
+" Windows
+set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe
 
 "--------------------------------------
 " vim-easymotion
