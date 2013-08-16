@@ -14,6 +14,8 @@ sh setup.sh
 
 `samples` ディレクトリ以下に格納
 
+### git
+
 * **git/hooks/prepare-commit-msg** : ブランチ名からチケット番号をパースし、コメントに付加してエディタを起動する git の hook
 
   ```
