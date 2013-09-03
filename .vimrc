@@ -177,8 +177,6 @@ autocmd FileType vimfiler
 " 無視するファイル
 " Linux/Mac OS X
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/*,*/coverage/*
-" Windows
-set wildignore+=.git\*,.hg\*,.svn\*,*.dll,*.exe
 
 "--------------------------------------
 " vim-easymotion
