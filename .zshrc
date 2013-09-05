@@ -99,7 +99,6 @@ alias brs='be rails s'
 alias brc='be rails c'
 alias bsp='be rspec'
 alias bra='be rake'
-alias pryr='pry -r ./config/environment'
 
 # RVM
 alias rvl='rvm list'
