@@ -13,8 +13,8 @@ case "${OSTYPE}" in
     PATH=/usr/local/share/npm/bin:$PATH
     ;;
 esac
-
 export PATH
+
 export MANPATH=/usr/local/man:/usr/share/man
 
 # Editor
@@ -28,8 +28,7 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 export GIT_PAGER="lv -c"
 
 # Mercurial
-HGENCODING=utf-8
-export HGENCODING
+export HGENCODING=utf-8
 
 ## Python
 # pip
@@ -37,6 +36,7 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_cache
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUALENV=true
 export VIRTUALENV_USE_DISTRIBUTE=true
+
 # virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
