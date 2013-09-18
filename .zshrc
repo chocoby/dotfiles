@@ -44,11 +44,6 @@ if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
 fi
 
 ## Ruby
-# rvm
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-  source "$HOME/.rvm/scripts/rvm"
-fi
-
 # rbenv
 if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
   eval "$(rbenv init -)"
@@ -99,13 +94,6 @@ alias brs='be rails s'
 alias brc='be rails c'
 alias bsp='be rspec'
 alias bra='be rake'
-
-# RVM
-alias rvl='rvm list'
-alias rvu='rvm use'
-alias rgl='rvm gemset list'
-alias rgc='rvm gemset create'
-alias rgu='rvm gemset use'
 
 # rbenv
 alias rbv='rbenv versions'
