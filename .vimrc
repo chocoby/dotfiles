@@ -52,7 +52,6 @@ set cindent         " C 言語の自動インデント
 set hidden          " 編集中でも他のファイルを開けるようにする
 set whichwrap=b,s,h,l,<,>,[,]   " カーソルを行頭、行末で止まらないようにする
 set backspace=indent,eol,start  " 改行して自動インデントされたスペースを BS で削除
-set clipboard+=unnamed          " OS のクリップボードを使用する
 set clipboard=unnamed           " yank は OS のクリップボードを使用する
 
 " Insert Mode を抜けたら IME をオフにする
