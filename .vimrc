@@ -29,10 +29,10 @@ colorscheme jellybeans
 " 基本設定
 "--------------------------------------
 " タブ
-set tabstop=4       " 半角スペース4つ分
+set tabstop=4       " 半角スペース 4 つ分
 set expandtab       " タブを半角スペースにする
 set smarttab        " 行頭の余白内でタブを入力すると shiftwidth の数だけインデントする
-set shiftwidth=4    " 行頭の余白内でタブを入力すると4つ分追加される
+set shiftwidth=4    " 行頭の余白内でタブを入力すると 4 つ分追加される
 set shiftround      " shiftwidth で設定された整数倍のスペースが追加される
 set nowrap          " 折り返し表示をしない
 
