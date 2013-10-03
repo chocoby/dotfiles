@@ -130,7 +130,7 @@ alias gre='git rebase'
 alias grei='git rebase -i'
 alias gres='git reset'
 alias gwc='git whatchanged'
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glog='git-log-graph'
 alias gcpo='git-co-pull-origin'
 alias gcpu='git-co-pull-upstream'
 
@@ -291,4 +291,9 @@ function git-co-pull-upstream() {
 # Git: 現在のブランチ
 function git-current-branch() {
   git rev-parse --abbrev-ref HEAD
+}
+
+# Git: 整形されたログを出力
+function git-log-graph() {
+  git log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
 }
