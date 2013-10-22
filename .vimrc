@@ -224,6 +224,7 @@ Bundle 'hallison/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'kana/vim-operator-user'
 Bundle 'kana/vim-operator-replace'
+Bundle 'jnwhiteh/vim-golang'
 
 filetype plugin indent on
 
