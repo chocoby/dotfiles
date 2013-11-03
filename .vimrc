@@ -198,11 +198,11 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-" github/vim-scripts
+" GitHub/vim-scripts
 Bundle 'taglist.vim'
 Bundle 'quickrun.vim'
 
-" github
+" GitHub
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/vimproc'
