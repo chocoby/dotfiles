@@ -94,6 +94,7 @@ alias brs='be rails s'
 alias brc='be rails c'
 alias bsp='be rspec'
 alias bra='be rake'
+alias bs='be spring'
 
 # rbenv
 alias rbv='rbenv versions'
