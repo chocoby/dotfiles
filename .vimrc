@@ -225,6 +225,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'kana/vim-operator-user'
 Bundle 'kana/vim-operator-replace'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'mustache/vim-mustache-handlebars'
 
 filetype plugin indent on
 
