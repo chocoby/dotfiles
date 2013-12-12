@@ -86,7 +86,6 @@ alias tm='tmux a -t'
 # Ruby
 alias b='bundle'
 alias be='bundle exec'
-alias bu='bundle update'
 
 # Rails
 alias r='be rails'
