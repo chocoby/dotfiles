@@ -135,6 +135,10 @@ alias glog='git-log-graph'
 alias gcpo='git-co-pull-origin'
 alias gcpu='git-co-pull-upstream'
 
+# Vagrant
+alias vss='vagrant ssh'
+alias vpr='vagrant provision'
+
 #--------------------------------------
 # Prompt
 #--------------------------------------
