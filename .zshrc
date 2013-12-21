@@ -138,6 +138,7 @@ alias gcpu='git-co-pull-upstream'
 # Vagrant
 alias vss='vagrant ssh'
 alias vpr='vagrant provision'
+alias vs='vagrant sandbox'
 
 #--------------------------------------
 # Prompt
