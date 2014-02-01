@@ -82,6 +82,7 @@ case "${OSTYPE}" in
 esac
 
 alias tm='tmux a -t'
+alias tml='tmux list-sessions'
 
 # Ruby
 alias b='bundle'
