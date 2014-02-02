@@ -7,7 +7,7 @@ https://github.com/chocoby/dotfiles
 ```
 git clone git@github.com:chocoby/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-sh setup.sh
+./setup.sh
 ```
 
 ## サンプルファイル
