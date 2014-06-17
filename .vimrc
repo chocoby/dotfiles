@@ -65,6 +65,7 @@ set backup
 set backupdir=~/.vim_backup
 set swapfile
 set directory=~/.vim_swap
+set noundofile
 
 "--------------------------------------
 " キーマップ
