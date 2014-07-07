@@ -141,6 +141,9 @@ alias vss='vagrant ssh'
 alias vpr='vagrant provision'
 alias vs='vagrant sandbox'
 
+# peco
+alias pgbr='peco-git-checkout-branch'
+
 #--------------------------------------
 # Prompt
 #--------------------------------------
@@ -279,6 +282,9 @@ source $HOME/.zsh/z/z.sh
 precmd() {
   _z --add "$(pwd -P)"
 }
+
+# peco
+for f (~/.zsh/peco-sources/*) source "${f}"
 
 # C-s でロックされるのを防ぐ
 stty stop undef
