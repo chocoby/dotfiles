@@ -143,6 +143,7 @@ alias vs='vagrant sandbox'
 
 # peco
 alias pgbr='peco-git-checkout-branch'
+alias pgst='peco-git-status-add'
 
 #--------------------------------------
 # Prompt
