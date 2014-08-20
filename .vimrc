@@ -191,7 +191,6 @@ map R <Plug>(operator-replace)
 "--------------------------------------
 " vundle
 "--------------------------------------
-set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
