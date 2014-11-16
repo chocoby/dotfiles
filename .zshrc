@@ -49,6 +49,9 @@ if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
   eval "$(rbenv init -)"
 fi
 
+# direnv
+[[ -x $(which direnv) ]] && eval "$(direnv hook $SHELL)"
+
 #--------------------------------------
 # Alias
 #--------------------------------------
