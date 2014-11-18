@@ -50,7 +50,9 @@ if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
 fi
 
 # direnv
-[[ -x $(which direnv) ]] && eval "$(direnv hook $SHELL)"
+if builtin command -v direnv > /dev/null; then
+  eval "$(direnv hook $SHELL)"
+fi
 
 #--------------------------------------
 # Alias
