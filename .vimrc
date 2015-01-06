@@ -14,6 +14,8 @@ set showcmd         " コマンドライン補完を表示
 set showtabline=2   " タブバーの表示
 set cursorline      " カーソル行をハイライト
 set showmatch       " 対応する括弧の表示
+set matchtime=1
+set pumheight=10
 
 syntax on           " カラーハイライト
 
@@ -85,6 +87,7 @@ nmap <F12> <C-w>=
 nmap t :tabnew<Space>
 nmap T :tabclose
 nmap f <Leader>w
+nnoremap Y y$
 
 "--------------------------------------
 " 便利
