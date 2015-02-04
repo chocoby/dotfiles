@@ -1,5 +1,1 @@
-setlocal expandtab
-setlocal tabstop=2
-setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal autoindent
+setlocal expandtab shiftwidth=2 tabstop=2
