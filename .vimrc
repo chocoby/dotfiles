@@ -16,14 +16,12 @@ set cursorline      " カーソル行をハイライト
 set showmatch       " 対応する括弧の表示
 set matchtime=1
 set pumheight=10
+set colorcolumn=81  " 81 桁目をハイライト
 
 syntax on           " カラーハイライト
 
 " ステータスバーに文字コード/改行コードを表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-
-" 81 桁目以降をハイライト
-execute 'set colorcolumn=' . join(range(81, 9999), ',')
 
 colorscheme jellybeans
 
