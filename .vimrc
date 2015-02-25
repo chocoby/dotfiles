@@ -190,6 +190,11 @@ let g:EasyMotion_leader_key = '<Leader>'
 map R <Plug>(operator-replace)
 
 "--------------------------------------
+" vim-easy-align
+"--------------------------------------
+vmap <Enter> <Plug>(EasyAlign)
+
+"--------------------------------------
 " vundle
 "--------------------------------------
 filetype off
@@ -230,6 +235,7 @@ Bundle 'kana/vim-operator-user'
 Bundle 'kana/vim-operator-replace'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'junegunn/vim-easy-align'
 
 filetype plugin indent on
 
