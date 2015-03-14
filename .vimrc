@@ -86,6 +86,7 @@ nmap t :tabnew<Space>
 nmap T :tabclose
 nmap f <Leader>w
 nnoremap Y y$
+nnoremap Q <Nop>
 
 "--------------------------------------
 " 便利
