@@ -84,7 +84,6 @@ nmap <F11> <C-w>_
 nmap <F12> <C-w>=
 nmap t :tabnew<Space>
 nmap T :tabclose
-nmap f <Leader>w
 nnoremap Y y$
 nnoremap Q <Nop>
 map <C-w><C-w> <ESC>:w<CR>
@@ -173,7 +172,13 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/*,*/coverage/*
 "--------------------------------------
 " vim-easymotion
 "--------------------------------------
-let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+
+nmap f <Plug>(easymotion-w)
+nmap F <Plug>(easymotion-b)
+map J <Plug>(easymotion-j)
+map K <Plug>(easymotion-k)
 
 "--------------------------------------
 " vim-operator-replace
