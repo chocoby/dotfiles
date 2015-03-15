@@ -91,17 +91,6 @@ nnoremap Q <Nop>
 "--------------------------------------
 " 便利
 "--------------------------------------
-" 対応したカッコを補完し、カッコの中にカーソルを戻す
-imap { {}<Left>
-imap [ []<Left>
-imap ( ()<Left>
-imap < <><Left>
-
-" カッコの中にカーソルを戻す
-imap '' ''<Left>
-imap "" ""<Left>
-imap `` ``<Left>
-
 " 行末の不要なスペースを削除
 function! RTrim()
   let s:cursor = getpos(".")
@@ -238,5 +227,6 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'banyan/recognize_charcode.vim'
+Bundle 'kana/vim-smartinput'
 
 filetype plugin indent on
