@@ -87,6 +87,7 @@ nmap T :tabclose
 nmap f <Leader>w
 nnoremap Y y$
 nnoremap Q <Nop>
+map <C-w><C-w> <ESC>:w<CR>
 
 "--------------------------------------
 " 便利
