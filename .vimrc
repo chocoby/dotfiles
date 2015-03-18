@@ -234,6 +234,6 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'banyan/recognize_charcode.vim'
-Bundle 'kana/vim-smartinput'
+Bundle 'cohama/lexima.vim'
 
 filetype plugin indent on
