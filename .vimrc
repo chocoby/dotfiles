@@ -73,6 +73,8 @@ set noundofile
 " スペースキーでカーソルを中心に保ってスクロール
 nnoremap <Space> jzz
 
+inoremap <C-c> <Esc>
+
 " ESC キー2回押しでハイライトを消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
