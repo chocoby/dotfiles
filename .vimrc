@@ -159,10 +159,19 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 "--------------------------------------
 " セーフモードを無効にする
 let g:vimfiler_safe_mode_by_default = 0
+
 " カレントディレクトリの絞り込みに unite.vim を使う
+function! UniteFileCurrentDir()
+  let s  = ':Unite file -path='
+  let s .= vimfiler#get_current_vimfiler().current_dir
+
+  execute s
+endfunction
+
 autocmd FileType vimfiler
       \ nnoremap <buffer><silent>/
-      \ :<C-u>Unite file -default-action=vimfiler<CR>
+      \ :call UniteFileCurrentDir() <CR>
+
 
 "--------------------------------------
 " ctrlp.vim
