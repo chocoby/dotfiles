@@ -246,6 +246,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'banyan/recognize_charcode.vim'
 Plugin 'cohama/lexima.vim'
+Plugin 'AndrewRadev/switch.vim'
 
 call vundle#end()
 filetype plugin indent on
