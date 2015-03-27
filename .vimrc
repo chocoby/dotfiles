@@ -162,7 +162,7 @@ let g:vimfiler_safe_mode_by_default = 0
 
 " カレントディレクトリの絞り込みに unite.vim を使う
 function! UniteFileCurrentDir()
-  let s  = ':Unite file -path='
+  let s  = ':Unite file -start-insert -path='
   let s .= vimfiler#get_current_vimfiler().current_dir
 
   execute s
