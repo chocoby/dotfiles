@@ -202,6 +202,13 @@ map R <Plug>(operator-replace)
 vmap <Enter> <Plug>(EasyAlign)
 
 "--------------------------------------
+" CamelCaseMotion
+"--------------------------------------
+map <S-W> <Plug>CamelCaseMotion_w
+map <S-B> <Plug>CamelCaseMotion_b
+map <S-E> <Plug>CamelCaseMotion_e
+
+"--------------------------------------
 " vundle
 "--------------------------------------
 filetype off
@@ -247,6 +254,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'banyan/recognize_charcode.vim'
 Plugin 'cohama/lexima.vim'
 Plugin 'AndrewRadev/switch.vim'
+Plugin 'bkad/CamelCaseMotion'
 
 call vundle#end()
 filetype plugin indent on
