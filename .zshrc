@@ -24,6 +24,9 @@ export EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
+# less
+export LESS='-R'
+
 # git
 export GIT_PAGER="lv -c"
 
