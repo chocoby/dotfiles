@@ -179,6 +179,7 @@ autocmd FileType vimfiler
 " ctrlp.vim
 "--------------------------------------
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/*,*/coverage/*
+let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
 
 "--------------------------------------
 " vim-easymotion
@@ -269,6 +270,7 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
+Plugin 'JazzCore/ctrlp-cmatcher'
 
 call vundle#end()
 filetype plugin indent on
