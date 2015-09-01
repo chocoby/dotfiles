@@ -155,8 +155,8 @@ alias vpr='vagrant provision'
 alias vs='vagrant sandbox'
 
 # peco
-alias pgbr='peco-git-checkout-branch'
-alias pgst='peco-git-status-add'
+alias pgco='peco-git-checkout-branch'
+alias pgadd='peco-git-status-add'
 
 #--------------------------------------
 # Prompt
