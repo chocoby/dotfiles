@@ -215,6 +215,10 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
+
 "--------------------------------------
 " vundle
 "--------------------------------------
@@ -264,6 +268,7 @@ Plugin 'AndrewRadev/switch.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
 
 call vundle#end()
 filetype plugin indent on
