@@ -257,6 +257,7 @@ Plugin 'banyan/recognize_charcode.vim'
 Plugin 'cohama/lexima.vim'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'bkad/CamelCaseMotion'
+Plugin 'chase/vim-ansible-yaml'
 
 call vundle#end()
 filetype plugin indent on
