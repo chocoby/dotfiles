@@ -209,6 +209,13 @@ map <S-B> <Plug>CamelCaseMotion_b
 map <S-E> <Plug>CamelCaseMotion_e
 
 "--------------------------------------
+" incsearch.vim
+"--------------------------------------
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+"--------------------------------------
 " vundle
 "--------------------------------------
 filetype off
@@ -256,6 +263,7 @@ Plugin 'cohama/lexima.vim'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'haya14busa/incsearch.vim'
 
 call vundle#end()
 filetype plugin indent on
