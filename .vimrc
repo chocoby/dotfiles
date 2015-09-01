@@ -178,8 +178,6 @@ autocmd FileType vimfiler
 "--------------------------------------
 " ctrlp.vim
 "--------------------------------------
-" 無視するファイル
-" Linux/Mac OS X
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/*,*/coverage/*
 
 "--------------------------------------
