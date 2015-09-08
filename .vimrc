@@ -108,7 +108,7 @@ autocmd BufWritePre * call RTrim()
 "--------------------------------------
 " grep に ag を使う
 let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'
+let g:unite_source_grep_default_opts = '-i --vimgrep --hidden'
 let g:unite_source_grep_max_candidates = 1000
 
 " prefix key
