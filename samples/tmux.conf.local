@@ -3,5 +3,5 @@
 # To use reattach-to-user-namespace:
 #   brew install reattach-to-user-namespace
 set-option -g default-command "reattach-to-user-namespace -l zsh"
-set-option -g status-right "[#20(whoami)@#H][#(sysctl vm.loadavg|cut -d' ' -f3)][%Y/%m/%d(%a)%H:%M]"
+set-option -g status-right "[#(whoami)@#H][#(sysctl vm.loadavg|cut -d' ' -f3)][%Y/%m/%d(%a)%H:%M]"
 set-option -g default-terminal screen-256color
