@@ -2,22 +2,20 @@
 
 https://github.com/chocoby/dotfiles
 
-## セットアップ
+## Setup
 
 ```
-git clone git@github.com:chocoby/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+DOTFILES_DIR=~/src/github.com/chocoby/dotfiles
+mkdir -p $DOTFILES_DIR
+git clone git@github.com:chocoby/dotfiles.git $DOTFILES_DIR
+cd $DOTFILES_DIR
 ./setup.sh
 ```
 
-## サンプルファイル
+## Git hooks
 
-`samples` ディレクトリ以下に格納
-
-### git
-
-* **git/hooks/prepare-commit-msg** : ブランチ名からチケット番号をパースし、コメントに付加してエディタを起動する git の hook
+* **prepare-commit-msg** : Add an issue id to commit comment from parsed branch name
 
   ```
-  ln -s ~/dotfiles/samples/git/hooks/prepare-commit-msg /path/to/.git/hooks/
+  ln -s ~/src/github.com/chocoby/dotfiles/samples/git/hooks/prepare-commit-msg $GIT_REPO/.git/hooks/
   ```
