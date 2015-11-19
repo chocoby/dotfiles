@@ -1,0 +1,15 @@
+[user]
+    name = Kenta Okamoto
+    email = chocoby@gmail.com
+
+[core]
+    excludesfile = ~/.gitignore_global
+
+[color]
+    ui = auto
+
+[ghq]
+    root = ~/src
+
+[hub]
+    protocol = https
