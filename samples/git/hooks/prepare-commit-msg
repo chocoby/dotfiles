@@ -1,11 +1,5 @@
-# feature/123_keyword 形式のブランチ名からチケット番号(例: 123)を
-# 取り出し、コミットコメントに付加してエディタを起動する
 if [ "$2" == "" ]; then
-    branch_name=`git rev-parse --abbrev-ref HEAD`
-
-    if [[ "$branch_name" =~ ^feature|fix\/ ]]; then
-        mv $1 $1.tmp
-        echo `buranko -ref` > $1
-        cat $1.tmp >> $1
-    fi
+    mv $1 $1.tmp
+    echo `buranko -ref` > $1
+    cat $1.tmp >> $1
 fi
