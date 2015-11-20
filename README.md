@@ -17,5 +17,5 @@ cd $DOTFILES_DIR
 * **prepare-commit-msg** : Add an issue id to commit comment from parsed branch name
 
   ```
-  ln -s ~/src/github.com/chocoby/dotfiles/samples/git/hooks/prepare-commit-msg $GIT_REPO/.git/hooks/
+  ln -s ~/src/github.com/chocoby/dotfiles/git/hooks/prepare-commit-msg $GIT_REPO/.git/hooks/
   ```
