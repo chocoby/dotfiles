@@ -17,7 +17,3 @@ mkdir -p $HOME/.vim_backup
 
 mkdir -p $HOME/.vim/bundle
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-
-# Git
-git config --global core.excludesfile ~/.gitignore_global
-git config --global color.ui auto
