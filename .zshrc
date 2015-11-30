@@ -62,6 +62,10 @@ if builtin command -v boot2docker > /dev/null; then
   $(boot2docker shellinit 2>/dev/null)
 fi
 
+## Golang
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+
 #--------------------------------------
 # Alias
 #--------------------------------------
