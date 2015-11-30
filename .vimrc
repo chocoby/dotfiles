@@ -22,6 +22,9 @@ syntax on           " カラーハイライト
 
 " ステータスバーに文字コード/改行コードを表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 colorscheme jellybeans
 
@@ -221,6 +224,14 @@ map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 
 "--------------------------------------
+" syntastic
+"--------------------------------------
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"--------------------------------------
 " vundle
 "--------------------------------------
 filetype off
@@ -271,6 +282,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'JazzCore/ctrlp-cmatcher'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 filetype plugin indent on
