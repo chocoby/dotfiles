@@ -15,5 +15,5 @@ git submodule update
 mkdir -p $HOME/.vim_swap
 mkdir -p $HOME/.vim_backup
 
-mkdir -p $HOME/.vim/bundle
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+mkdir -p $HOME/.vim/plugged
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
