@@ -1,1 +1,1 @@
-../bundle/jellybeans.vim/colors/jellybeans.vim
+../plugged/jellybeans.vim/colors/jellybeans.vim

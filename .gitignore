@@ -1,5 +1,4 @@
 .vim/.netrwhist
-.vim/bundle/*
-.vimperator/info
+.vim/autoload/plug.vim*
+.vim/plugged
 .zsh/.zsh_history
-.DS_Store

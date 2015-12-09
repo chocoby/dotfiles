@@ -154,7 +154,7 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " スニペット補完
 " スニペットファイルの置き場所
-let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets,~/.vim/snippets'
+let g:neosnippet#snippets_directory = '~/.vim/plugged/vim-snippets/snippets,~/.vim/snippets'
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
@@ -234,57 +234,48 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['go'] }
 let g:syntastic_go_checkers = ['go', 'golint']
 
 "--------------------------------------
-" vundle
+" vim-plug
 "--------------------------------------
-filetype off
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/quickrun.vim'
+Plug 'Shougo/neocomplcache'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/vimproc', { 'do': 'make' }
+Plug 'Shougo/vimshell'
+Plug 'Shougo/vimfiler'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/tabpagebuffer.vim'
+Plug 'Shougo/unite-outline'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'kchmck/vim-coffee-script'
+Plug 'groenewege/vim-less'
+Plug 'thinca/vim-qfreplace'
+Plug 'nanotech/jellybeans.vim'
+Plug 'basyura/unite-rails'
+Plug 'hallison/vim-markdown'
+Plug 'vim-ruby/vim-ruby'
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-operator-replace'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'junegunn/vim-easy-align'
+Plug 'banyan/recognize_charcode.vim'
+Plug 'cohama/lexima.vim'
+Plug 'AndrewRadev/switch.vim'
+Plug 'bkad/CamelCaseMotion'
+Plug 'chase/vim-ansible-yaml'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
+Plug 'scrooloose/syntastic'
 
-Plugin 'gmarik/vundle'
-
-" GitHub/vim-scripts
-Plugin 'taglist.vim'
-Plugin 'quickrun.vim'
-
-" GitHub
-Plugin 'Shougo/neocomplcache'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'Shougo/vimproc'
-Plugin 'Shougo/vimshell'
-Plugin 'Shougo/vimfiler'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/tabpagebuffer.vim'
-Plugin 'Shougo/unite-outline'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'groenewege/vim-less'
-Plugin 'thinca/vim-qfreplace'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'basyura/unite-rails'
-Plugin 'hallison/vim-markdown'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'kana/vim-operator-user'
-Plugin 'kana/vim-operator-replace'
-Plugin 'fatih/vim-go'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'banyan/recognize_charcode.vim'
-Plugin 'cohama/lexima.vim'
-Plugin 'AndrewRadev/switch.vim'
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-Plugin 'JazzCore/ctrlp-cmatcher'
-Plugin 'scrooloose/syntastic'
-
-call vundle#end()
-filetype plugin indent on
+call plug#end()
