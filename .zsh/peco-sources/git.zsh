@@ -1,5 +1,5 @@
 function peco-git-checkout-branch() {
-  git checkout $(git branch | peco | awk '{ sub("*", ""); print $0; }')
+  git checkout $(git branch | peco)
 }
 
 function peco-git-status-add() {
