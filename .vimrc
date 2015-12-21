@@ -181,7 +181,7 @@ autocmd FileType vimfiler
 "--------------------------------------
 " ctrlp.vim
 "--------------------------------------
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/*,*/coverage/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/*,*/coverage/*,*/tmp/*
 let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
 
 "--------------------------------------
