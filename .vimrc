@@ -278,5 +278,6 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
 Plug 'scrooloose/syntastic'
 Plug 'mxw/vim-jsx'
+Plug 'isRuslan/vim-es6'
 
 call plug#end()
