@@ -13,3 +13,6 @@
 
 [hub]
     protocol = https
+
+[include]
+    path = ~/.gitconfig_local
