@@ -266,7 +266,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-replace'
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'junegunn/vim-easy-align'
 Plug 'banyan/recognize_charcode.vim'
 Plug 'cohama/lexima.vim'
