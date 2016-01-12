@@ -81,7 +81,7 @@ inoremap <C-c> <Esc>
 " ESC キー2回押しでハイライトを消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
-nmap <F3> :VimFiler<CR><ESC>
+nmap <F3> :VimFiler -status<CR><ESC>
 nmap <F4> :Unite buffer<CR><ESC>
 nmap <F5> gT
 nmap <F6> gt
@@ -162,7 +162,6 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 "--------------------------------------
 " VimFiler
 "--------------------------------------
-" セーフモードを無効にする
 let g:vimfiler_safe_mode_by_default = 0
 
 " カレントディレクトリの絞り込みに unite.vim を使う
