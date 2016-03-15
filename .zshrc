@@ -69,6 +69,7 @@ if [[ -s "$HOME/local/go" ]]; then
 fi
 
 export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
 ## Node.js
