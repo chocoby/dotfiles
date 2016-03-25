@@ -1,5 +1,5 @@
 if [ "$2" == "" ]; then
     mv $1 $1.tmp
-    echo `buranko -ref` > $1
+    echo `buranko -ref -reponame` > $1
     cat $1.tmp >> $1
 fi
