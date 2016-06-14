@@ -8,6 +8,9 @@
 [color]
     ui = auto
 
+[diff]
+    compactionHeuristic = true
+
 [ghq]
     root = ~/src
 
