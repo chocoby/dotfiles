@@ -18,7 +18,14 @@ export PATH
 export MANPATH=/usr/local/man:/usr/share/man
 
 # Editor
-export EDITOR=vim
+case "${OSTYPE}" in
+  darwin*)
+    export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
+    ;;
+  linux*)
+    export EDITOR=vim
+    ;;
+esac
 
 # ls
 export CLICOLOR=1
