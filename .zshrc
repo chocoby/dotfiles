@@ -34,9 +34,6 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 # less
 export LESS='-R'
 
-# git
-export GIT_PAGER="lv -c"
-
 # Mercurial
 export HGENCODING=utf-8
 
