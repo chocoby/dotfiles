@@ -61,11 +61,6 @@ if builtin command -v direnv > /dev/null; then
   eval "$(direnv hook $SHELL)"
 fi
 
-# boot2docker
-if builtin command -v boot2docker > /dev/null; then
-  $(boot2docker shellinit 2>/dev/null)
-fi
-
 ## Golang
 if [[ -s "$HOME/local/go" ]]; then
   export GOROOT=$HOME/local/go
