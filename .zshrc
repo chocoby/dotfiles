@@ -112,19 +112,15 @@ alias tm='tmux a -t'
 alias tml='tmux list-sessions'
 
 # Ruby
-alias b='bundle'
 alias be='bundle exec'
 
 # Rails
-alias r='be rails'
 alias brs='be rails s'
 alias brc='be rails c'
 alias bsp='be rspec'
 alias bra='be rake'
-alias bs='be spring'
 
 # rbenv
-alias rbv='rbenv versions'
 alias rbg='rbenv global'
 alias rbl='rbenv local'
 alias rbr='rbenv rehash'
