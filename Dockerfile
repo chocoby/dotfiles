@@ -1,5 +1,9 @@
 FROM ubuntu:16.04
 
+ENV \
+  TZ=Asia/Tokyo \
+  TERM=screen-256color
+
 RUN \
   sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list && \
 
@@ -29,7 +33,6 @@ RUN \
   chsh -s /bin/zsh user
 
 ENV \
-  TERM=screen-256color \
   HOME=/home/user
 
 WORKDIR /home/user
