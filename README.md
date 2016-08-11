@@ -2,14 +2,19 @@
 
 https://github.com/chocoby/dotfiles
 
-## Setup
+## Install
 
 ```
-DOTFILES_DIR=~/src/github.com/chocoby/dotfiles
-mkdir -p $DOTFILES_DIR
-git clone git@github.com:chocoby/dotfiles.git $DOTFILES_DIR
-cd $DOTFILES_DIR
-./setup.sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/chocoby/dotfiles/master/scripts/install)"
+```
+
+## Usage
+
+### Update
+
+```
+cd ~/src/github.com/chocoby/dotfiles
+make install
 ```
 
 ## Git hooks

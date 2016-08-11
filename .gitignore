@@ -1,4 +1,6 @@
 .vim/.netrwhist
-.vim/autoload/plug.vim*
+.vim/autoload
 .vim/plugged
 .zsh/.zsh_history
+
+tmp/
