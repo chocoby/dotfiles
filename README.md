@@ -17,6 +17,13 @@ cd ~/src/github.com/chocoby/dotfiles
 make install
 ```
 
+### Testing on Docker
+
+```
+docker build -t chocoby/dotfiles .
+docker run -it chocoby/dotfiles
+```
+
 ## Git hooks
 
 * **prepare-commit-msg** : Add an issue id to commit comment from parsed branch name
