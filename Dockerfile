@@ -18,6 +18,7 @@ RUN \
     software-properties-common \
     build-essential python-dev libncurses-dev \
     ca-certificates \
+    unzip \
     exuberant-ctags less vim git curl zsh tmux && \
   apt clean && \
   rm -rf /var/lib/apt/lists/* && \
@@ -35,10 +36,26 @@ RUN \
 ENV \
   HOME=/home/user
 
-WORKDIR /home/user
 USER user
 
 RUN \
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/chocoby/dotfiles/master/scripts/install)"
+
+RUN \
+  mkdir -p $HOME/local/src && \
+  mkdir -p $HOME/local/bin
+
+WORKDIR /home/user/local/src
+
+RUN \
+  curl -fLo $HOME/local/src/ghq_linux_amd64.zip https://github.com/motemen/ghq/releases/download/v0.7.4/ghq_linux_amd64.zip && \
+  unzip $HOME/local/src/ghq_linux_amd64.zip -d ghq_linux_amd64 && \
+  cp $HOME/local/src/ghq_linux_amd64/ghq $HOME/local/bin/ && \
+
+  curl -fLo $HOME/local/src/peco_linux_amd64.tar.gz https://github.com/peco/peco/releases/download/v0.3.6/peco_linux_amd64.tar.gz && \
+  tar zxvf $HOME/local/src/peco_linux_amd64.tar.gz && \
+  cp peco_linux_amd64/peco $HOME/local/bin
+
+WORKDIR /home/user
 
 CMD ["/bin/zsh"]
