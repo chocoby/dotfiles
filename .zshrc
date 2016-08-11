@@ -172,6 +172,9 @@ alias vs='vagrant sandbox'
 alias pgco='peco-git-checkout-branch'
 alias pgadd='peco-git-status-add'
 
+alias pdrm='peco-rm-docker-ps'
+alias pdrmi='peco-rm-docker-images'
+
 #--------------------------------------
 # Prompt
 #--------------------------------------
