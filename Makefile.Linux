@@ -1,2 +1,0 @@
-init:
-	bash scripts/setup_vim.sh
