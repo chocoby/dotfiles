@@ -247,7 +247,7 @@ Plug 'Shougo/neocomplcache'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/vimproc', { 'do': 'make' }
-Plug 'Shougo/vimfiler', { 'commit': '730d41f6ebe19422cb385c64833976fcc84a66d6' }
+Plug 'Shougo/vimfiler'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/tabpagebuffer.vim'
 Plug 'Shougo/unite-outline'
