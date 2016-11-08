@@ -284,5 +284,6 @@ Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
 Plug 'scrooloose/syntastic'
 Plug 'mxw/vim-jsx'
 Plug 'isRuslan/vim-es6'
+Plug 'cakebaker/scss-syntax.vim'
 
 call plug#end()
