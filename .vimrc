@@ -285,5 +285,6 @@ Plug 'scrooloose/syntastic'
 Plug 'mxw/vim-jsx'
 Plug 'isRuslan/vim-es6'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'fatih/vim-nginx'
 
 call plug#end()
