@@ -97,6 +97,9 @@ nnoremap Y y$
 nnoremap Q <Nop>
 map <C-w><C-w> <ESC>:w<CR>
 
+imap <C-h> <BS>
+cmap <C-h> <BS>
+
 set pastetoggle=<F10>
 
 "--------------------------------------
