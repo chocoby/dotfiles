@@ -6,3 +6,6 @@ do
         ln -sfnv "$PWD/$dotfile" $HOME
     fi
 done
+
+ln -sfnv $PWD/bin/multi_ssh /usr/local/bin
+ln -sfnv $PWD/bin/pero /usr/local/bin
