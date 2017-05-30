@@ -15,7 +15,7 @@ RUN \
   apt update && \
   apt -y upgrade && \
   apt install --no-install-recommends -y \
-    software-properties-common \
+    software-properties-common locales \
     build-essential python-dev libncurses-dev \
     ca-certificates \
     unzip \
@@ -26,6 +26,9 @@ RUN \
   echo en_US.UTF-8 UTF-8 > /etc/locale.gen && \
   locale-gen && \
   update-locale LANG=en_US.UTF-8 && \
+
+  # FIXME
+  chmod 777 /usr/local/bin && \
 
   ln -s /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin && \
   chmod a+x /usr/local/bin/diff-highlight && \
