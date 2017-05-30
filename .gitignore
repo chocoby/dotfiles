@@ -1,6 +1,6 @@
+.tmux/plugins
 .vim/.netrwhist
 .vim/autoload
 .vim/plugged
 .zsh/.zsh_history
-
 tmp/

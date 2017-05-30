@@ -1,3 +1,4 @@
 .git
+.tmux/plugins
 .vim/plugged
 tmp

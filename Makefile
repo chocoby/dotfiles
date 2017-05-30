@@ -14,6 +14,7 @@ deploy:
 
 init:
 	bash scripts/setup_vim.sh
+	bash scripts/setup_tpm.sh
 
 update:
 	git pull origin master
