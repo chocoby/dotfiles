@@ -17,7 +17,7 @@ cd ~/src/github.com/chocoby/dotfiles
 make install
 ```
 
-### Homebrew
+### Install Homebrew bundles
 
 ```
 brew bundle
@@ -32,7 +32,7 @@ docker run -it chocoby/dotfiles
 
 ## Git hooks
 
-* **prepare-commit-msg** : Add an issue id to commit comment from parsed branch name
+* **prepare-commit-msg** : Add an issue id to commit comment from parsed branch name with [buranko](https://github.com/chocoby/buranko)
 
   ```
   ln -s ~/src/github.com/chocoby/dotfiles/git/hooks/prepare-commit-msg `pwd`/.git/hooks/
