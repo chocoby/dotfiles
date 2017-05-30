@@ -17,6 +17,12 @@ cd ~/src/github.com/chocoby/dotfiles
 make install
 ```
 
+### Homebrew
+
+```
+brew bundle
+```
+
 ### Testing on Docker
 
 ```
