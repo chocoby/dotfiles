@@ -7,12 +7,6 @@ export LANG=en_US.UTF-8
 # PATH
 PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:$PATH
 PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
-
-case "${OSTYPE}" in
-  darwin*)
-    PATH=/usr/local/share/npm/bin:$PATH
-    ;;
-esac
 export PATH
 
 export MANPATH=/usr/local/man:/usr/share/man
@@ -34,31 +28,15 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 # less
 export LESS='-R'
 
-# Mercurial
-export HGENCODING=utf-8
-
-## Python
-# pip
-export PIP_DOWNLOAD_CACHE=$HOME/.pip_cache
-export PIP_RESPECT_VIRTUALENV=true
-export PIP_REQUIRE_VIRTUALENV=true
-export VIRTUALENV_USE_DISTRIBUTE=true
-
-# virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-if [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]]; then
-  source /usr/local/bin/virtualenvwrapper.sh
+# direnv
+if builtin command -v direnv > /dev/null; then
+  eval "$(direnv hook $SHELL)"
 fi
 
 ## Ruby
 # rbenv
 if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
   eval "$(rbenv init -)"
-fi
-
-# direnv
-if builtin command -v direnv > /dev/null; then
-  eval "$(direnv hook $SHELL)"
 fi
 
 ## Golang
@@ -71,7 +49,7 @@ export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
-## Node.js
+## Node
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
@@ -120,11 +98,6 @@ alias brc='be rails c'
 alias bsp='be rspec'
 alias bra='be rake'
 
-# rbenv
-alias rbg='rbenv global'
-alias rbl='rbenv local'
-alias rbr='rbenv rehash'
-
 # Git
 alias gg='git grep'
 alias gfe='git fetch'
@@ -148,8 +121,6 @@ alias gplo='gpl origin'
 alias gad='git add'
 alias gadp='git add -p'
 alias glo='git log'
-alias gbr='git branch'
-alias gsh='git show'
 alias gcp='git cherry-pick'
 alias gre='git rebase'
 alias grei='git rebase -i'
@@ -158,11 +129,6 @@ alias gwc='git whatchanged'
 alias glog='git-log-graph'
 alias gcpo='git-co-pull-origin'
 alias gcpu='git-co-pull-upstream'
-
-# Vagrant
-alias vss='vagrant ssh'
-alias vpr='vagrant provision'
-alias vs='vagrant sandbox'
 
 # peco
 alias pgco='peco-git-checkout-branch'
@@ -273,13 +239,10 @@ setopt magic_equal_subst
 setopt auto_param_keys
 
 #--------------------------------------
-# Key Bind
+# Keybind
 #--------------------------------------
 # Emacs 風のキーバインド
 bindkey -e
-
-# ^ を入力で cd ..
-bindkey '\^' cdup
 
 # glob (*) でヒストリをインクリメンタル検索
 bindkey '^R' history-incremental-pattern-search-backward
@@ -295,14 +258,6 @@ setopt auto_pushd
 # 自動修正
 setopt correct
 
-# ^ で cd ..
-function cdup() {
-  echo
-  cd ..
-  zle reset-prompt
-}
-zle -N cdup
-
 # z.sh
 _Z_CMD=j
 source $HOME/.zsh/z/z.sh
@@ -310,11 +265,11 @@ precmd() {
   _z --add "$(pwd -P)"
 }
 
-# peco
-for f (~/.zsh/peco-sources/*) source "${f}"
-
 # C-s でロックされるのを防ぐ
 stty stop undef
+
+# peco
+for f (~/.zsh/peco-sources/*) source "${f}"
 
 # Git: ブランチ checkout/pull(origin)
 function git-co-pull-origin() {
