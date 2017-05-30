@@ -271,24 +271,5 @@ stty stop undef
 # peco
 for f (~/.zsh/peco-sources/*) source "${f}"
 
-# Git: ブランチ checkout/pull(origin)
-function git-co-pull-origin() {
-  git checkout $1
-  git pull origin $1
-}
-
-# Git: ブランチ checkout/pull(upstream)
-function git-co-pull-upstream() {
-  git checkout $1
-  git pull upstream $1
-}
-
-# Git: 現在のブランチ
-function git-current-branch() {
-  git rev-parse --abbrev-ref HEAD
-}
-
-# Git: 整形されたログを出力
-function git-log-graph() {
-  git log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
-}
+# git
+for f (~/.zsh/git-scripts/*) source "${f}"
