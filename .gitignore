@@ -1,3 +1,4 @@
+.bundle/cache
 .tmux/plugins
 .tmux/resurrect
 .vim/.netrwhist
