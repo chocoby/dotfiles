@@ -12,11 +12,9 @@ set linespace=0     " 行間
 set wildmenu        " 補完強化
 set showcmd         " コマンドライン補完を表示
 set showtabline=2   " タブバーの表示
-set cursorline      " カーソル行をハイライト
 set showmatch       " 対応する括弧の表示
 set matchtime=1
 set pumheight=10
-set colorcolumn=81  " 81 桁目をハイライト
 
 syntax on           " カラーハイライト
 
