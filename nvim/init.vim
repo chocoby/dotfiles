@@ -2,6 +2,10 @@ if &compatible
   set nocompatible
 endif
 
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.cache/dein')
@@ -20,3 +24,6 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
+
+runtime! options.rc.vim
+runtime! keymap.rc.vim
