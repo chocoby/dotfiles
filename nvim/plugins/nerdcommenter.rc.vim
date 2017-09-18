@@ -1,3 +1,3 @@
 let g:NERDCreateDefaultMappings = 0
-nmap <C-c> <Plug>NERDCommenterToggle
-vmap <C-c> <Plug>NERDCommenterToggle
+nmap <Leader>cc <Plug>NERDCommenterToggle
+vmap <Leader>cc <Plug>NERDCommenterToggle

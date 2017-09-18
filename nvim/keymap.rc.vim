@@ -1,15 +1,12 @@
 nnoremap <Space> jzz
-inoremap <C-c> <Esc>
+inoremap <C-c> <ESC>
 
-nmap <ESC><ESC> :nohlsearch<CR><ESC>
+nmap <C-c><C-c> :nohlsearch<CR><ESC>
 
 nmap <F5> gT
 nmap <F6> gt
-"nmap <F11> <C-w>_
-"nmap <F12> <C-w>=
 nmap t :tabnew<Space>
 nmap T :tabclose
-nnoremap Y y$
 nnoremap Q <Nop>
 map <C-w><C-w> <ESC>:w<CR>
 
