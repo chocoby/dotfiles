@@ -9,3 +9,13 @@ au MyAutoCmd VimEnter * nested colorscheme jellybeans
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_i = 1
+hook_add = '''
+source ~/.config/nvim/plugins/denite.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
