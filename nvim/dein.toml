@@ -55,3 +55,12 @@ source ~/.config/nvim/plugins/CamelCaseMotion.rc.vim
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'haya14busa/incsearch.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/incsearch.rc.vim
+'''
+
+[[plugins]]
+repo = 'haya14busa/incsearch-fuzzy.vim'
