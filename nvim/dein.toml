@@ -52,3 +52,6 @@ repo = 'bkad/CamelCaseMotion'
 hook_add = '''
 source ~/.config/nvim/plugins/CamelCaseMotion.rc.vim
 '''
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
