@@ -25,3 +25,9 @@ repo = 'cocopon/vaffle.vim'
 hook_add = '''
 source ~/.config/nvim/plugins/vaffle.rc.vim
 '''
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+hook_add = '''
+source ~/.config/nvim/plugins/nerdcommenter.rc.vim
+'''
