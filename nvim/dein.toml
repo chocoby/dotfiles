@@ -64,3 +64,6 @@ source ~/.config/nvim/plugins/incsearch.rc.vim
 
 [[plugins]]
 repo = 'haya14busa/incsearch-fuzzy.vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
