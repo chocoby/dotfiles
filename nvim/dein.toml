@@ -37,3 +37,9 @@ repo = 'easymotion/vim-easymotion'
 hook_add = '''
 source ~/.config/nvim/plugins/vim-easymotion.rc.vim
 '''
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-easy-align.rc.vim
+'''
