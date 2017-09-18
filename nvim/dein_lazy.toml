@@ -1,18 +1,16 @@
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_source = '''
+source ~/.config/nvim/plugins/deoplete.rc.vim
+'''
+
+[[plugins]]
 repo = 'Shougo/neosnippet.vim'
 on_i = 1
 on_ft = 'snipppet'
 hook_source = '''
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-'''
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_i = 1
-hook_source = '''
-let g:deoplete#enable_at_startup = 1
+source ~/.config/nvim/plugins/neosnippet.rc.vim
 '''
 
 [[plugins]]
