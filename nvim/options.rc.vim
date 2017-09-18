@@ -48,6 +48,9 @@ set swapfile
 set directory=~/.vim_swap
 set noundofile
 
+" filetype
+au BufRead,BufNewFile */infrastructure/*.yml set filetype=ansible
+
 " Remove trailing spaces
 function! RTrim()
   let s:cursor = getpos(".")

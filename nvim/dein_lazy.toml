@@ -15,6 +15,43 @@ hook_source = '''
 let g:deoplete#enable_at_startup = 1
 '''
 
+# language
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = 'javascript'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-jsx.rc.vim
+'''
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'tpope/vim-markdown'
+on_ft = 'markdown'
+
+[[plugins]]
+repo = 'pearofducks/ansible-vim'
+on_ft = 'ansible'
+
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
