@@ -4,7 +4,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
 hook_add = '''
-au MyAutoCmd VimEnter * nested colorscheme jellybeans
+source ~/.config/nvim/plugins/jellybeans.rc.vim
 '''
 
 [[plugins]]
