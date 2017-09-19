@@ -14,12 +14,6 @@ source ~/.config/nvim/plugins/neosnippet.rc.vim
 '''
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
-repo = 'Shougo/tabpagebuffer.vim'
-
-[[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 on_cmd = 'help'
 

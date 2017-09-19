@@ -18,6 +18,12 @@ source ~/.config/nvim/plugins/denite.rc.vim
 '''
 
 [[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/tabpagebuffer.vim'
+
+[[plugins]]
 repo = 'Shougo/neoyank.vim'
 
 [[plugins]]
