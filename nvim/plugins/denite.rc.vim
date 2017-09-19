@@ -21,6 +21,7 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ '.git/', 'tmp/', '.bundle/',
       \ 'node_modules/', '.sass-cache/',
       \ 'coverage/', '.vagrant/',
+      \ '*.png', '*.jpg', '*.ico',
       \ '.DS_Store' ])
 
 call denite#custom#var('grep', 'command', ['ag'])

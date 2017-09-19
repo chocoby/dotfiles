@@ -55,6 +55,12 @@ source ~/.config/nvim/plugins/vim-easy-align.rc.vim
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-fugitive.rc.vim
+'''
+
+[[plugins]]
+repo = 'tpope/vim-rhubarb'
 
 [[plugins]]
 repo = 'bkad/CamelCaseMotion'
