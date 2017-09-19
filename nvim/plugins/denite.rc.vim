@@ -1,3 +1,4 @@
+nnoremap <silent> <F4> :<C-u>Denite buffer<CR>
 nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
 nnoremap <silent> ,,y :<C-u>Denite neoyank<CR>
 
