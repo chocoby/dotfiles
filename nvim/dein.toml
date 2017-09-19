@@ -27,6 +27,9 @@ repo = 'Shougo/tabpagebuffer.vim'
 repo = 'Shougo/neoyank.vim'
 
 [[plugins]]
+repo = 'thinca/vim-qfreplace'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
 source ~/.config/nvim/plugins/nerdtree.rc.vim

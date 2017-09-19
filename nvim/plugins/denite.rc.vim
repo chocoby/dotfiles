@@ -30,3 +30,21 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
+
+function! DeniteQfreplace(context)
+  let l:qflist = []
+  for target in a:context['targets']
+    if !has_key(target, 'action__path') | continue | endif
+    if !has_key(target, 'action__line') | continue | endif
+    if !has_key(target, 'action__text') | continue | endif
+
+    call add(qflist, {
+          \ 'filename': target['action__path'],
+          \ 'lnum': target['action__line'],
+          \ 'text': target['action__text']
+          \ })
+  endfor
+  call setqflist(qflist)
+  call qfreplace#start('')
+endfunction
+call denite#custom#action('file', 'qfreplace', function('DeniteQfreplace'))
