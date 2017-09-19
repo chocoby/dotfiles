@@ -21,9 +21,9 @@ source ~/.config/nvim/plugins/denite.rc.vim
 repo = 'Shougo/neoyank.vim'
 
 [[plugins]]
-repo = 'cocopon/vaffle.vim'
+repo = 'scrooloose/nerdtree'
 hook_add = '''
-source ~/.config/nvim/plugins/vaffle.rc.vim
+source ~/.config/nvim/plugins/nerdtree.rc.vim
 '''
 
 [[plugins]]
