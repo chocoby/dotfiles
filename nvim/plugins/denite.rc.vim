@@ -1,5 +1,6 @@
 nnoremap <silent> <F4> :<C-u>Denite buffer<CR>
 nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <silent> <S-f>t :<C-u>Denite unite:tab<CR>
 nnoremap <silent> ,,y :<C-u>Denite neoyank<CR>
 
 call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
