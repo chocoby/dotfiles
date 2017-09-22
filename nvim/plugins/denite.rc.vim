@@ -1,9 +1,9 @@
 nnoremap [denite] <Nop>
 nmap <S-f> [denite]
 
-nnoremap <silent> <F4> :<C-u>Denite buffer<CR>
-nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <silent> <C-p> :<C-u>Denite file_rec -buffer-name=search-buffer-denite<CR>
 nnoremap <silent> [denite]t :<C-u>Denite unite:tab<CR>
+nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
 nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR>
 nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
 nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
