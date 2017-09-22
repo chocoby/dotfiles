@@ -1,0 +1,1 @@
+vmap <Enter> <Plug>(EasyAlign)

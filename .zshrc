@@ -14,7 +14,7 @@ export MANPATH=/usr/local/man:/usr/share/man
 # Editor
 case "${OSTYPE}" in
   darwin*)
-    export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
+    export EDITOR=nvim
     ;;
   linux*)
     export EDITOR=vim
