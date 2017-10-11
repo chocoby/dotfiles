@@ -48,6 +48,11 @@ set swapfile
 set directory=~/.vim_swap
 set noundofile
 
+" Fix split multibyte sequences
+" https://github.com/neovim/neovim/issues/3094
+set ttimeout
+set ttimeoutlen=50
+
 " filetype
 au BufRead,BufNewFile */infrastructure/*.yml set filetype=ansible
 
