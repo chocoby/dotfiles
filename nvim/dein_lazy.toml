@@ -39,6 +39,13 @@ repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 
 [[plugins]]
+repo = 'prettier/vim-prettier'
+on_ft = ['javascript', 'javascript.jsx']
+hook_add = '''
+source ~/.config/nvim/plugins/vim-prettier.rc.vim
+'''
+
+[[plugins]]
 repo = 'kchmck/vim-coffee-script'
 on_ft = ['haml', 'coffee']
 
