@@ -1,5 +1,5 @@
-# OS X
-# https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+# macOS
+# https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
 .DS_Store
 ._*
 
@@ -9,3 +9,6 @@
 [._]s[a-w][a-z]
 *.un~
 *~
+
+# RubyMine
+.idea
