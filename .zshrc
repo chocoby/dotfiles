@@ -34,8 +34,7 @@ if builtin command -v direnv > /dev/null; then
 fi
 
 ## Ruby
-# rbenv
-if [[ -s "$HOME/.rbenv/bin/rbenv" ]]; then
+if builtin command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
