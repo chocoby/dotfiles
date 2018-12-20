@@ -38,6 +38,11 @@ if builtin command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
+## Python
+if builtin command -v pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+fi
+
 ## Golang
 if [[ -s "$HOME/local/go" ]]; then
   export GOROOT=$HOME/local/go
