@@ -12,14 +12,7 @@ export PATH
 export MANPATH=/usr/local/man:/usr/share/man
 
 # Editor
-case "${OSTYPE}" in
-  darwin*)
-    export EDITOR=nvim
-    ;;
-  linux*)
-    export EDITOR=vim
-    ;;
-esac
+export EDITOR=vim
 
 # ls
 export CLICOLOR=1
