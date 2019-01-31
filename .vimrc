@@ -21,7 +21,6 @@ syntax on           " カラーハイライト
 " ステータスバーに文字コード/改行コードを表示
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 try
@@ -130,18 +129,6 @@ nnoremap <silent> [unite]t :<C-u>Unite tab<CR>
 nnoremap <silent> [unite]s :<C-u>Unite source<CR>
 nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 
-" unite-rails
-nnoremap <silent> [unite]r :<C-u>Unite rails/
-nnoremap <silent> [unite]rmo :<C-u>Unite rails/model<CR>
-nnoremap <silent> [unite]rcon :<C-u>Unite rails/controller<CR>
-nnoremap <silent> [unite]rvi :<C-u>Unite rails/view<CR>
-nnoremap <silent> [unite]rhel :<C-u>Unite rails/helper<CR>
-nnoremap <silent> [unite]rlib :<C-u>Unite rails/lib<CR>
-nnoremap <silent> [unite]rdb :<C-u>Unite rails/db<CR>
-nnoremap <silent> [unite]rconfig :<C-u>Unite rails/config<CR>
-nnoremap <silent> [unite]rlog :<C-u>Unite rails/log<CR>
-nnoremap <silent> [unite]rspe :<C-u>Unite rails/spec<CR>
-
 "--------------------------------------
 " neocomplcache
 "--------------------------------------
@@ -228,27 +215,10 @@ map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 
 "--------------------------------------
-" syntastic
-"--------------------------------------
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['go'] }
-let g:syntastic_go_checkers = ['go', 'golint']
-
-"--------------------------------------
-" vim-jsx
-"--------------------------------------
-let g:jsx_ext_required = 0
-
-"--------------------------------------
 " vim-plug
 "--------------------------------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-scripts/taglist.vim'
-Plug 'vim-scripts/quickrun.vim'
 Plug 'Shougo/neocomplcache'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
@@ -260,14 +230,11 @@ Plug 'Shougo/unite-outline'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'kchmck/vim-coffee-script'
 Plug 'thinca/vim-qfreplace'
 Plug 'nanotech/jellybeans.vim'
-Plug 'basyura/unite-rails'
 Plug 'hallison/vim-markdown'
 Plug 'vim-ruby/vim-ruby'
 Plug 'kana/vim-operator-user'
@@ -278,14 +245,8 @@ Plug 'banyan/recognize_charcode.vim'
 Plug 'cohama/lexima.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'bkad/CamelCaseMotion'
-Plug 'chase/vim-ansible-yaml'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
-Plug 'scrooloose/syntastic'
-Plug 'mxw/vim-jsx'
-Plug 'isRuslan/vim-es6'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'fatih/vim-nginx'
 
 call plug#end()
