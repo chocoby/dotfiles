@@ -12,3 +12,6 @@
 
 # RubyMine
 .idea
+
+# Visual Studio Code
+.vscode
