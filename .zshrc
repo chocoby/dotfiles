@@ -89,12 +89,6 @@ alias tml='tmux list-sessions'
 # Ruby
 alias be='bundle exec'
 
-# Rails
-alias brs='be rails s'
-alias brc='be rails c'
-alias bsp='be rspec'
-alias bra='be rake'
-
 # Git
 alias gg='git grep'
 alias gfe='git fetch'
