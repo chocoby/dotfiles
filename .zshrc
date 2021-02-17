@@ -51,6 +51,9 @@ export PATH=$PATH:$GOPATH/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
+## Rust
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
 #--------------------------------------
 # Alias
 #--------------------------------------
