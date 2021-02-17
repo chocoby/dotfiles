@@ -10,11 +10,17 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/chocoby/dotfiles/master/
 
 ## Usage
 
-### Update
+### Setup
 
 ```
 cd ~/src/github.com/chocoby/dotfiles
 make install
+```
+
+### Update submodules
+
+```
+make update
 ```
 
 ### Install Homebrew bundles
