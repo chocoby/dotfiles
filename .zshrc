@@ -54,6 +54,11 @@ export NVM_DIR="$HOME/.nvm"
 ## Rust
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
+## Android
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+
+
 #--------------------------------------
 # Alias
 #--------------------------------------
