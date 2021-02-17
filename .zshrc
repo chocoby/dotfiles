@@ -88,6 +88,7 @@ alias tml='tmux list-sessions'
 
 # Ruby
 alias be='bundle exec'
+alias rr='be rubocop -A $(git status -s | cut -c4-) && bin/rspec $(git status -s "*_spec.rb" | cut -c4-)'
 
 # Git
 alias gg='git grep'
