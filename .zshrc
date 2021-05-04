@@ -218,7 +218,7 @@ fi
 # Completion
 #--------------------------------------
 autoload -Uz compinit
-compinit -u
+compinit
 # ビープ音を鳴らさないようにする
 setopt nolistbeep
 # 補完候補を一覧表示
