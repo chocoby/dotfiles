@@ -257,13 +257,6 @@ setopt auto_pushd
 # 自動修正
 setopt correct
 
-# z.sh
-#_Z_CMD=j
-#source $HOME/.zsh/z/z.sh
-#precmd() {
-#  _z --add "$(pwd -P)"
-#}
-
 # C-s でロックされるのを防ぐ
 stty stop undef
 
