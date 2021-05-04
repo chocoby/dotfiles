@@ -3,7 +3,8 @@
 cd $(dirname "$0")
 
 if [ "$(uname)" == 'Darwin' ]; then
-    VIM=/Applications/MacVim.app/Contents/MacOS/Vim
+    VIM=vim
+    ln -s $(brew --prefix macvim)/MacVim.app /Applications
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     VIM=$HOME/local/bin/vim
 
