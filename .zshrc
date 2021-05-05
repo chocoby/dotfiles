@@ -50,8 +50,21 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
 # Node
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+function load-nvm () {
+  export NVM_DIR="$HOME/.nvm"
+  [[ -s $(brew --prefix nvm)/nvm.sh ]] && source $(brew --prefix nvm)/nvm.sh
+}
+
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    if ! type nvm >/dev/null; then
+      load-nvm
+    fi
+    nvm use
+  fi
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook chpwd load-nvmrc
 
 # Rust
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
