@@ -21,22 +21,25 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 # less
 export LESS='-R'
 
+# evalcache
+source $HOME/.zsh/evalcache/evalcache.plugin.zsh
+
 # direnv
 if builtin command -v direnv > /dev/null; then
-  eval "$(direnv hook $SHELL)"
+  _evalcache direnv hook zsh
 fi
 
-## Ruby
+# Ruby
 if builtin command -v rbenv > /dev/null; then
-  eval "$(rbenv init -)"
+  _evalcache rbenv init -
 fi
 
-## Python
+# Python
 if builtin command -v pyenv > /dev/null; then
-  eval "$(pyenv init -)"
+  _evalcache pyenv init -
 fi
 
-## Golang
+# Golang
 if [[ -s "$HOME/local/go" ]]; then
   export GOROOT=$HOME/local/go
   export PATH=$PATH:$GOROOT/bin
@@ -46,15 +49,14 @@ export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
-## Node
-# nvm
+# Node
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
-## Rust
+# Rust
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-## Android
+# Android
 export ANDROID_SDK=$HOME/Library/Android/sdk
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
