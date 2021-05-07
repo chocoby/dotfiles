@@ -173,7 +173,7 @@ autocmd FileType vimfiler
 " ctrlp.vim
 "--------------------------------------
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/*,*/coverage/*,*/tmp/*
-let g:ctrlp_match_func = { 'match' : 'matcher#cmatch' }
+let g:ctrlp_match_func = { 'match' : 'ctrlp_matchfuzzy#matcher' }
 
 "--------------------------------------
 " vim-easymotion
@@ -232,6 +232,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/ctrlp-matchfuzzy'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'thinca/vim-qfreplace'
 Plug 'nanotech/jellybeans.vim'
@@ -247,6 +248,5 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
 
 call plug#end()
