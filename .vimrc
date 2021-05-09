@@ -71,6 +71,8 @@ set swapfile
 set directory=~/.vim_swap
 set noundofile
 
+set wildignore+=*/.git/*,*/.bundle/*,*/node_modules/*,*/coverage/*,*/tmp/*
+
 "--------------------------------------
 " キーマップ
 "--------------------------------------
@@ -172,8 +174,8 @@ autocmd FileType vimfiler
 "--------------------------------------
 " ctrlp.vim
 "--------------------------------------
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so,*/node_modules/*,*/coverage/*,*/tmp/*
 let g:ctrlp_match_func = { 'match' : 'ctrlp_matchfuzzy#matcher' }
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 "--------------------------------------
 " vim-easymotion
