@@ -3,9 +3,6 @@
     email = chocoby@gmail.com
     signingkey = CF01B85A
 
-[core]
-    excludesfile = ~/.gitignore_global
-
 [color]
     ui = auto
 

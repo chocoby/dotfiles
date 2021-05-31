@@ -1,4 +1,5 @@
 #!/bin/bash
+
 for dotfile in .?*
 do
     if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.gitignore' ] && [ $dotfile != '.gitmodules' ]
@@ -7,5 +8,14 @@ do
     fi
 done
 
-ln -sfnv $PWD/bin/multi_ssh /usr/local/bin
-ln -sfnv $PWD/bin/pero /usr/local/bin
+mkdir -p $PWD/.config
+
+for dir in $PWD/.config/*
+do
+    ln -sfnv $dir $HOME/.config
+done
+
+for file in $PWD/bin/*
+do
+    ln -sfnv $file /usr/local/bin
+done
