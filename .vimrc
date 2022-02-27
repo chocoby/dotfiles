@@ -146,13 +146,6 @@ if !exists('g:neocomplcache_keyword_patterns')
   let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-" スニペット補完
-" スニペットファイルの置き場所
-let g:neosnippet#snippets_directory = '~/.vim/plugged/vim-snippets/snippets,~/.vim/snippets'
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
 "--------------------------------------
 " VimFiler
 "--------------------------------------
@@ -222,14 +215,11 @@ map zg/ <Plug>(incsearch-fuzzy-stay)
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/neocomplcache'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'Shougo/vimfiler'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/tabpagebuffer.vim'
 Plug 'Shougo/unite-outline'
-Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
