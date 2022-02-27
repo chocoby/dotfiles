@@ -84,7 +84,7 @@ inoremap <C-c> <Esc>
 " ESC キー2回押しでハイライトを消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
-nmap <F3> :VimFiler -status<CR><ESC>
+nmap <F3> :VimFiler -status -fnamewidth=100 -simple<CR><ESC>
 nmap <F4> :Unite buffer<CR><ESC>
 nmap <F5> gT
 nmap <F6> gt
