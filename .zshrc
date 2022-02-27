@@ -21,6 +21,9 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 # less
 export LESS='-R'
 
+# GPG
+export GPG_TTY=$(tty)
+
 # evalcache
 source $HOME/.zsh/evalcache/evalcache.plugin.zsh
 
