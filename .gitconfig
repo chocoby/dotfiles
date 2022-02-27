@@ -1,7 +1,7 @@
 [user]
     name = Kenta Okamoto
-    email = chocoby@gmail.com
-    signingkey = CF01B85A
+    email = chocoby@himajin.dev
+    signingkey = F363047DD619B35DD2DF970B44D99A71EABAA646
 
 [color]
     ui = auto
