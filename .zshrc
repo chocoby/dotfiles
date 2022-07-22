@@ -216,8 +216,10 @@ fi
 # History
 #--------------------------------------
 HISTFILE=$HOME/.zsh/.zsh_history
-HISTSIZE=100000
+HISTSIZE=10000
 SAVEHIST=100000
+# history に保存しないコマンド
+HISTORY_IGNORE="(ls|ll|cd|pwd|gst|gdi|gdic|gpsoc|gfe|glo|grei|gci|gcia|gco|gsh)"
 # 同じコマンドを重複して記録しない
 setopt hist_ignore_dups
 # 履歴ファイルに時刻を記録
@@ -226,6 +228,14 @@ setopt extended_history
 setopt share_history
 # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
 setopt append_history
+# history コマンドを記録しない
+setopt hist_no_store
+# 余分な空白を詰めて記録
+setopt hist_reduce_blanks
+# 履歴検索中、重複を飛ばす
+setopt hist_find_no_dups
+# 行頭がスペースのコマンドは記録しない
+setopt hist_ignore_space
 # root のコマンドはヒストリに追加しない
 if [ $UID = 0 ]; then
   unset HISTFILE
