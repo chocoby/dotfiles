@@ -23,13 +23,7 @@ make install
 make update
 ```
 
-### Install Homebrew bundles
-
-```
-brew bundle
-```
-
-### Testing on Docker
+### Test on Docker
 
 ```
 docker build -t chocoby/dotfiles .
