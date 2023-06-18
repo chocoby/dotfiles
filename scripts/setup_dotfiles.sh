@@ -17,5 +17,5 @@ done
 
 for file in $PWD/bin/*
 do
-    ln -sfnv $file /usr/local/bin
+    ln -sfnv $file $HOME/local/bin
 done
