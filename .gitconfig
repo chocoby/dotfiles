@@ -29,3 +29,12 @@
 
 [pull]
     rebase = false
+[init]
+	defaultBranch = main
+[core]
+	ignorecase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

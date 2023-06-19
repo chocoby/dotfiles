@@ -19,3 +19,6 @@
 # dotenv
 .env
 .envrc
+
+# NPM / Yarn
+yarn-error.log
