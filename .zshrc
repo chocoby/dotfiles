@@ -154,6 +154,15 @@ alias pgadd='peco-git-status-add'
 alias pdrm='peco-rm-docker-ps'
 alias pdrmi='peco-rm-docker-images'
 
+# Kubernetes
+alias k='kubectl'
+
+# Docker
+alias dc='docker compose'
+
+# Terraform
+alias tf='terraform'
+
 #--------------------------------------
 # Prompt
 #--------------------------------------
