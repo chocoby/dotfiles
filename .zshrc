@@ -79,6 +79,10 @@ add-zsh-hook chpwd load-nvmrc
 # Rust
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 # Android
 export ANDROID_SDK=$HOME/Library/Android/sdk
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
