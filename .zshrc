@@ -62,7 +62,15 @@ export PATH=$PATH:$GOPATH/bin
 # Node
 function load-nvm () {
   export NVM_DIR="$HOME/.nvm"
-  [[ -s $(brew --prefix nvm)/nvm.sh ]] && source $(brew --prefix nvm)/nvm.sh
+
+  case "${OSTYPE}" in
+    darwin*)
+      [[ -s $(brew --prefix nvm)/nvm.sh ]] && source $(brew --prefix nvm)/nvm.sh
+      ;;
+    linux*)
+      [[ -s ~/.nvm/nvm.sh ]] && source ~/.nvm/nvm.sh
+      ;;
+  esac
 }
 
 load-nvmrc() {
