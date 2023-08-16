@@ -22,3 +22,6 @@
 
 # NPM / Yarn
 yarn-error.log
+
+# Bash
+.bash_history
