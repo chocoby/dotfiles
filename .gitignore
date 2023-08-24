@@ -6,3 +6,5 @@
 .vim/plugged
 .zsh/.zsh_history
 tmp/
+
+.config/ngrok
