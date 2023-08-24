@@ -5,7 +5,7 @@ https://github.com/chocoby/dotfiles
 ## Install
 
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/chocoby/dotfiles/master/scripts/install)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/chocoby/dotfiles/main/scripts/install)"
 ```
 
 ## Usage

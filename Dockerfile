@@ -42,7 +42,7 @@ ENV \
 USER user
 
 RUN \
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/chocoby/dotfiles/master/scripts/install)"
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/chocoby/dotfiles/main/scripts/install)"
 
 RUN \
   mkdir -p $HOME/local/src && \
