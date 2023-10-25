@@ -5,7 +5,7 @@
 export LANG=en_US.UTF-8
 
 # PATH
-PATH=$HOME/local/bin:/usr/local/bin:/sbin:/usr/bin:$PATH
+PATH=$HOME/local/bin:$HOME/.local/bin:/usr/local/bin:/sbin:/usr/bin:$PATH
 PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 if [ "$(uname -m)" = "arm64" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
