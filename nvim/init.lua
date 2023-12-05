@@ -30,6 +30,21 @@ require('lazy').setup({
       vim.cmd.colorscheme 'jellybeans-nvim'
     end,
   },
+  {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
+  {
+    "cappyzawa/trim.nvim",
+    opts = {
+      trim_on_write = true,
+      trim_trailing = true,
+    }
+  },
 })
 
 -- [[ Setting options ]]
@@ -96,3 +111,11 @@ vim.keymap.set('n', 'T', ':tabclose<CR>')
 
 -- Editor
 vim.keymap.set('i', ',', ',<Space>', opts)
+
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fbb', ":Telescope file_browser<CR>", { noremap = true })
