@@ -2,6 +2,8 @@
   "jellybeans-nvim": { "branch": "main", "commit": "f77b75443adf6461ded30de0243f49771f933d06" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lush.nvim": { "branch": "main", "commit": "966aad1accd47fa11fbe2539234f81f678fef2de" },
+  "nvim-treesitter": { "branch": "master", "commit": "c203884c80ef31b6a3993398734fbe008addcb27" },
+  "nvim-treesitter-textobjects": { "branch": "master", "commit": "ec1c5bdb3d87ac971749fa6c7dbc2b14884f1f6a" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "98101b22402cd6d1c7e9a7e0c4718bfc98cb1625" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
