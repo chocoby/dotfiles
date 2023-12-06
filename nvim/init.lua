@@ -46,6 +46,24 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
   {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    config = function()
+      require("nvim-tree").setup {
+        sort =  {
+          sorter = 'case_sensitive',
+        },
+        renderer = {
+          group_empty = true,
+        },
+        filters = {
+          dotfiles = true,
+        },
+      }
+    end,
+  },
+  {
     "cappyzawa/trim.nvim",
     opts = {
       trim_on_write = true,
@@ -127,6 +145,10 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fbb', ":Telescope file_browser<CR>", { noremap = true })
 
+-- nvim-tree
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
+
+-- [[ Plugins ]]
 -- Treesitter
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
