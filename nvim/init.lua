@@ -58,7 +58,8 @@ require('lazy').setup({
           group_empty = true,
         },
         filters = {
-          dotfiles = true,
+          dotfiles = false,
+          git_ignored = false,
         },
       }
     end,
@@ -190,7 +191,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fbb', ":Telescope file_browser<CR>", { noremap = true })
 
 -- nvim-tree
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
+vim.keymap.set('n', '<F2>', ':NvimTreeToggle<CR>', { silent = true })
 
 -- LSP
 vim.keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
