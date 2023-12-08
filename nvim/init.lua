@@ -129,6 +129,7 @@ require('lazy').setup({
       trim_trailing = true,
     }
   },
+  { "RRethy/nvim-treesitter-endwise" },
 })
 
 -- [[ Setting options ]]
@@ -251,6 +252,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- [[ Plugins ]]
 -- [[ Autoclose ]]
 require("autoclose").setup()
+
+-- [[ nvim-treesitter-endwise ]]
+require('nvim-treesitter.configs').setup {
+  endwise = {
+    enable = true,
+  },
+}
 
 -- [[ Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
