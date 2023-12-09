@@ -132,6 +132,15 @@ require('lazy').setup({
   },
   { 'numToStr/Comment.nvim', opts = {} },
   { 'ggandor/leap.nvim' },
+  {
+    'kylechui/nvim-surround',
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+      })
+    end
+  },
 })
 
 -- [[ Setting options ]]
