@@ -131,6 +131,7 @@ require('lazy').setup({
     }
   },
   { 'numToStr/Comment.nvim', opts = {} },
+  { 'ggandor/leap.nvim' },
 })
 
 -- [[ Setting options ]]
@@ -457,3 +458,6 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+-- [[ Leap.nvim ]]
+require('leap').add_default_mappings()
