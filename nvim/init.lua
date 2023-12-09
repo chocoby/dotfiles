@@ -57,6 +57,7 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  { "RRethy/nvim-treesitter-endwise" },
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
@@ -129,7 +130,7 @@ require('lazy').setup({
       trim_trailing = true,
     }
   },
-  { "RRethy/nvim-treesitter-endwise" },
+  { 'numToStr/Comment.nvim', opts = {} },
 })
 
 -- [[ Setting options ]]
