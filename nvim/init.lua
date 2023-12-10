@@ -141,6 +141,15 @@ require('lazy').setup({
       })
     end
   },
+  {
+    "nvim-neotest/neotest",
+    lazy = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "olimorris/neotest-rspec",
+    }
+  },
 })
 
 -- [[ Setting options ]]
@@ -471,3 +480,10 @@ mason_lspconfig.setup_handlers {
 
 -- [[ Leap.nvim ]]
 require('leap').add_default_mappings()
+
+-- [[ Neotest ]]
+require("neotest").setup({
+  adapters = {
+    require("neotest-rspec")
+  },
+})
