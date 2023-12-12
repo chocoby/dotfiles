@@ -150,6 +150,7 @@ require('lazy').setup({
       "olimorris/neotest-rspec",
     }
   },
+  { "github/copilot.vim" },
 })
 
 -- [[ Setting options ]]
