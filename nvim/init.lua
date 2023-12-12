@@ -271,6 +271,27 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
 )
 
+-- neotest
+vim.keymap.set('n', '<leader>rc', function ()
+  require("neotest").run.run()
+end, { desc = 'Run nearest test' })
+vim.keymap.set('n', '<leader>rr', function ()
+  require("neotest").run.run_last()
+end, { desc = 'Run last test' })
+vim.keymap.set('n', '<leader>rf', function ()
+  require("neotest").run.run(vim.fn.expand("%"))
+end, { desc = 'Run current file' })
+vim.keymap.set('n', '<leader>rs', function ()
+  require('neotest').summary.toggle()
+end, { desc = 'Display summary' })
+vim.keymap.set('n', '<leader>ro', function ()
+  require('neotest').output.open({ enter = true })
+end, { desc = 'Display output' })
+vim.keymap.set('n', '<leader>rp', function ()
+  require('neotest').output_panel.toggle()
+end, { desc = 'Display output panel' })
+
+
 -- [[ Plugins ]]
 -- [[ Autoclose ]]
 require("autoclose").setup()
@@ -485,6 +506,29 @@ require('leap').add_default_mappings()
 -- [[ Neotest ]]
 require("neotest").setup({
   adapters = {
-    require("neotest-rspec")
-  },
+    require("neotest-rspec")({
+      rspec_cmd = function()
+        -- FIXME: This is a hack to get the rspec command to work with docker compose
+        return vim.tbl_flatten({
+          "docker",
+          "compose",
+          "exec",
+          "-i",
+          "rails",
+          "rspec",
+          "-f",
+          "json",
+          "-o",
+          "log/rspec.output",
+        })
+      end,
+
+      transform_spec_path = function(path)
+        local prefix = require('neotest-rspec').root(path)
+        return string.sub(path, string.len(prefix) + 2, -1)
+      end,
+
+      results_path = "log/rspec.output"
+    }),
+  }
 })
