@@ -158,7 +158,7 @@ vim.wo.number = true
 vim.wo.signcolumn = 'yes'
 vim.opt.mouse = 'a'
 vim.opt.breakindent = true
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
@@ -212,8 +212,8 @@ vim.keymap.set('n', '<leader>sw', '<C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-
 vim.keymap.set('n', '<leader>st', '<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><')
 
 -- Tab
-vim.keymap.set('n', '<F5>', ':tabNext<CR>')
-vim.keymap.set('n', '<F6>', ':tabprevious<CR>')
+vim.keymap.set('n', '<F5>', ':tabprevious<CR>')
+vim.keymap.set('n', '<F6>', ':tabnext<CR>')
 vim.keymap.set('n', 't', ':tabnew<CR>')
 vim.keymap.set('n', 'T', ':tabclose<CR>')
 
