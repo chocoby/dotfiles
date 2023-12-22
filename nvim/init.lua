@@ -102,10 +102,10 @@ require('lazy').setup({
           end,
         },
         sources = {
-          { name = "copilot" },
-          { name = "nvim_lsp" },
+          { name = "copilot", group_index = 2 },
+          { name = "nvim_lsp", group_index = 2 },
+          { name = "path", group_index = 2 },
           { name = "buffer" },
-          { name = "path" },
         },
         mapping = cmp.mapping.preset.insert({
           ["<Tab>"] = vim.schedule_wrap(function(fallback)
@@ -174,7 +174,10 @@ require('lazy').setup({
   {
     "zbirenbaum/copilot-cmp",
     config = function ()
-      require("copilot_cmp").setup()
+      require("copilot_cmp").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
     end
   }
 })
