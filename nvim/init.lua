@@ -119,7 +119,7 @@ require('lazy').setup({
           ["<C-n>"] = cmp.mapping.select_next_item(),
           ['<C-l>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm { select = true },
+          ["<CR>"] = cmp.mapping.confirm { select = false },
         }),
         experimental = {
           ghost_text = true,
@@ -497,7 +497,9 @@ end
 require('mason').setup()
 require('mason-lspconfig').setup()
 local servers = {
-  solargraph = {},
+  solargraph = {
+    filetypes = { 'ruby' },
+  },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
