@@ -179,7 +179,8 @@ require('lazy').setup({
         panel = { enabled = false },
       })
     end
-  }
+  },
+  { "vim-ruby/vim-ruby" }
 })
 
 -- [[ Setting options ]]
