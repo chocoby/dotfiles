@@ -96,6 +96,9 @@ nnoremap Y y$
 nnoremap Q <Nop>
 map <C-w><C-w> <ESC>:w<CR>
 
+nnoremap ; :
+nnoremap : ;
+
 imap <C-h> <BS>
 cmap <C-h> <BS>
 
