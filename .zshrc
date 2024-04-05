@@ -182,6 +182,9 @@ alias dc='docker compose'
 # Terraform
 alias tf='terraform'
 
+# ripgrep
+alias rga='rg --hidden --no-ignore'
+
 #--------------------------------------
 # Prompt
 #--------------------------------------
