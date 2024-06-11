@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mkdir -p $PWD/.config
-
 for dir in $PWD/.config/*
 do
     ln -sfnv $dir $HOME/.config/
