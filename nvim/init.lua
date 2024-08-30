@@ -376,10 +376,9 @@ vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 -- Treesitter
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
-    ensure_installed = { 'go', 'lua', 'python', 'tsx', 'javascript', 'typescript', 'ruby', 'bash' },
+    ensure_installed = { 'go', 'lua', 'tsx', 'javascript', 'typescript', 'ruby', 'bash' },
 
     highlight = { enable = true },
-    indent = { enable = true },
     incremental_selection = {
       enable = true,
       keymaps = {
