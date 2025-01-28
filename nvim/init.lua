@@ -181,7 +181,26 @@ require('lazy').setup({
       })
     end
   },
-  { "vim-ruby/vim-ruby" }
+  { "vim-ruby/vim-ruby" },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = function()
+      require("ibl").setup({
+        indent = {
+          char = "|",
+        },
+        scope = {
+          enabled = true,
+          show_start = true,
+          show_end = true,
+          highlight = "Function"
+        }
+      })
+    end
+  }
 })
 
 -- [[ Setting options ]]
