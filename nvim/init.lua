@@ -565,7 +565,11 @@ require("neotest").setup({
         return string.sub(path, string.len(prefix) + 2, -1)
       end,
 
-      results_path = "log/rspec.output"
+      results_path = "log/rspec.output",
+      formatter = "json"
     }),
-  }
+  },
+  output_panel = {
+    open = 'botright vsplit | resize 80'
+  },
 })
