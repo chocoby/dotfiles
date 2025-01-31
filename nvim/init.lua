@@ -545,19 +545,29 @@ require("neotest").setup({
   adapters = {
     require("neotest-rspec")({
       rspec_cmd = function()
-        -- FIXME: This is a hack to get the rspec command to work with docker compose
-        return vim.tbl_flatten({
+        -- This is a hack to get the RSpec command to work with Docker Compose.
+        -- Read the container name for running RSpec (default is `rails`).
+        -- To customize, create a `neotest.conf` file in the `tmp` directory of each project and set the container name (e.g., `web`).
+        local container_name = "rails"
+        local file = io.open("tmp/neotest.conf", "r")
+        if file then
+          container_name = file:read("*all")
+          container_name = container_name:gsub("[\n\r]", "")
+          file:close()
+        end
+
+        return vim.iter({
           "docker",
           "compose",
           "exec",
           "-i",
-          "rails",
+          container_name,
           "rspec",
           "-f",
           "json",
           "-o",
           "log/rspec.output",
-        })
+        }):flatten():totable()
       end,
 
       transform_spec_path = function(path)
@@ -570,6 +580,6 @@ require("neotest").setup({
     }),
   },
   output_panel = {
-    open = 'botright vsplit | resize 80'
+    open = 'botright vsplit'
   },
 })
