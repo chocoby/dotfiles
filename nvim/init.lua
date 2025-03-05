@@ -102,7 +102,6 @@ require('lazy').setup({
           end,
         },
         sources = {
-          { name = "copilot", group_index = 2 },
           { name = "nvim_lsp", group_index = 2 },
           { name = "path", group_index = 2 },
           { name = "buffer" },
@@ -163,23 +162,6 @@ require('lazy').setup({
       "antoinemadec/FixCursorHold.nvim",
       "olimorris/neotest-rspec",
     }
-  },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({})
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function ()
-      require("copilot_cmp").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
-    end
   },
   { "vim-ruby/vim-ruby" },
   {
