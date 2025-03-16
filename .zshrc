@@ -6,7 +6,8 @@ export LANG=en_US.UTF-8
 
 # PATH
 PATH=$HOME/local/bin:$HOME/.local/bin:/usr/local/bin:/sbin:/usr/bin:$PATH
-PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
+
+# Homebrew
 if [ "$(uname -m)" = "arm64" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
   export PATH="/opt/homebrew/bin:$PATH"
@@ -15,14 +16,8 @@ elif [ "$(uname -m)" = "darwin" ]; then
 fi
 export PATH
 
-export MANPATH=/usr/local/man:/usr/share/man
-
 # Editor
 export EDITOR=vim
-
-# ls
-export CLICOLOR=1
-export LSCOLORS=DxGxcxdxCxegedabagacad
 
 # less
 export LESS='-R'
@@ -39,6 +34,7 @@ if builtin command -v direnv > /dev/null; then
 fi
 
 # Ruby
+PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 if builtin command -v rbenv > /dev/null; then
   _evalcache rbenv init -
 fi
@@ -87,14 +83,6 @@ add-zsh-hook chpwd load-nvmrc
 # Rust
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-# SDKMAN
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# Android
-export ANDROID_SDK=$HOME/Library/Android/sdk
-export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
-
 # Visual Studio Code
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 
@@ -121,13 +109,6 @@ alias p='popd'
 if [[ -s "$HOME/local/bin/vim" ]]; then
   alias vim="$HOME/local/bin/vim"
 fi
-
-# tmux
-case "${OSTYPE}" in
-  linux*)
-    alias tmux='TERM=screen-256color tmux'
-    ;;
-esac
 
 alias tm='tmux a -t'
 alias tml='tmux list-sessions'
@@ -175,9 +156,6 @@ alias pgadd='peco-git-status-add'
 
 alias pdrm='peco-rm-docker-ps'
 alias pdrmi='peco-rm-docker-images'
-
-# Kubernetes
-alias k='kubectl'
 
 # Docker
 alias dc='docker compose'
