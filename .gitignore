@@ -1,10 +1,17 @@
-.bundle/cache
+# tmux
 .tmux/plugins
 .tmux/resurrect
+
+# vim
 .vim/.netrwhist
 .vim/autoload
 .vim/plugged
-.zsh/.zsh_history
-tmp/
+nvim/lazy-lock.json
 
+# zsh
+.zsh/.zsh_history
+
+# other
+.bundle/cache
 .config/ngrok
+tmp/
