@@ -5,6 +5,7 @@ https://github.com/chocoby/dotfiles
 ## Install
 
 ```
+curl -sS https://starship.rs/install.sh | sh
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chocoby/dotfiles/main/scripts/install)"
 ```
 

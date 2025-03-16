@@ -191,60 +191,7 @@ alias rga='rg --hidden --no-ignore'
 #--------------------------------------
 # Prompt
 #--------------------------------------
-autoload -Uz colors
-colors
-# 色を %{fg[green]%} のように指定する
-setopt prompt_subst
-
-# root の場合は # / その他は % でプロンプトを表示
-case ${UID} in
-  0)
-    PROMPT="%{$fg[red]%}#%{$reset_color%} "
-    PROMPT2="%{$fg[red]%}%{$reset_color%} "
-    SPROMPT="%{$fg[red]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-      PROMPT="%{$fg[red]%}${HOST%%.*} $PROMPT"
-    ;;
-  *)
-    PROMPT="%{$fg[green]%}%%%{$reset_color%} "
-    PROMPT2="%{$fg[green]%}%{$reset_color%} "
-    SPROMPT="%{$fg[green]%}%R -> %r? [n, y, a, e]:%{$reset_color%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-      PROMPT="%{$fg[green]%}${HOST%%.*} $PROMPT"
-    ;;
-esac
-
-# vcs_info を表示
-# http://d.hatena.ne.jp/tarao/20100114/1263436661
-if [[ $ZSH_VERSION == (<5->|4.<4->|4.3.<10->)* ]]; then
-  autoload -Uz vcs_info
-  zstyle ':vcs_info:*' max-exports 4
-  zstyle ':vcs_info:*' enable git
-  zstyle ':vcs_info:git:*' check-for-changes true
-  zstyle ':vcs_info:git:*' stagedstr "!"
-  zstyle ':vcs_info:git:*' unstagedstr "+"
-  zstyle ':vcs_info:git:*' formats '%R' '%S' '%b' '%c%u'
-  zstyle ':vcs_info:git:*' actionformats '%R' '%S' '%b|%a' '%c%u'
-  precmd_vcs_info() {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    repos=`print -nD "$vcs_info_msg_0_"`
-    [[ -n "$repos" ]] && psvar[2]="$repos"
-    [[ -n "$vcs_info_msg_1_" ]] && psvar[3]="$vcs_info_msg_1_"
-    [[ -n "$vcs_info_msg_2_" ]] && psvar[1]="$vcs_info_msg_2_"
-    [[ -n "$vcs_info_msg_3_" ]] && psvar[4]="$vcs_info_msg_3_"
-  }
-  typeset -ga precmd_functions
-  precmd_functions+=precmd_vcs_info
-
-  local dirs='[%F{yellow}%3(v|%32<..<%3v%<<|%60<..<%~%<<)%f]'
-  local vcs='%3(v|[%10<\<<%F{yellow}%2v%f%<<@%F{blue}%1v%f%4(v|:%4v|)]|)'
-  local datetime="[%D{%m/%d %T}]"
-  RPROMPT="$dirs$vcs$datetime"
-else
-  # 右プロンプトにカレントディレクトリを表示
-  RPROMPT=" [%~]"
-fi
+eval "$(starship init zsh)"
 
 #--------------------------------------
 # History
