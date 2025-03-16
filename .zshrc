@@ -25,49 +25,8 @@ export LESS='-R'
 # GPG
 export GPG_TTY=$(tty)
 
-# evalcache
-source $HOME/.zsh/evalcache/evalcache.plugin.zsh
-
-# direnv
-if builtin command -v direnv > /dev/null; then
-  _evalcache direnv hook zsh
-fi
-
-# Ruby
-PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
-if builtin command -v rbenv > /dev/null; then
-  _evalcache rbenv init -
-fi
-
-# Python
-if builtin command -v pyenv > /dev/null; then
-  _evalcache pyenv init -
-fi
-
-# Node
-function load-nvm () {
-  export NVM_DIR="$HOME/.nvm"
-
-  case "${OSTYPE}" in
-    darwin*)
-      [[ -s $(brew --prefix nvm)/nvm.sh ]] && source $(brew --prefix nvm)/nvm.sh
-      ;;
-    linux*)
-      [[ -s ~/.nvm/nvm.sh ]] && source ~/.nvm/nvm.sh
-      ;;
-  esac
-}
-
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    if ! type nvm >/dev/null; then
-      load-nvm
-    fi
-    nvm use
-  fi
-}
-autoload -Uz add-zsh-hook
-add-zsh-hook chpwd load-nvmrc
+# mise
+eval "$(mise activate zsh)"
 
 # Rust
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"

@@ -1,3 +1,0 @@
-[submodule ".zsh/evalcache"]
-	path = .zsh/evalcache
-	url = https://github.com/mroth/evalcache.git
