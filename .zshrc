@@ -95,6 +95,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export ANDROID_SDK=$HOME/Library/Android/sdk
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
+# Visual Studio Code
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
 
 #--------------------------------------
 # Alias
