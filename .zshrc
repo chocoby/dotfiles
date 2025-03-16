@@ -44,17 +44,6 @@ if builtin command -v pyenv > /dev/null; then
   _evalcache pyenv init -
 fi
 
-# Golang
-if [[ -s "$HOME/local/go" ]]; then
-  export GOROOT=$HOME/local/go
-  export PATH=$PATH:$GOROOT/bin
-fi
-
-export GODEBUG=asyncpreemptoff=1
-export GOPATH=$HOME/.go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOPATH/bin
-
 # Node
 function load-nvm () {
   export NVM_DIR="$HOME/.nvm"
