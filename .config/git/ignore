@@ -25,7 +25,3 @@ yarn-error.log
 
 # Bash
 .bash_history
-
-# AI assistant
-.clinerules
-.cursor/
