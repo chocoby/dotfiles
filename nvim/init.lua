@@ -220,7 +220,6 @@ vim.opt.clipboard = "unnamedplus"
 -- [[ Keymap ]]
 vim.keymap.set('n', '<Space>', 'jzz', { noremap = true, silent = true })
 vim.keymap.set('i', 'jj', '<ESC>', { silent=true })
-vim.keymap.set('n', ';', ':', { silent=true })
 vim.keymap.set('n', '<Esc><Esc>', ':<C-u>set nohlsearch<Return>')
 
 -- Window
