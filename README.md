@@ -11,7 +11,6 @@ curl https://mise.run | sh
 
 # Mac
 brew install mise starship
-brew install mise
 
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chocoby/dotfiles/main/scripts/install)"
 ```
