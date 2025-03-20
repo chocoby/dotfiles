@@ -17,7 +17,7 @@ fi
 export PATH
 
 # Editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # less
 export LESS='-R'
