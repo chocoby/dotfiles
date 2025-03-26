@@ -198,5 +198,8 @@ stty stop undef
 # peco
 for f (~/.zsh/peco-sources/*) source "${f}"
 
+# fzf
+for f (~/.zsh/fzf-sources/*) source "${f}"
+
 # git
 for f (~/.zsh/git-scripts/*) source "${f}"
