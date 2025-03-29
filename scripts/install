@@ -1,9 +1,0 @@
-#!/bin/bash
-
-DOTFILES_DIR=$HOME/src/github.com/chocoby/dotfiles
-DOTFILES_REPO=https://github.com/chocoby/dotfiles.git
-
-mkdir -p $DOTFILES_DIR
-git clone $DOTFILES_REPO $DOTFILES_DIR
-cd $DOTFILES_DIR
-make install

@@ -19,7 +19,7 @@ set -g window-status-current-style fg=black,bg=white
 # Key binding
 setw -g mode-keys vi
 
-bind r source-file ~/.tmux.conf
+bind r source-file ~/.config/tmux/tmux.conf
 bind : command-prompt
 
 bind c new-window -c "#{pane_current_path}"
@@ -36,8 +36,17 @@ bind > resize-pane -R 1
 bind - resize-pane -D 1
 bind + resize-pane -U 1
 
-if-shell 'test "$(uname)" = "Linux"'  'source ~/.tmux/.tmux.linux.conf'
-if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux/.tmux.mac.conf'
+{{ if eq .chezmoi.os "linux" -}}
+{{ if .chezmoi.kernel.osrelease | lower | contains "microsoft" -}}
+# Avoid strange characters on WSL2
+# https://github.com/microsoft/WSL/issues/5931
+set -sg escape-time 1
+
+# Key binding
+# Use clipboard on WSL2
+bind -T copy-mode-vi Enter send -X copy-pipe-and-cancel "iconv -t utf16 | clip.exe"
+{{ end -}}
+{{ end -}}
 
 # Plugins
 set -g @plugin 'tmux-plugins/tpm'
