@@ -1,4 +1,2 @@
 [tools]
-go = "latest"
 node = "22"
-rust = "latest"
