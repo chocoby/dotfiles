@@ -54,9 +54,7 @@ alias la='ll -a'
 alias p='popd'
 
 # vim
-if [[ -s "$HOME/local/bin/vim" ]]; then
-  alias vim="$HOME/local/bin/vim"
-fi
+alias vim='nvim'
 
 alias tm='tmux a -t'
 alias tml='tmux list-sessions'
