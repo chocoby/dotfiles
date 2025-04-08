@@ -1,4 +1,4 @@
-ghq-fzf_change_directory() {
+fzf_change_ghq_directory() {
   local destination_dir=$(echo "$(ghq list --full-path)" | fzf)
   if [ -n "$destination_dir" ]; then
     BUFFER="cd $destination_dir"
@@ -6,6 +6,6 @@ ghq-fzf_change_directory() {
   fi
 }
 
-zle -N ghq-fzf_change_directory
-bindkey '^]' ghq-fzf_change_directory
-bindkey 'C-]' ghq-fzf_change_directory
+zle -N fzf_change_ghq_directory
+bindkey '^]' fzf_change_ghq_directory
+bindkey 'C-]' fzf_change_ghq_directory

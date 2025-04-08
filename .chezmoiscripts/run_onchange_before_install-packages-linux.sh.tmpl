@@ -17,14 +17,6 @@ rm -rf "${TEMP_DIR}"
 # mise
 curl -sS https://mise.run | sh
 
-# peco
-TEMP_DIR=$(mktemp -d)
-PECO_URL="https://github.com/peco/peco/releases/latest/download/peco_linux_amd64.tar.gz"
-curl -L -o "${TEMP_DIR}/peco.tar.gz" "${PECO_URL}"
-tar zxvf "${TEMP_DIR}/peco.tar.gz" -C "${TEMP_DIR}"
-mv "${TEMP_DIR}/peco_linux_amd64/peco" ~/.local/bin/
-rm -rf "${TEMP_DIR}"
-
 # starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y -b ~/.local/bin
 
