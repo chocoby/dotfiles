@@ -31,10 +31,6 @@ eval "$(mise activate zsh)"
 # Rust
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-# Visual Studio Code
-[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
-
-
 #--------------------------------------
 # Alias
 #--------------------------------------
