@@ -4,18 +4,6 @@
 # LANG
 export LANG=en_US.UTF-8
 
-# PATH
-PATH=$HOME/local/bin:$HOME/.local/bin:/usr/local/bin:/sbin:/usr/bin:$PATH
-
-# Homebrew
-if [ "$(uname -m)" = "arm64" ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  export PATH="/opt/homebrew/bin:$PATH"
-elif [ "$(uname -m)" = "darwin" ]; then
-  eval "$(/usr/local/bin/brew shellenv)"
-fi
-export PATH
-
 # Editor
 export EDITOR=nvim
 
@@ -25,11 +13,6 @@ export LESS='-R'
 # GPG
 export GPG_TTY=$(tty)
 
-# mise
-eval "$(mise activate zsh)"
-
-# Rust
-[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 #--------------------------------------
 # Alias
