@@ -76,7 +76,7 @@ alias gcpo='git-co-pull-origin'
 alias gcpu='git-co-pull-upstream'
 
 # fzf
-alias pgco='fzf-git-checkout-branch'
+alias pgco='fzf_git_checkout_branch'
 
 # Docker
 alias dc='docker compose'
