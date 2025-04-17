@@ -234,9 +234,6 @@ vim.keymap.set('n', '<F6>', ':tabnext<CR>')
 vim.keymap.set('n', 't', ':tabnew<CR>')
 vim.keymap.set('n', 'T', ':tabclose<CR>')
 
--- Editor
-vim.keymap.set('i', ',', ',<Space>')
-
 -- Telescope
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
