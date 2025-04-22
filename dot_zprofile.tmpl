@@ -2,6 +2,9 @@
 PATH=$HOME/local/bin:$HOME/.local/bin:$PATH
 
 {{ if eq .chezmoi.os "darwin" -}}
+# Windsurf
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 {{- end }}
