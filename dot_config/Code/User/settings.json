@@ -1,0 +1,26 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "redhat.telemetry.enabled": false,
+  "vim.leader": ",",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<Leader>", "r"],
+      "commands": [
+        {
+          "args": "rspec here",
+          "command": "workbench.action.tasks.runTask"
+        }
+      ]
+    }
+  ],
+  "window.commandCenter": 1,
+  "workbench.colorTheme": "Default Dark Modern"
+}
