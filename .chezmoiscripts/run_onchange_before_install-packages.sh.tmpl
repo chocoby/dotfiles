@@ -4,6 +4,8 @@
 {{ if not $codespaces -}}
 #!/bin/bash
 
+set -ex
+
 # Tmux Plugin Manager
 mkdir -p ~/.tmux/plugins
 
@@ -11,6 +13,7 @@ TEMP_DIR=$(mktemp -d)
 TPM_URL="https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
 curl -L -o "${TEMP_DIR}/tpm.tar.gz" "${TPM_URL}"
 tar zxvf "${TEMP_DIR}/tpm.tar.gz" -C "${TEMP_DIR}"
+rm -r ~/.tmux/plugins/tpm
 mv "${TEMP_DIR}/tpm-master" ~/.tmux/plugins/tpm
 rm -rf "${TEMP_DIR}"
 

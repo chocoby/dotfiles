@@ -1,9 +1,12 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
+set -ex
+
 brew bundle --file=/dev/stdin <<EOF
 brew "fzf"
 brew "ghq"
+brew "git"
 brew "mise"
 brew "ripgrep"
 brew "starship"
