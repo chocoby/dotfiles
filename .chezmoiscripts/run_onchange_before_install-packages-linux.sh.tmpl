@@ -5,9 +5,10 @@ set -ex
 
 sudo apt update && \
 sudo apt install -y \
+    fzf \
     git \
-    ripgrep \
-    fzf
+    jq \
+    ripgrep
 
 # ghq
 TEMP_DIR=$(mktemp -d)
