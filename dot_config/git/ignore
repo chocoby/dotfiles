@@ -25,3 +25,6 @@ yarn-error.log
 
 # Bash
 .bash_history
+
+# Claude
+**/.claude/settings.local.json

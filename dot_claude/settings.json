@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "List(*)",
+      "Bash(docker compose:*)",
+      "Bash(find:*)",
+      "Bash(gh issue create:*)",
+      "Bash(gh issue edit:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(git *)",
+      "Bash(grep:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": []
+  }
+}
