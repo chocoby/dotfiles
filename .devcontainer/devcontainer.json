@@ -1,16 +1,15 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "Ubuntu",
-	"image": "mcr.microsoft.com/devcontainers/base:jammy",
-	"postCreateCommand": "./install.sh",
-	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": "true",
-			"installOhMyZsh": "false",
-			"configureZshAsDefaultShell": "true"
-		}
-	},
-	"customizations": {
-	}
+  "name": "Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "postCreateCommand": "./install.sh",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "true",
+      "installOhMyZsh": "false",
+      "configureZshAsDefaultShell": "true"
+    }
+  },
+  "customizations": {}
 }

@@ -1,7 +1,3 @@
-{{- $remoteContainers := env "REMOTE_CONTAINERS" | not | not -}}
-{{- $codespaces := env "CODESPACES" | not | not -}}
-{{ if not $remoteContainers -}}
-{{ if not $codespaces -}}
 #!/bin/bash
 
 set -ex
@@ -13,7 +9,7 @@ TEMP_DIR=$(mktemp -d)
 TPM_URL="https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
 curl -L -o "${TEMP_DIR}/tpm.tar.gz" "${TPM_URL}"
 tar zxvf "${TEMP_DIR}/tpm.tar.gz" -C "${TEMP_DIR}"
-rm -r ~/.tmux/plugins/tpm
+rm -rf ~/.tmux/plugins/tpm
 mv "${TEMP_DIR}/tpm-master" ~/.tmux/plugins/tpm
 rm -rf "${TEMP_DIR}"
 
@@ -23,5 +19,5 @@ $TPM_PATH/bin/install_plugins || true
 $TPM_PATH/bin/clean_plugins
 $TPM_PATH/bin/update_plugins all
 
-{{- end -}}
-{{- end -}}
+# Neovim
+nvim --headless "+Lazy! update" +qa

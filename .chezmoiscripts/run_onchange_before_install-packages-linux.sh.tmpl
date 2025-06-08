@@ -8,7 +8,8 @@ sudo apt install -y \
     fzf \
     git \
     jq \
-    ripgrep
+    ripgrep \
+    tmux
 
 # ghq
 TEMP_DIR=$(mktemp -d)
@@ -20,6 +21,25 @@ rm -rf "${TEMP_DIR}"
 
 # mise
 curl -sS https://mise.run | sh
+
+# Neovim
+rm -f ~/local/bin/nvim
+rm -f ~/local/AppImage/nvim.appimage
+rm -rf ~/local/AppImage/nvim
+
+mkdir -p ~/local/AppImage
+cd ~/local/AppImage
+{{ if eq .chezmoi.arch "amd64" -}}
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+mv nvim-linux-x86_64.appimage nvim.appimage
+{{ else if eq .chezmoi.arch "arm64" -}}
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.appimage
+mv nvim-linux-arm64.appimage nvim.appimage
+{{ end -}}
+chmod u+x nvim.appimage
+./nvim.appimage --appimage-extract
+mv squashfs-root nvim
+ln -s ~/local/AppImage/nvim/usr/bin/nvim ~/.local/bin/nvim
 
 # starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y -b ~/.local/bin
