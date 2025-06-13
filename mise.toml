@@ -1,0 +1,3 @@
+[tasks.nvim-update]
+description = "Update Neovim plugins using Lazy"
+run = "nvim --headless '+Lazy! update' +qa"
