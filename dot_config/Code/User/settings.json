@@ -10,6 +10,7 @@
   "files.trimTrailingWhitespace": true,
   "redhat.telemetry.enabled": false,
   "vim.leader": ",",
+  "vim.easymotion": true,
   "vim.normalModeKeyBindings": [
     {
       "before": ["<Leader>", "r"],
@@ -22,5 +23,17 @@
     }
   ],
   "window.commandCenter": 1,
-  "workbench.colorTheme": "Default Dark Modern"
+  "workbench.colorTheme": "Default Dark Modern",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "files.trimTrailingWhitespace": false
+  }
 }
