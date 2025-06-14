@@ -182,6 +182,15 @@ require('lazy').setup({
         }
       })
     end
+  },
+  {
+    "nvim-pack/nvim-spectre",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      keys = {
+        { "<leader>S", "<cmd>Spectre<CR>", desc = "Toggle Spectre (file-wise search and replace)" },
+      }
+    }
   }
 })
 
