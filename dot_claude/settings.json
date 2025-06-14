@@ -1,17 +1,32 @@
 {
   "permissions": {
     "allow": [
-      "List(*)",
-      "Bash(docker compose:*)",
+      "Bash(docker compose build:*)",
+      "Bash(docker compose down:*)",
+      "Bash(docker compose logs:*)",
+      "Bash(docker compose ps:*)",
+      "Bash(docker compose run:*)",
+      "Bash(docker compose up:*)",
       "Bash(find:*)",
-      "Bash(gh issue create:*)",
-      "Bash(gh issue edit:*)",
+      "Bash(gh api:*)",
+      "Bash(gh issue view:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr view:*)",
-      "Bash(git *)",
+      "Bash(git add:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(git rebase:*)",
+      "Bash(git status:*)",
       "Bash(grep:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(sed:*)",
+
+      "List(*)"
     ],
     "deny": []
   }
