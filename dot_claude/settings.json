@@ -3,6 +3,7 @@
     "allow": [
       "Bash(docker compose build:*)",
       "Bash(docker compose down:*)",
+      "Bash(docker compose exec:*)",
       "Bash(docker compose logs:*)",
       "Bash(docker compose ps:*)",
       "Bash(docker compose run:*)",
@@ -20,6 +21,7 @@
       "Bash(git fetch:*)",
       "Bash(git pull:*)",
       "Bash(git rebase:*)",
+      "Bash(git reset:*)",
       "Bash(git status:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
