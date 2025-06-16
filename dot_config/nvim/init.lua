@@ -191,6 +191,9 @@ require('lazy').setup({
         { "<leader>S", "<cmd>Spectre<CR>", desc = "Toggle Spectre (file-wise search and replace)" },
       }
     }
+  },
+  {
+    "lewis6991/gitsigns.nvim"
   }
 })
 
