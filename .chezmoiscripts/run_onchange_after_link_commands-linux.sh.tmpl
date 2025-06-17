@@ -8,6 +8,7 @@ TEMP_DIR=$(mktemp -d)
 git clone --depth=1 https://github.com/git/git.git "${TEMP_DIR}"
 cd "${TEMP_DIR}/contrib/diff-highlight"
 make
+rm -f ~/.local/bin/diff-highlight
 mv diff-highlight ~/.local/bin/diff-highlight
 rm -rf "${TEMP_DIR}"
 {{ end -}}
