@@ -2,6 +2,10 @@
 description = "Install and update packages"
 run = "chezmoi state delete-bucket --bucket=entryState && chezmoi update"
 
+[tasks.system-update]
+description = "Update system packages"
+run = "bash ~/.local/scripts/system-update.sh"
+
 [tasks.nvim-update]
 description = "Update Neovim plugins using Lazy"
 run = "nvim --headless '+Lazy! update' +qa"

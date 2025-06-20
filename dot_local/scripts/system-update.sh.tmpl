@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+set -o pipefail
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+brew update && brew upgrade
+
+{{ else if eq .chezmoi.os "linux" -}}
+
+{{ $osRelease := (output "bash" "-c" "source /etc/os-release && echo $ID") | trim -}}
+{{ if or (eq $osRelease "ubuntu") (eq $osRelease "debian") -}}
+
+sudo apt update && sudo apt upgrade -y
+
+{{ else -}}
+
+echo "Unsupported Linux distribution: {{ $osRelease }}" >&2
+exit 1
+
+{{ end -}}
+{{ else -}}
+
+echo "Unsupported OS: {{ .chezmoi.os }}" >&2
+exit 1
+
+{{ end -}}
