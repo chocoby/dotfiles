@@ -39,6 +39,7 @@ mv nvim-linux-arm64.appimage nvim.appimage
 chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
 mv squashfs-root nvim
+rm -f ~/.local/bin/nvim
 ln -s ~/local/AppImage/nvim/usr/bin/nvim ~/.local/bin/nvim
 
 # starship

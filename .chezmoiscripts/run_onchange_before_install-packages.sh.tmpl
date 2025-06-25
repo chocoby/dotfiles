@@ -16,8 +16,8 @@ rm -rf "${TEMP_DIR}"
 TPM_PATH=$HOME/.tmux/plugins/tpm
 # Installation of tpm may fail, ignore the error.
 $TPM_PATH/bin/install_plugins || true
-$TPM_PATH/bin/clean_plugins
-$TPM_PATH/bin/update_plugins all
+$TPM_PATH/bin/clean_plugins || true
+$TPM_PATH/bin/update_plugins all || true
 
 # Neovim
 nvim --headless "+Lazy! update" +qa
