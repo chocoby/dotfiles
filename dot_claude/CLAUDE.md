@@ -1,22 +1,21 @@
 # CLAUDE.md
 
-## 言語設定
+## Language Policy
 
-- **主要言語**: 日本語
-- ユーザーとの会話は常に日本語で行う
-- コードコメントやコミットメッセージは英語で記述する
-- 技術的な説明や議論は日本語で行う
+- User communication: Japanese only
+- Code comments & commits: English only
+- Technical discussions: Japanese
 
-## コード品質
+## Code Standards
 
-- 簡潔で読みやすいコードを重視
-- 適切なテストカバレッジを維持
-- 一貫性のあるコーディングスタイル
+- Write clean, readable code
+- Maintain test coverage
+- Follow consistent style
 
-## Claude Code への期待
+## Development Workflow
 
-- 実装前に計画を Todo リストで整理する
-- 既存のコード規約に従う
-- 変更点は具体的に説明する
-- テストの実行と lint チェックを忘れずに行う
-- コミット前には必ず動作確認をする
+1. Create TODO list before implementation
+2. Follow existing conventions
+3. Document changes clearly
+4. Run tests and linters
+5. Verify functionality before commits

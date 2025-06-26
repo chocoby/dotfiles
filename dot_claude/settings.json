@@ -9,7 +9,6 @@
       "Bash(docker compose run:*)",
       "Bash(docker compose up:*)",
       "Bash(find:*)",
-      "Bash(gh api:*)",
       "Bash(gh issue view:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh pr list:*)",
@@ -30,7 +29,10 @@
       "Bash(rg:*)",
       "Bash(sed:*)",
 
-      "List(*)"
+      "List(*)",
+
+      "mcp__repomix__pack_codebase",
+      "mcp__repomix__grep_repomix_output"
     ],
     "deny": []
   }
