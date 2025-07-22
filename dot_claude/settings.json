@@ -28,12 +28,18 @@
       "Bash(mkdir:*)",
       "Bash(rg:*)",
       "Bash(sed:*)",
-
-      "List(*)",
-
-      "mcp__repomix__pack_codebase",
-      "mcp__repomix__grep_repomix_output"
+      "List(*)"
     ],
-    "deny": []
+    "deny": [
+      "Bash(rm -rf*)",
+      "Bash(rm /*)",
+      "Bash(cp /* *)",
+      "Bash(cp * /*)",
+      "Bash(mv /* *)",
+      "Bash(mv * /*)",
+      "Bash(mkdir /*)",
+      "Bash(sudo*)",
+      "Write(.git/**)"
+    ]
   }
 }
