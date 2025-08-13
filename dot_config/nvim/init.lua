@@ -276,6 +276,12 @@ vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = '[F]ind [R]esume' })
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[F]ind [B]uffer' })
 
+-- File type
+vim.filetype.add({
+  extension = {
+    schema = 'ruby',
+  }
+})
 
 -- nvim-tree
 vim.keymap.set('n', '<F2>', ':NvimTreeToggle<CR>', { silent = true })
