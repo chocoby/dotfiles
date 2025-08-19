@@ -155,6 +155,8 @@ require('lazy').setup({
   },
   {
     "nvim-neotest/neotest",
+    -- https://github.com/nvim-neotest/neotest/issues/531
+    commit = '52fca671',
     lazy = true,
     dependencies = {
       "nvim-neotest/nvim-nio",
