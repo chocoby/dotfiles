@@ -35,14 +35,12 @@
       "List(*)"
     ],
     "deny": [
-      "Bash(rm -rf*)",
-      "Bash(rm /*)",
-      "Bash(cp /* *)",
-      "Bash(cp * /*)",
-      "Bash(mv /* *)",
-      "Bash(mv * /*)",
+      "Bash(rm -rf ../*)",
+      "Bash(rm -rf /)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~/*)",
       "Bash(mkdir /*)",
-      "Bash(sudo*)",
+      "Bash(sudo:*)",
       "Write(.git/**)"
     ]
   },
