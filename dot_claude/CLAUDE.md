@@ -11,6 +11,7 @@
 - Write clean, readable code
 - Maintain test coverage
 - Follow consistent style
+- Add spaces between words
 
 ## Development Workflow
 
