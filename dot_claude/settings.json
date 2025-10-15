@@ -72,5 +72,6 @@
     "type": "command",
     "command": "ccusage statusline"
   },
-  "model": "opusplan"
+  "model": "opusplan",
+  "includeCoAuthoredBy": false
 }
