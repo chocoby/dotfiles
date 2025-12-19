@@ -2,8 +2,10 @@
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
+      "WebFetch(domain:github.com)",
       "Bash(cat:*)",
       "Bash(curl:*)",
+      "Bash(chmod:*)",
       "Bash(docker compose build:*)",
       "Bash(docker compose down:*)",
       "Bash(docker compose exec:*)",
