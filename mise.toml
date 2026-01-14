@@ -8,4 +8,4 @@ run = "bash ~/.local/scripts/system-update.sh"
 
 [tasks.nvim-update]
 description = "Update Neovim plugins using Lazy"
-run = "nvim --headless '+Lazy! update' +qa"
+run = "nvim --headless '+Lazy! update' '+TSUpdate' +qa"
