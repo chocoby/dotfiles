@@ -1,7 +1,6 @@
 [tools]
 node = "22"
 "npm:@anthropic-ai/claude-code" = "latest"
-"npm:@google/gemini-cli" = "latest"
 "npm:ccusage" = "latest"
 
 [settings]
