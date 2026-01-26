@@ -143,7 +143,7 @@ require('lazy').setup({
     }
   },
   { 'numToStr/Comment.nvim', opts = {} },
-  { 'ggandor/leap.nvim' },
+  { url = 'https://codeberg.org/andyg/leap.nvim' },
   {
     'kylechui/nvim-surround',
     version = "*",
