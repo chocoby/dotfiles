@@ -3,6 +3,7 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(cat:*)",
       "Bash(curl:*)",
       "Bash(chmod:*)",
@@ -48,6 +49,7 @@
       "List(*)"
     ],
     "deny": [
+      "Bash(git push:*)",
       "Bash(rm -rf ../*)",
       "Bash(rm -rf /)",
       "Bash(rm -rf /*)",
