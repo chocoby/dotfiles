@@ -97,7 +97,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "ccusage statusline",
+    "command": "~/.claude/statusline.py",
     "padding": 0
   },
   "alwaysThinkingEnabled": true
