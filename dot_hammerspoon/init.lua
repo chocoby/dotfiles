@@ -13,3 +13,9 @@ end
 
 quitModal:bind('cmd', 'q', killApp)
 quitModal:bind('', 'escape', function() quitModal:exit() end)
+
+-- Play / Pause
+hs.hotkey.bind({"shift", "alt"}, "Z", function()
+    hs.eventtap.event.newSystemKeyEvent("PLAY", true):post()
+    hs.eventtap.event.newSystemKeyEvent("PLAY", false):post()
+end)
