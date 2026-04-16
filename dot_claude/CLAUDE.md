@@ -13,6 +13,10 @@
 - Follow consistent style
 - Add spaces between Japanese and alphanumeric characters
 
+## Error Handling
+
+- If an "Operation not permitted" error occurs, stop execution immediately and ask the user for guidance before proceeding.
+
 ## Development Workflow
 
 1. Create TODO list before implementation
