@@ -31,3 +31,6 @@ yarn-error.log
 
 # Neovim
 rspec.output
+
+# oh-my-claudecode
+.omc/
