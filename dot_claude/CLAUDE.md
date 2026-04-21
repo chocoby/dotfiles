@@ -92,5 +92,3 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 3. Document changes clearly
 4. Run tests and linters
 5. Verify functionality before commits
-
-@RTK.md

@@ -7,7 +7,6 @@
     "allow": [
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
-
       "Bash(cat *)",
       "Bash(curl *)",
       "Bash(docker compose build *)",
@@ -49,7 +48,6 @@
       "Bash(npm install *)",
       "Bash(rg *)",
       "Bash(sed *)",
-
       "List(*)"
     ],
     "deny": [
@@ -59,21 +57,16 @@
       "Bash(rm -rf ~/*)",
       "Bash(mkdir /*)",
       "Bash(sudo *)",
-
       "Read(~/.ssh/*)",
       "Read(~/.aws/*)",
       "Read(~/.gnupg/*)",
       "Read(~/.netrc)",
       "Read(~/.npmrc)",
       "Read(~/.gem/credentials)",
-
       "Read(./.env*)",
-
       "Write(.git/**)",
-
       "Bash(jj git push *)",
       "Bash(git push *)",
-
       "Bash(gh pr create *)",
       "Bash(gh pr merge *)",
       "Bash(gh pr close *)",
@@ -118,17 +111,6 @@
           {
             "type": "command",
             "command": "bash ~/.claude/commands/notify.sh stop"
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/rtk-rewrite.sh"
           }
         ]
       }
