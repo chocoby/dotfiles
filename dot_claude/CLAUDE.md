@@ -86,3 +86,8 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 3. Document changes clearly
 4. Run tests and linters
 5. Verify functionality before commits
+
+## Development Style
+
+- Follow TDD: explore → Red → Green → Refactor
+- Ask clarifying questions when instructions are ambiguous
