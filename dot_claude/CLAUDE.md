@@ -66,8 +66,6 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 
 <!-- User customizations (migrated from previous CLAUDE.md) -->
 
-# CLAUDE.md
-
 ## Language
 
 - Code comments & commits: English

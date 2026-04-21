@@ -2,7 +2,10 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
-  "includeCoAuthoredBy": false,
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "WebFetch(domain:github.com)",
@@ -91,7 +94,6 @@
       "Bash(gh variable delete *)"
     ]
   },
-  "model": "opusplan",
   "hooks": {
     "Notification": [
       {
@@ -134,5 +136,6 @@
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "model": "sonnet"
 }
