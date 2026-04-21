@@ -1,5 +1,5 @@
 <!-- OMC:START -->
-<!-- OMC:VERSION:4.12.0 -->
+<!-- OMC:VERSION:4.13.1 -->
 
 # oh-my-claudecode - Intelligent Multi-Agent Orchestration
 
@@ -64,8 +64,7 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 
 <!-- OMC:END -->
 
-<!-- User customizations (migrated from previous CLAUDE.md) -->
-
+<!-- User customizations -->
 ## Language
 
 - Code comments & commits: English
