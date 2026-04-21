@@ -52,8 +52,10 @@ require('lazy').setup({
   },
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
+    lazy = false,
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
+      { 'nvim-treesitter/nvim-treesitter-textobjects', branch = 'main' },
     },
     build = ':TSUpdate',
   },
@@ -328,13 +330,6 @@ end, { desc = 'Display output panel' })
 -- [[ Autoclose ]]
 require("autoclose").setup()
 
--- [[ nvim-treesitter-endwise ]]
-require('nvim-treesitter.configs').setup {
-  endwise = {
-    enable = true,
-  },
-}
-
 -- [[ Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
@@ -389,66 +384,61 @@ vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
 
 -- Treesitter
-vim.defer_fn(function()
-  require('nvim-treesitter.configs').setup {
-    ensure_installed = { 'go', 'lua', 'tsx', 'javascript', 'typescript', 'ruby', 'bash' },
+require('nvim-treesitter').install({ 'go', 'lua', 'tsx', 'javascript', 'typescript', 'ruby', 'bash', 'markdown', 'markdown_inline' })
 
-    highlight = { enable = true },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = '<c-space>',
-        node_incremental = '<c-space>',
-        scope_incremental = '<c-s>',
-        node_decremental = '<M-space>',
-      },
+-- Enable treesitter highlighting via Neovim built-in
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(args)
+    if vim.bo[args.buf].filetype ~= '' then
+      pcall(vim.treesitter.start, args.buf)
+    end
+  end,
+})
+
+-- Textobjects
+require('nvim-treesitter-textobjects').setup({
+  select = {
+    enable = true,
+    lookahead = true,
+    keymaps = {
+      ['aa'] = '@parameter.outer',
+      ['ia'] = '@parameter.inner',
+      ['af'] = '@function.outer',
+      ['if'] = '@function.inner',
+      ['ac'] = '@class.outer',
+      ['ic'] = '@class.inner',
     },
-    textobjects = {
-      select = {
-        enable = true,
-        lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-        keymaps = {
-          -- You can use the capture groups defined in textobjects.scm
-          ['aa'] = '@parameter.outer',
-          ['ia'] = '@parameter.inner',
-          ['af'] = '@function.outer',
-          ['if'] = '@function.inner',
-          ['ac'] = '@class.outer',
-          ['ic'] = '@class.inner',
-        },
-      },
-      move = {
-        enable = true,
-        set_jumps = true, -- whether to set jumps in the jumplist
-        goto_next_start = {
-          [']m'] = '@function.outer',
-          [']]'] = '@class.outer',
-        },
-        goto_next_end = {
-          [']M'] = '@function.outer',
-          [']['] = '@class.outer',
-        },
-        goto_previous_start = {
-          ['[m'] = '@function.outer',
-          ['[['] = '@class.outer',
-        },
-        goto_previous_end = {
-          ['[M'] = '@function.outer',
-          ['[]'] = '@class.outer',
-        },
-      },
-      swap = {
-        enable = true,
-        swap_next = {
-          ['<leader>a'] = '@parameter.inner',
-        },
-        swap_previous = {
-          ['<leader>A'] = '@parameter.inner',
-        },
-      },
+  },
+  move = {
+    enable = true,
+    set_jumps = true,
+    goto_next_start = {
+      [']m'] = '@function.outer',
+      [']]'] = '@class.outer',
     },
-  }
-end, 0)
+    goto_next_end = {
+      [']M'] = '@function.outer',
+      [']['] = '@class.outer',
+    },
+    goto_previous_start = {
+      ['[m'] = '@function.outer',
+      ['[['] = '@class.outer',
+    },
+    goto_previous_end = {
+      ['[M'] = '@function.outer',
+      ['[]'] = '@class.outer',
+    },
+  },
+  swap = {
+    enable = true,
+    swap_next = {
+      ['<leader>a'] = '@parameter.inner',
+    },
+    swap_previous = {
+      ['<leader>A'] = '@parameter.inner',
+    },
+  },
+})
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
