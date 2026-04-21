@@ -68,11 +68,9 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 
 # CLAUDE.md
 
-## Language Policy
+## Language
 
-- User communication: Japanese only
-- Code comments & commits: English only
-- Technical discussions: Japanese
+- Code comments & commits: English
 
 ## Code Standards
 
@@ -80,10 +78,6 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 - Maintain test coverage
 - Follow consistent style
 - Add spaces between Japanese and alphanumeric characters
-
-## Error Handling
-
-- If an "Operation not permitted" error occurs, stop execution immediately and ask the user for guidance before proceeding.
 
 ## Development Workflow
 
