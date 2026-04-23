@@ -34,7 +34,6 @@
       "Bash(git add *)",
       "Bash(git branch *)",
       "Bash(git checkout *)",
-      "Bash(git commit *)",
       "Bash(git fetch *)",
       "Bash(git log *)",
       "Bash(git pull *)",
@@ -53,6 +52,13 @@
       "Bash(sed *)",
       "List(*)"
     ],
+    "ask": [
+      "Bash(gh api *)",
+      "Bash(gh pr create *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(jj git push *)"
+    ],
     "deny": [
       "Bash(rm -rf ../*)",
       "Bash(rm -rf /)",
@@ -68,9 +74,6 @@
       "Read(~/.gem/credentials)",
       "Read(./.env*)",
       "Write(.git/**)",
-      "Bash(jj git push *)",
-      "Bash(git push *)",
-      "Bash(gh pr create *)",
       "Bash(gh pr merge *)",
       "Bash(gh pr close *)",
       "Bash(gh pr reopen *)",
@@ -86,7 +89,6 @@
       "Bash(gh issue comment *)",
       "Bash(gh gist create *)",
       "Bash(gh workflow run *)",
-      "Bash(gh api *)",
       "Bash(gh auth login *)",
       "Bash(gh secret set *)",
       "Bash(gh secret delete *)",
