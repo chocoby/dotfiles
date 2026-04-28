@@ -126,7 +126,8 @@
     "command": "node ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hud/omc-hud.mjs"
   },
   "enabledPlugins": {
-    "oh-my-claudecode@omc": true
+    "oh-my-claudecode@omc": true,
+    "gopls-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "omc": {
@@ -139,5 +140,6 @@
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "remoteControlAtStartup": false
 }
