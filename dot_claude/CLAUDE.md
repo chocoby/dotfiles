@@ -88,3 +88,5 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 
 - Follow TDD: explore → Red → Green → Refactor
 - Ask clarifying questions when instructions are ambiguous
+
+@RTK.md
