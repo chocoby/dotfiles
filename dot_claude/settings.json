@@ -94,7 +94,8 @@
       "Bash(gh api *)",
       "Bash(gh pr create *)",
       "Bash(git push *)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "model": "opus",
   "hooks": {
@@ -138,7 +139,8 @@
   },
   "enabledPlugins": {
     "oh-my-claudecode@omc": true,
-    "gopls-lsp@claude-plugins-official": true
+    "gopls-lsp@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "omc": {
@@ -151,6 +153,6 @@
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
-  "skipAutoPermissionPrompt": true,
-  "remoteControlAtStartup": false
+  "remoteControlAtStartup": false,
+  "skipAutoPermissionPrompt": true
 }
