@@ -84,6 +84,12 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 4. Run tests and linters
 5. Verify functionality before commits
 
+## Commit Convention
+
+- If the project defines its own commit convention (CONTRIBUTING.md, recent `git log`, commit hooks, etc.), follow it.
+- Otherwise, use Conventional Commits in a single line: `<type>(<scope>): <subject>` (scope optional). No body, no footer.
+  - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
+
 ## Development Style
 
 - Follow TDD: explore → Red → Green → Refactor
