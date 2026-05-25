@@ -86,8 +86,9 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 
 ## Commit Convention
 
-- If the project defines its own commit convention (CONTRIBUTING.md, recent `git log`, commit hooks, etc.), follow it.
-- Otherwise, use Conventional Commits in a single line: `<type>(<scope>): <subject>` (scope optional). No body, no footer.
+- Always commit in a single line — no body, no footer.
+- If the project defines its own commit convention (CONTRIBUTING.md, recent `git log`, commit hooks, etc.), follow it (still one line).
+- Otherwise, use Conventional Commits: `<type>(<scope>): <subject>` (scope optional).
   - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
 
 ## Development Style
