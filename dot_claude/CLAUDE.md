@@ -71,18 +71,8 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 
 ## Code Standards
 
-- Write clean, readable code
-- Maintain test coverage
-- Follow consistent style
 - Add spaces between Japanese and alphanumeric characters
-
-## Development Workflow
-
-1. Create TODO list before implementation
-2. Follow existing conventions
-3. Document changes clearly
-4. Run tests and linters
-5. Verify functionality before commits
+- Follow existing conventions in nearby files (style, naming, structure)
 
 ## Commit Convention
 
