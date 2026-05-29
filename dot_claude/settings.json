@@ -14,7 +14,6 @@
       "Bash(cat *)",
       "Bash(curl *)",
       "Bash(docker compose build *)",
-      "Bash(docker compose down *)",
       "Bash(docker compose exec *)",
       "Bash(docker compose logs *)",
       "Bash(docker compose ps *)",
@@ -91,6 +90,8 @@
       "Bash(gh variable delete *)"
     ],
     "ask": [
+      "Bash(docker compose down)",
+      "Bash(docker compose down *)",
       "Bash(gh api *)",
       "Bash(gh pr create *)",
       "Bash(git push *)"
