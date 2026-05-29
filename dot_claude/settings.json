@@ -152,6 +152,7 @@
     }
   },
   "language": "japanese",
+  "outputStyle": "Concise, verbose on decisions",
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
   "remoteControlAtStartup": false,
