@@ -60,6 +60,7 @@
       "Bash(rm -rf /*)",
       "Bash(rm -rf ~/*)",
       "Bash(mkdir /*)",
+      "Bash(find / *)",
       "Bash(sudo *)",
       "Read(~/.ssh/*)",
       "Read(~/.aws/*)",
