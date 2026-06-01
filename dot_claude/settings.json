@@ -31,6 +31,7 @@
       "Bash(gh pr view *)",
       "Bash(gh release list *)",
       "Bash(gh run view *)",
+      "Bash(gh workflow run *)",
       "Bash(git add *)",
       "Bash(git branch *)",
       "Bash(git checkout *)",
@@ -78,11 +79,8 @@
       "Bash(gh repo create *)",
       "Bash(gh repo fork *)",
       "Bash(gh repo delete *)",
-      "Bash(gh issue create *)",
       "Bash(gh issue close *)",
-      "Bash(gh issue comment *)",
       "Bash(gh gist create *)",
-      "Bash(gh workflow run *)",
       "Bash(gh auth login *)",
       "Bash(gh secret set *)",
       "Bash(gh secret delete *)",
@@ -90,9 +88,11 @@
       "Bash(gh variable delete *)"
     ],
     "ask": [
-      "Bash(docker compose down)",
       "Bash(docker compose down *)",
+      "Bash(docker compose down)",
       "Bash(gh api *)",
+      "Bash(gh issue comment *)",
+      "Bash(gh issue create *)",
       "Bash(gh pr create *)",
       "Bash(git push *)"
     ],
