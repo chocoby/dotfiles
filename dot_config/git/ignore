@@ -28,6 +28,7 @@ yarn-error.log
 
 # Claude
 **/.claude/settings.local.json
+**/.claude/scheduled_tasks.lock
 
 # Neovim
 rspec.output
