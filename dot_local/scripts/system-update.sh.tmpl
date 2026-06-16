@@ -5,7 +5,7 @@ set -o pipefail
 
 {{ if eq .chezmoi.os "darwin" -}}
 
-brew update && brew upgrade
+brew update && brew upgrade --no-ask
 
 {{ else if eq .chezmoi.os "linux" -}}
 
