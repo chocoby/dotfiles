@@ -324,6 +324,21 @@ require("autoclose").setup()
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    -- Include hidden and gitignored files in live_grep / grep_string.
+    -- Only `.git/` itself is excluded.
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--hidden',
+      '--no-ignore',
+      '--glob',
+      '!.git/',
+    },
     preview = {
       treesitter = false,
     },
