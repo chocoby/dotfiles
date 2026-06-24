@@ -13,6 +13,9 @@ export LESS='-R'
 # GPG
 export GPG_TTY=$(tty)
 
+# Claude Code
+export OMC_STATE_DIR="$HOME/.claude/omc"
+
 
 #--------------------------------------
 # Alias
