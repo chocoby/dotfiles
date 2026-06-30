@@ -152,6 +152,7 @@
       }
     }
   },
+  "cleanupPeriodDays": 9999,
   "outputStyle": "Concise, verbose on decisions",
   "language": "japanese",
   "alwaysThinkingEnabled": true,
