@@ -78,6 +78,7 @@ Say "setup omc" or run `/oh-my-claudecode:omc-setup`.
 ## Code Standards
 
 - Add spaces between Japanese and alphanumeric characters
+- Use half-width parentheses () instead of full-width （） (surround with spaces per the spacing rule above)
 - Follow existing conventions in nearby files (style, naming, structure)
 
 ## Commit Convention
