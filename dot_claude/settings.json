@@ -71,7 +71,7 @@
       "Read(~/.npmrc)",
       "Read(~/.gem/credentials)",
       "Read(./.env*)",
-      "Write(.git/**)",
+      "Edit(.git/**)",
       "Bash(gh pr merge *)",
       "Bash(gh pr close *)",
       "Bash(gh pr reopen *)",
