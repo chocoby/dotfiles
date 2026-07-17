@@ -143,7 +143,8 @@
     "oh-my-claudecode@omc": true,
     "gopls-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "omc": {
@@ -153,7 +154,6 @@
       }
     }
   },
-  "cleanupPeriodDays": 9999,
   "outputStyle": "Concise, verbose on decisions",
   "language": "japanese",
   "alwaysThinkingEnabled": true,
