@@ -349,6 +349,15 @@ require('telescope').setup {
       },
     },
   },
+  pickers = {
+    -- find_files ignores vimgrep_arguments, so mirror the same policy here:
+    -- include hidden and gitignored files, excluding only `.git/` itself.
+    find_files = {
+      hidden = true,
+      no_ignore = true,
+      file_ignore_patterns = { '^%.git/' },
+    },
+  },
 }
 
 -- Enable telescope fzf native, if installed
