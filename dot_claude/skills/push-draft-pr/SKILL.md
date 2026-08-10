@@ -97,7 +97,16 @@ Match the format pattern of the recent merged PR titles (prefix style, casing, t
 - Compatibility impact: breaking changes, behavior differences, new dependencies
 - Cross-PR context if this builds on a previous PR
 
-Target: a reviewer finishes reading in under 30 seconds.
+**Length** — determined by the number of things a reviewer cannot get from the diff, not by the size of the diff:
+
+- Roughly 1–3 lines per non-obvious point. If there are zero non-obvious points, the motivation line alone is a complete description — a 1–2 line body is a finished body, not a lazy one.
+- A large diff that is mechanical (bulk rename, formatting, dependency bump, generated code) gets a *short* description. Changes that required no judgment need no explanation.
+- A small diff can still warrant explanation if the judgment behind it is non-obvious (e.g. a one-line fix closing a specific race).
+- Never write a line to fill a section. If a template section has nothing high-signal, leave it empty.
+
+Self-check before returning: for each line, ask 「この行を消してレビュアーが困るか？」 If not, delete it.
+
+Target: 10 seconds to read for a simple change, 30 seconds for a complex one.
 
 ### B7. Return the result
 
