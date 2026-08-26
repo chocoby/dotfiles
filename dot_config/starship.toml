@@ -1,6 +1,13 @@
 format = """
+$hostname\
 $directory\
 $git_branch\
 $line_break\
 $character\
 """
+
+[hostname]
+ssh_only = true
+ssh_symbol = "🌐 "
+format = "[$ssh_symbol$hostname]($style) "
+style = "bold yellow"
