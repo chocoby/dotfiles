@@ -1,7 +1,17 @@
 [user]
     name = Kenta Okamoto
     email = 85665+chocoby@users.noreply.github.com
-    signingkey = F363047DD619B35DD2DF970B44D99A71EABAA646
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKf0waRVqnOwwhELvkAvnOIL68SBz5NG8vM+u5olOFL0
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  allowedSignersFile = ~/.config/git/allowed_signers
+
+[commit]
+  gpgsign = true
 
 [color]
     ui = auto
