@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -ex
+
+{{ if eq .chezmoi.os "linux" -}}
+# chezmoi runs scripts in a non-login shell, so ~/.zprofile PATH is not applied.
+prepend_path() {
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$1:$PATH" ;;
+    esac
+}
+prepend_path "$HOME/.local/bin"
+prepend_path "$HOME/local/bin"
+export PATH
+{{ end -}}
+
+# Runs after apply so that ~/.config/nvim/init.lua is in place to bootstrap lazy.nvim.
+nvim --headless "+Lazy! update" +qa
