@@ -9,7 +9,15 @@ sudo apt install -y \
     git \
     jq \
     ripgrep \
-    tmux
+    tmux \
+    zsh
+
+# Set zsh as the default login shell
+ZSH_PATH="$(command -v zsh)"
+CURRENT_USER="$(id -un)"
+if [ "$(getent passwd "$CURRENT_USER" | cut -d: -f7)" != "$ZSH_PATH" ]; then
+    sudo chsh -s "$ZSH_PATH" "$CURRENT_USER"
+fi
 
 # gh
 sudo mkdir -p -m 755 /etc/apt/keyrings \
