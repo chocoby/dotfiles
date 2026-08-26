@@ -40,6 +40,20 @@ rm -rf "${TEMP_DIR}"
 # mise
 curl -sS https://mise.run | sh
 
+# tree-sitter CLI
+TEMP_DIR=$(mktemp -d)
+{{ if eq .chezmoi.arch "amd64" -}}
+TREE_SITTER_URL="https://github.com/tree-sitter/tree-sitter/releases/latest/download/tree-sitter-linux-x64.gz"
+{{ else if eq .chezmoi.arch "arm64" -}}
+TREE_SITTER_URL="https://github.com/tree-sitter/tree-sitter/releases/latest/download/tree-sitter-linux-arm64.gz"
+{{ end -}}
+curl -L -o "${TEMP_DIR}/tree-sitter.gz" "${TREE_SITTER_URL}"
+gunzip "${TEMP_DIR}/tree-sitter.gz"
+chmod +x "${TEMP_DIR}/tree-sitter"
+rm -f ~/.local/bin/tree-sitter
+mv "${TEMP_DIR}/tree-sitter" ~/.local/bin/tree-sitter
+rm -rf "${TEMP_DIR}"
+
 # Neovim
 rm -f ~/local/bin/nvim
 rm -f ~/local/AppImage/nvim.appimage
