@@ -74,6 +74,20 @@ mv squashfs-root nvim
 rm -f ~/.local/bin/nvim
 ln -s ~/local/AppImage/nvim/usr/bin/nvim ~/.local/bin/nvim
 
+# rtk
+TEMP_DIR=$(mktemp -d)
+{{ if eq .chezmoi.arch "amd64" -}}
+RTK_URL="https://github.com/rtk-ai/rtk/releases/latest/download/rtk-x86_64-unknown-linux-musl.tar.gz"
+{{ else if eq .chezmoi.arch "arm64" -}}
+RTK_URL="https://github.com/rtk-ai/rtk/releases/latest/download/rtk-aarch64-unknown-linux-gnu.tar.gz"
+{{ end -}}
+curl -L -o "${TEMP_DIR}/rtk.tar.gz" "${RTK_URL}"
+tar zxf "${TEMP_DIR}/rtk.tar.gz" -C "${TEMP_DIR}"
+chmod +x "${TEMP_DIR}/rtk"
+rm -f ~/.local/bin/rtk
+mv "${TEMP_DIR}/rtk" ~/.local/bin/rtk
+rm -rf "${TEMP_DIR}"
+
 # starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y -b ~/.local/bin
 

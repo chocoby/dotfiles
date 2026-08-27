@@ -1,5 +1,17 @@
 #!/bin/bash
 
+{{ if eq .chezmoi.os "linux" -}}
+# chezmoi runs scripts in a non-login shell, so ~/.zprofile PATH is not applied.
+prepend_path() {
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$1:$PATH" ;;
+    esac
+}
+prepend_path "$HOME/.local/bin"
+export PATH
+{{ end -}}
+
 if command -v rtk &>/dev/null; then
   rtk init -g
 fi
