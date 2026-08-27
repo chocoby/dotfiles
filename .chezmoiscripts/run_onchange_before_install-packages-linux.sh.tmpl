@@ -37,10 +37,17 @@ sudo apt install gh -y
 
 # ghq
 TEMP_DIR=$(mktemp -d)
+{{ if eq .chezmoi.arch "amd64" -}}
 GHQ_URL="https://github.com/x-motemen/ghq/releases/latest/download/ghq_linux_amd64.zip"
-curl -L -o "${TEMP_DIR}/ghq_linux_amd64.zip" "${GHQ_URL}"
-unzip -d "${TEMP_DIR}" "${TEMP_DIR}/ghq_linux_amd64.zip"
-mv "${TEMP_DIR}/ghq_linux_amd64/ghq" ~/.local/bin/
+{{ else if eq .chezmoi.arch "arm64" -}}
+GHQ_URL="https://github.com/x-motemen/ghq/releases/latest/download/ghq_linux_arm64.zip"
+{{ else -}}
+echo "Unsupported architecture: {{ .chezmoi.arch }}" >&2
+exit 1
+{{ end -}}
+curl -L -o "${TEMP_DIR}/ghq.zip" "${GHQ_URL}"
+unzip -d "${TEMP_DIR}" "${TEMP_DIR}/ghq.zip"
+mv "${TEMP_DIR}"/ghq_linux_*/ghq ~/.local/bin/
 rm -rf "${TEMP_DIR}"
 
 # mise
@@ -52,6 +59,9 @@ TEMP_DIR=$(mktemp -d)
 TREE_SITTER_URL="https://github.com/tree-sitter/tree-sitter/releases/latest/download/tree-sitter-linux-x64.gz"
 {{ else if eq .chezmoi.arch "arm64" -}}
 TREE_SITTER_URL="https://github.com/tree-sitter/tree-sitter/releases/latest/download/tree-sitter-linux-arm64.gz"
+{{ else -}}
+echo "Unsupported architecture: {{ .chezmoi.arch }}" >&2
+exit 1
 {{ end -}}
 curl -L -o "${TEMP_DIR}/tree-sitter.gz" "${TREE_SITTER_URL}"
 gunzip "${TEMP_DIR}/tree-sitter.gz"
@@ -68,12 +78,14 @@ rm -rf ~/local/AppImage/nvim
 mkdir -p ~/local/AppImage
 cd ~/local/AppImage
 {{ if eq .chezmoi.arch "amd64" -}}
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
-mv nvim-linux-x86_64.appimage nvim.appimage
+NVIM_URL="https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage"
 {{ else if eq .chezmoi.arch "arm64" -}}
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.appimage
-mv nvim-linux-arm64.appimage nvim.appimage
+NVIM_URL="https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.appimage"
+{{ else -}}
+echo "Unsupported architecture: {{ .chezmoi.arch }}" >&2
+exit 1
 {{ end -}}
+curl -L -o nvim.appimage "${NVIM_URL}"
 chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
 mv squashfs-root nvim
@@ -86,6 +98,9 @@ TEMP_DIR=$(mktemp -d)
 RTK_URL="https://github.com/rtk-ai/rtk/releases/latest/download/rtk-x86_64-unknown-linux-musl.tar.gz"
 {{ else if eq .chezmoi.arch "arm64" -}}
 RTK_URL="https://github.com/rtk-ai/rtk/releases/latest/download/rtk-aarch64-unknown-linux-gnu.tar.gz"
+{{ else -}}
+echo "Unsupported architecture: {{ .chezmoi.arch }}" >&2
+exit 1
 {{ end -}}
 curl -L -o "${TEMP_DIR}/rtk.tar.gz" "${RTK_URL}"
 tar zxf "${TEMP_DIR}/rtk.tar.gz" -C "${TEMP_DIR}"
