@@ -1,6 +1,6 @@
 [tasks.update]
 description = "Install and update packages"
-run = "chezmoi state delete-bucket --bucket=entryState && chezmoi update"
+run = "chezmoi state delete-bucket --bucket=entryState || true; chezmoi update"
 
 [tasks.system-update]
 description = "Update system packages"
