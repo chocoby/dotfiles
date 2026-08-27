@@ -9,3 +9,18 @@ run = "bash ~/.local/scripts/system-update.sh"
 [tasks.nvim-update]
 description = "Update Neovim plugins using Lazy"
 run = "nvim --headless '+Lazy! update' '+TSUpdate' +qa"
+
+[tasks.test]
+description = "Verify 'chezmoi apply' end to end on Linux in Docker"
+dir = "{{config_root}}"
+run = """
+set -eu
+platform_opt=""
+if [ -n "${DOCKER_PLATFORM:-}" ]; then
+    platform_opt="--platform ${DOCKER_PLATFORM}"
+fi
+# shellcheck disable=SC2086
+docker build $platform_opt -t chezmoi-dotfiles-test test
+# shellcheck disable=SC2086
+docker run --rm $platform_opt -v "{{config_root}}:/src:ro" chezmoi-dotfiles-test
+"""
