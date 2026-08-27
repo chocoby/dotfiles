@@ -152,6 +152,7 @@
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
   "remoteControlAtStartup": false,
   "skipAutoPermissionPrompt": true
 }
