@@ -4,14 +4,16 @@
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKf0waRVqnOwwhELvkAvnOIL68SBz5NG8vM+u5olOFL0
 
 [gpg]
-  format = ssh
+    format = ssh
 
 [gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-  allowedSignersFile = ~/.config/git/allowed_signers
+    allowedSignersFile = ~/.config/git/allowed_signers
+{{- if eq .chezmoi.os "darwin" }}
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+{{- end }}
 
 [commit]
-  gpgsign = true
+    gpgsign = true
 
 [color]
     ui = auto
