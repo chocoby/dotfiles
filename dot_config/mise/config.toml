@@ -3,5 +3,9 @@ node = "lts"
 pnpm = "latest"
 ruby = "latest"
 
+[tasks.update-all]
+description = "Update system packages, dotfiles, mise tools, and Neovim plugins"
+run = 'mise -C "$(chezmoi source-path)" run update-all'
+
 [settings]
 idiomatic_version_file_enable_tools = []

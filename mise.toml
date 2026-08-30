@@ -1,14 +1,27 @@
-[tasks.update]
-description = "Install and update packages"
-run = "chezmoi state delete-bucket --bucket=entryState || true; chezmoi update"
-
-[tasks.system-update]
+[tasks."update:system"]
 description = "Update system packages"
 run = "bash ~/.local/scripts/system-update.sh"
 
-[tasks.nvim-update]
+[tasks."update:dotfiles"]
+description = "Update dotfiles via chezmoi"
+run = "chezmoi state delete-bucket --bucket=entryState || true; chezmoi update"
+
+[tasks."update:tools"]
+description = "Update mise-managed tools and prune unused versions"
+run = ["mise upgrade", "mise prune --yes"]
+
+[tasks."update:nvim"]
 description = "Update Neovim plugins using Lazy"
 run = "nvim --headless '+Lazy! update' '+TSUpdate' +qa"
+
+[tasks.update-all]
+description = "Update system packages, dotfiles, mise tools, and Neovim plugins"
+run = [
+  "mise run update:system",
+  "mise run update:dotfiles",
+  "mise run update:tools",
+  "mise run update:nvim",
+]
 
 [tasks.test]
 description = "Verify 'chezmoi apply' end to end on Linux in Docker"
