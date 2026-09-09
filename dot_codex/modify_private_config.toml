@@ -1,0 +1,6 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- .chezmoi.stdin | fromToml | default dict
+    | setValueAtPath "model" "gpt-6-astra"
+    | setValueAtPath "model_reasoning_effort" "low"
+    | setValueAtPath "tui.status_line" (list "model-with-reasoning" "git-branch" "context-remaining" "five-hour-limit" "weekly-limit")
+    | toToml }}

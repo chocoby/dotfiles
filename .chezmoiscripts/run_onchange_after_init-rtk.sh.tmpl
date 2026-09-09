@@ -9,4 +9,7 @@ export PATH
 
 if command -v rtk &>/dev/null; then
   rtk init -g
+  if command -v codex &>/dev/null; then
+    rtk init -g --codex
+  fi
 fi
