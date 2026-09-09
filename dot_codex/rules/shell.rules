@@ -1,0 +1,50 @@
+# Shell permissions from dot_claude/settings.json, including RTK wrappers.
+allow_commands = [
+    ["cat"],
+    ["curl"],
+    ["docker", "compose", ["build", "exec", "logs", "ps", "run", "up"]],
+    ["docker", ["build", "logs", "run", "stop"]],
+    ["find"],
+    ["gh", "issue", "view"],
+    ["gh", "pr", ["checks", "create", "diff", "list", "view"]],
+    ["gh", "release", "list"],
+    ["gh", "run", "view"],
+    ["gh", "workflow", "run"],
+    ["git", [
+        "add", "branch", "checkout", "commit", "fetch", "log", "pull",
+        "rebase", "reset", "show", "stash", "status",
+    ]],
+    ["grep"],
+    ["ls"],
+    ["mise", ["install", "tasks"]],
+    ["npm", "install"],
+    ["rg"],
+    ["sed"],
+]
+
+prompt_commands = [
+    ["docker", "compose", "down"],
+    ["gh", "issue", ["close", "create"]],
+    # Prefix rules cannot express Claude's absolute-path wildcard denial.
+    ["mkdir"],
+]
+
+forbidden_commands = [
+    ["find", "/"],
+    ["sudo"],
+    ["gh", "pr", ["close", "reopen", "review"]],
+    ["gh", "release", ["create", "delete"]],
+    ["gh", "repo", ["create", "fork", "delete"]],
+    ["gh", "gist", "create"],
+    ["gh", "auth", "login"],
+    ["gh", "secret", ["set", "delete"]],
+    ["gh", "variable", ["set", "delete"]],
+]
+
+for wrapper in [[], ["rtk"], ["rtk", "proxy"]]:
+    for command in allow_commands:
+        prefix_rule(pattern = wrapper + command, decision = "allow")
+    for command in prompt_commands:
+        prefix_rule(pattern = wrapper + command, decision = "prompt")
+    for command in forbidden_commands:
+        prefix_rule(pattern = wrapper + command, decision = "forbidden")
