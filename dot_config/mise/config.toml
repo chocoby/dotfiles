@@ -2,6 +2,7 @@
 node = "lts"
 pnpm = "latest"
 ruby = "latest"
+"npm:oh-my-claude-sisyphus" = "latest"
 
 [tasks.update-all]
 description = "Update system packages, dotfiles, mise tools, and Neovim plugins"
