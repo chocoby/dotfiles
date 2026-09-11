@@ -5,3 +5,4 @@ install.sh
 mise.toml
 git/
 test/
+.claude/CLAUDE-omc.md
