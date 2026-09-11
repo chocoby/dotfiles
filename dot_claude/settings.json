@@ -148,7 +148,7 @@
       }
     }
   },
-  "outputStyle": "Concise, verbose on decisions",
+  "outputStyle": "Concise",
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
