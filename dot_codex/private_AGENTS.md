@@ -3,6 +3,7 @@
 ## Language
 
 - Code comments & commits: English
+- Japanese responses: write in 常体 (plain style, である調)
 
 ## Code Standards
 
