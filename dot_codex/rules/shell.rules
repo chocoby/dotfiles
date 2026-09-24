@@ -1,4 +1,4 @@
-# Shell permissions from dot_claude/settings.json, including RTK wrappers.
+# Shell permissions from dot_claude/settings.json.
 allow_commands = [
     ["cat"],
     ["curl"],
@@ -41,10 +41,9 @@ forbidden_commands = [
     ["gh", "variable", ["set", "delete"]],
 ]
 
-for wrapper in [[], ["rtk"], ["rtk", "proxy"]]:
-    for command in allow_commands:
-        prefix_rule(pattern = wrapper + command, decision = "allow")
-    for command in prompt_commands:
-        prefix_rule(pattern = wrapper + command, decision = "prompt")
-    for command in forbidden_commands:
-        prefix_rule(pattern = wrapper + command, decision = "forbidden")
+for command in allow_commands:
+    prefix_rule(pattern = command, decision = "allow")
+for command in prompt_commands:
+    prefix_rule(pattern = command, decision = "prompt")
+for command in forbidden_commands:
+    prefix_rule(pattern = command, decision = "forbidden")

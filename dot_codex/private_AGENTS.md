@@ -43,7 +43,3 @@ it, and never disable `commit.gpgsign` or edit the git config to get around it.
   order they need to run. If the retry still hangs, ask the user to unlock 1Password.
 - A deferred `fetch`/`pull` means working from a stale base. Say so, and ask first before branching
   off a remote-tracking ref that could not be updated.
-
-## RTK
-
-Read `~/.codex/RTK.md` and follow its Instructions.
