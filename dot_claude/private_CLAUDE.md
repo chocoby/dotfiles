@@ -39,11 +39,6 @@ it, and never disable `commit.gpgsign` or edit the git config to get around it.
 - A deferred `fetch`/`pull` means working from a stale base. Say so, and ask first before branching
   off a remote-tracking ref that could not be updated.
 
-## RTK
-
-@RTK.md
-
-
 <!-- OMC:IMPORT:START -->
 @CLAUDE-omc.md
 <!-- OMC:IMPORT:END -->
