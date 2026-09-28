@@ -4,7 +4,7 @@ run = "bash ~/.local/scripts/system-update.sh"
 
 [tasks."update:dotfiles"]
 description = "Update dotfiles via chezmoi"
-run = "chezmoi state delete-bucket --bucket=entryState || true; chezmoi update"
+run = "chezmoi update"
 
 [tasks."update:tools"]
 description = "Update mise-managed tools and prune unused versions"
