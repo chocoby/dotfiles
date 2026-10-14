@@ -1,6 +1,7 @@
 # Shell permissions from dot_claude/settings.json.
 allow_commands = [
     ["cat"],
+    ["claude", "-p"],
     ["curl"],
     ["docker", "compose", ["build", "exec", "logs", "ps", "run", "up"]],
     ["docker", ["build", "logs", "run", "stop"]],
