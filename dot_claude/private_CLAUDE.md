@@ -1,6 +1,5 @@
 ## Language
 
-- Code comments & commits: English
 - Japanese responses: write in 常体 (plain style, である調)
 
 ## Code Standards
@@ -11,15 +10,17 @@
 
 ## Commit Convention
 
-- Always commit in a single line — no body, no footer.
-- If the project defines its own commit convention (CONTRIBUTING.md, recent `git log`, commit hooks, etc.), follow it (still one line).
+- If the project defines its own commit convention (CONTRIBUTING.md, recent `git log`, commit hooks, etc.), follow it.
 - Otherwise, use Conventional Commits: `<type>(<scope>): <subject>` (scope optional).
   - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
 
 ## Development Style
 
-- Follow TDD: explore → Red → Green → Refactor
-- Ask clarifying questions when instructions are ambiguous
+- For behavior changes, follow TDD where practical: explore → Red → Green → Refactor.
+- Verify outcomes before claiming completion; use checks appropriate to the change.
+- Prefer the simplest approach that preserves quality.
+- Consult official documentation when SDK, framework, or API usage is uncertain.
+- Ask focused clarifying questions when ambiguity materially affects the outcome; otherwise proceed with reasonable assumptions.
 
 ## Git Signing (1Password)
 

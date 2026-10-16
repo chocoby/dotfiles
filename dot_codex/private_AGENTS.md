@@ -2,7 +2,6 @@
 
 ## Language
 
-- Code comments & commits: English
 - Japanese responses: write in 常体 (plain style, である調)
 
 ## Code Standards
@@ -13,8 +12,7 @@
 
 ## Commit Convention
 
-- Always commit in a single line — no body, no footer.
-- If the project defines its own commit convention (CONTRIBUTING.md, recent `git log`, commit hooks, etc.), follow it (still one line).
+- If the project defines its own commit convention (CONTRIBUTING.md, recent `git log`, commit hooks, etc.), follow it.
 - Otherwise, use Conventional Commits: `<type>(<scope>): <subject>` (scope optional).
   - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
 
