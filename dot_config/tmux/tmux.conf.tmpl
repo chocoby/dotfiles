@@ -21,6 +21,7 @@ set -g window-status-current-style fg=black,bg=white
 setw -g mode-keys vi
 set -s extended-keys always
 set -as terminal-features ',xterm-ghostty:extkeys'
+set -g allow-passthrough all
 
 bind r source-file ~/.config/tmux/tmux.conf
 bind : command-prompt

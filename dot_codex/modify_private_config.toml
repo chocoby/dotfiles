@@ -2,5 +2,8 @@
 {{- .chezmoi.stdin | fromToml | default dict
     | setValueAtPath "model" "gpt-6-sol"
     | setValueAtPath "model_reasoning_effort" "medium"
+    | setValueAtPath "notify" (list "/bin/bash" (printf "%s/.codex/notify.sh" .chezmoi.homeDir) "complete")
+    | setValueAtPath "hooks.PermissionRequest" (list (dict "hooks" (list (dict "type" "command" "command" "bash ~/.codex/notify.sh approval"))))
+    | setValueAtPath "tui.notifications" false
     | setValueAtPath "tui.status_line" (list "model-with-reasoning" "git-branch" "context-remaining" "five-hour-limit" "weekly-limit")
     | toToml }}
