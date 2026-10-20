@@ -38,9 +38,6 @@ alias p='popd'
 # vim
 alias vim='nvim'
 
-# Codex
-alias codex='codex --approve-for-me'
-
 # Tmux
 alias tm='tmux a -t'
 alias tml='tmux list-sessions'

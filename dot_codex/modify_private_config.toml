@@ -2,6 +2,9 @@
 {{- .chezmoi.stdin | fromToml | default dict
     | setValueAtPath "model" "gpt-6-sol"
     | setValueAtPath "model_reasoning_effort" "medium"
+    | setValueAtPath "approval_policy" "on-request"
+    | setValueAtPath "approvals_reviewer" "auto_review"
+    | setValueAtPath "sandbox_mode" "workspace-write"
     | setValueAtPath "notify" (list "/bin/bash" (printf "%s/.codex/notify.sh" .chezmoi.homeDir) "complete")
     | setValueAtPath "hooks.PermissionRequest" (list (dict "hooks" (list (dict "type" "command" "command" "bash ~/.codex/notify.sh approval"))))
     | setValueAtPath "tui.notifications" false
