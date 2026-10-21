@@ -89,9 +89,7 @@
     ],
     "ask": [
       "Bash(docker compose down *)",
-      "Bash(docker compose down)",
-      "Bash(gh issue close *)",
-      "Bash(gh issue create *)"
+      "Bash(docker compose down)"
     ],
     "defaultMode": "auto"
   },
