@@ -2,6 +2,7 @@
 allow_commands = [
     ["cat"],
     ["claude", "-p"],
+    ["claude", "auth", "status"],
     ["curl"],
     ["docker", "compose", ["build", "exec", "logs", "ps", "run", "up"]],
     ["docker", ["build", "logs", "run", "stop"]],
