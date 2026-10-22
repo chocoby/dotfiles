@@ -1,6 +1,6 @@
 {{- /* chezmoi:modify-template */ -}}
 {{- .chezmoi.stdin | fromToml | default dict
-    | setValueAtPath "model" "gpt-6-sol"
+    | setValueAtPath "model" "gpt-6.1-sol"
     | setValueAtPath "model_reasoning_effort" "medium"
     | setValueAtPath "approval_policy" "on-request"
     | setValueAtPath "approvals_reviewer" "auto_review"
