@@ -175,3 +175,6 @@ for f (~/.zsh/fzf-sources/*) source "${f}"
 
 # git
 for f (~/.zsh/git-scripts/*) source "${f}"
+
+# Machine-specific settings
+[[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
