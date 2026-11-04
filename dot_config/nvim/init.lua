@@ -147,7 +147,7 @@ require('lazy').setup({
     }
   },
   { 'numToStr/Comment.nvim', opts = {} },
-  { url = 'https://git.disroot.org/andyg/leap.nvim.git' },
+  { url = 'https://codeberg.org/andyg/leap.nvim.git' },
   {
     'kylechui/nvim-surround',
     version = "*",
