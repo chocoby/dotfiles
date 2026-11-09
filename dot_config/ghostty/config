@@ -1,7 +1,8 @@
 theme = "Nord Wave"
 
 font-family = "JetBrains Mono"
-font-family = "Zen Kaku Gothic New Medium"
+# 日本語だけ BIZ UDGothic で表示
+font-codepoint-map = U+3000-U+30FF,U+31F0-U+31FF,U+3400-U+4DBF,U+4E00-U+9FFF,U+F900-U+FAFF,U+FF00-U+FFEF=BIZ UDGothic
 
 window-padding-x = 8
 window-padding-y = 8
