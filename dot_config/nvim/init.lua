@@ -159,14 +159,13 @@ require('lazy').setup({
   },
   {
     "nvim-neotest/neotest",
-    -- https://github.com/nvim-neotest/neotest/issues/531
-    commit = '52fca671',
     lazy = true,
     dependencies = {
       "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "olimorris/neotest-rspec",
+      "nvim-neotest/neotest-go",
     }
   },
   { "vim-ruby/vim-ruby" },
@@ -509,8 +508,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*.go',
-  callback = function()
-    vim.lsp.buf.format({ async = false, timeout_ms = 2000 })
+  callback = function(ev)
+    for _, client in ipairs(vim.lsp.get_clients({ bufnr = ev.buf, name = 'gopls' })) do
+      local params = vim.lsp.util.make_range_params(0, client.offset_encoding)
+      params.context = { only = { 'source.organizeImports' }, diagnostics = {} }
+      local response = client:request_sync('textDocument/codeAction', params, 2000, ev.buf)
+      for _, action in ipairs(response and response.result or {}) do
+        if action.edit then
+          vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
+        end
+      end
+    end
+    vim.lsp.buf.format({ bufnr = ev.buf, name = 'gopls', async = false, timeout_ms = 2000 })
   end,
 })
 
@@ -521,6 +530,9 @@ vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
 -- [[ Neotest ]]
 require("neotest").setup({
   adapters = {
+    require("neotest-go")({
+      args = { "-count=1" },
+    }),
     require("neotest-rspec")({
       rspec_cmd = function()
         -- This is a hack to get the RSpec command to work with Docker Compose.
