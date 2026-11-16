@@ -1,3 +1,7 @@
+[tasks."auth:ssh"]
+description = "Authorize 1Password SSH agent up front"
+run = "ssh -T git@github.com 2>&1 | grep -q 'successfully authenticated'"
+
 [tasks."update:system"]
 description = "Update system packages"
 run = "bash ~/.local/scripts/system-update.sh"
@@ -17,6 +21,7 @@ run = "nvim --headless '+Lazy! update' '+TSUpdate' +qa"
 [tasks.update-all]
 description = "Update system packages, dotfiles, mise tools, and Neovim plugins"
 run = [
+  "mise run auth:ssh",
   "mise run update:system",
   "mise run update:dotfiles",
   "mise run update:tools",
