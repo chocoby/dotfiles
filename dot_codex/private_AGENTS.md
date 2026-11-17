@@ -12,7 +12,8 @@
 
 ## Commit Convention
 
-- If the project defines its own commit convention (CONTRIBUTING.md, recent `git log`, commit hooks, etc.), follow it.
+- Always commit in a single line — no body, no footer.
+- If the project defines its own commit convention (CONTRIBUTING.md, recent `git log`, commit hooks, etc.), follow it (still one line).
 - Otherwise, use Conventional Commits: `<type>(<scope>): <subject>` (scope optional).
 
 ## Development Style
